@@ -236,9 +236,9 @@ class ApiController extends AbstractController
         );
     }
 
-    #[Route('/volumes')]
+    #[Route('/volume/{pair}')]
 
-    public function volumes (EntityManagerInterface $entityManager){
+    public function volume (EntityManagerInterface $entityManager){
 
         //$cache = new FilesystemAdapter();
         //$value = $cache->get(str_replace([':','/'], '',"https://api.kujira.app/api/trades/candles?" .  $_SERVER['QUERY_STRING']), function (ItemInterface $item) {
