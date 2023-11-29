@@ -31,6 +31,57 @@ class ApplicationGlobalsService
         'SOMM' => 'https://rest.cosmos.directory/kujira/cosmwasm/wasm/v1/contract/kujira17lygr9z479rrslsg6rm8elutgcrt2lze4nqjlwsrvqud4hdx6mdqxa7huu/smart/eyJzdGF0dXMiOnt9fQ==',
     ];
 
+    private ?array $fin_contracts = [
+        //AXL USDC pairs
+        "KUJI_axlUSDC"      =>  ["contract" => "kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867"],
+        "JUNO_axlUSDC"      =>  ["contract" => "kujira1z7asfxkwv0t863rllul570eh5pf2zk07k3d86ag4vtghaue37l5s9epdvn"],
+        "EVMOS_axlUSDC"     =>  ["contract" => "kujira182nff4ttmvshn6yjlqj5czapfcav9434l2qzz8aahf5pxnyd33tsz30aw6"],
+        "wETH_axlUSDC"      =>  ["contract" => "kujira1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrsqq4jjh", "priceMultiplier" => 1000000000000],
+        "axlUSDT_axlUSDC"   =>  ["contract" => "kujira1xut80d09q0tgtch8p0z4k5f88d3uvt8cvtzm5h3tu3tsy4jk9xlscem692"],
+        "xAVAX_axlUSDC"     =>  ["contract" => "kujira1qjxu65ucccpg8c5kac8ng6yxfqq85fluwd0p9nt74g2304qw8eyq930y7w", "priceMultiplier" => 1000000000000],
+        "STARS_axlUSDC"     =>  ["contract" => "kujira1jkte0pytr85qg0whmgux3vmz9ehmh82w40h8gaqeg435fnkyfxqq5m32qy"],
+        "LOOP_axlUSDC"      =>  ["contract" => "kujira10fqy0npt7djm8lg847v9rqlng88kqfdvl8tyt4ge204wf52sy68qwmj07l"],
+        "CMDX_axlUSDC"      =>  ["contract" => "kujira16y344e8ryydmeu2g8yyfznq79j7jfnar4p59ngpvaazcj83jzsms6tju67"],
+        "ATOM_axlUSDC"      =>  ["contract" => "kujira1xr3rq8yvd7qplsw5yx90ftsr2zdhg4e9z60h5duusgxpv72hud3sl8nek6"],
+        "OSMO_axlUSDC"      =>  ["contract" => "kujira1aakfpghcanxtc45gpqlx8j3rq0zcpyf49qmhm9mdjrfx036h4z5sfmexun"],
+        "SCRT_axlUSDC"      =>  ["contract" => "kujira1fkwjqyfdyktgu5f59jpwhvl23zh8aav7f98ml9quly62jx2sehysqa4unf"],
+        "LUNA_axlUSDC"      =>  ["contract" => "kujira1yg8930mj8pk288lmkjex0qz85mj8wgtns5uzwyn2hs25pwdnw42skp0kur"],
+        "wBNB_axlUSDC"      =>  ["contract" => "kujira1apkgj87fgfsq84swvkyfaemrq7t4deuh60887lek0hkgdjh5fj0qaz7fhx", "priceMultiplier" => 1000000000000],
+        "DOT_axlUSDC"       =>  ["contract" => "kujira1w4t2qpwvhyhz0g2mwgqjzgsw63dcy5hkfch0tgr8xj9qjcsauq8q5x0zxz", "priceMultiplier" => 10000],
+        "gPAxG_axlUSDC"     =>  ["contract" => "kujira12p30cr4gstmp2yucwxtaq92turrzsxxar8upz3rhmfjxh6gdgk4s5vsyse", "priceMultiplier" => 1000000000000],
+        "MARS_axlUSDC"      =>  ["contract" => "kujira149m52kn7nvsg5nftvv4fh85scsavpdfxp5nr7zasz97dum89dp5qevttd9"],
+        "wTAO_axlUSDC"      =>  ["contract" => "kujira17qp8g5n5wwelrsnfdakrv0p550nzg72agpcz5t0ea6thlqd300hquxljcc", "priceMultiplier" => 1000000000000],
+        "MNTA_axlUSDC"      =>  ["contract" => "kujira1ws9w7wl68prspv3rut3plv8249rm0ea0kk335swye3sl2slld4lqdmc0lv"],
+        "NTRN_axlUSDC"      =>  ["contract" => "kujira1kt0jxlr5fkx3xepymxav5c3h8sjnmutp3za2e6r5k9pgsta34trq8emzqj"],
+
+        //USK PAIRS
+        "ATOM_USK"          =>  ["contract" => "kujira1yum4v0v5l92jkxn8xpn9mjg7wuldk784ctg424ue8gqvdp88qzlqr2qp2j"],
+        "KUJI_USK"          =>  ["contract" => "kujira193dzcmy7lwuj4eda3zpwwt9ejal00xva0vawcvhgsyyp5cfh6jyq66wfrf"],
+        "axlUSDC_USK"       =>  ["contract" => "kujira1rwx6w02alc4kaz7xpyg3rlxpjl4g63x5jq292mkxgg65zqpn5llq202vh5"],
+        "AXL_USK"           =>  ["contract" => "kujira1dtaqwlmzlk3jku5un6h6rfunttmwsqnfz7evvdf4pwr0wypsl68q49aaud"],
+        "CRO_USK"           =>  ["contract" => "kujira10j648ftg2g8p5vhgsu5kzfh6d907vpkrn0a5l3qch479eqy2qssqm905c4"],
+        "LUNA_USK"          =>  ["contract" => "kujira1zz74gvmq6ss3pg5vgahvx47ugpfzr80qu75l97lf2ggdgxq04ddqxkdzey"],
+        "wBNB_USK"          =>  ["contract" => "kujira1a0fyanyqm496fpgneqawhlsug6uqfvqg2epnw39q0jdenw3zs8zqsjhdr0"],
+        "STRD_USK"          =>  ["contract" => "kujira1cn922pcqrt4g2dr4va9vxk8h3w3jfxnxjqq2qp6zktjsehdzde6sz66um0"],
+        "LOCAL_USK"         =>  ["contract" => "kujira1sse6a00arh9dalzsyrd3q825dsn2zmrag0u4qx8q0dyks4ftnxyqrj0xds"],
+        "wMATIC_USK"        =>  ["contract" => "kujira1rrnacml8zeqq3ve2t98r5x88t4uahahdk66y9qpcrjp9qxhnuvysv59zx8"],
+        "wBTC_USK"          =>  ["contract" => "kujira1ulyrqqtx9vqsk92805jk7xxwz77lszmm2f548juyced96tj4lg7qugewsf"],
+        "USDC_USK"          =>  ["contract" => "kujira1zg4e37hz5hzlf8kmcaxjf85nyevk3qr2dp307lafdgst2928rghqed59ed"],
+
+        "KUJI-ATOM"       => ["contract" => "kujira18v47nqmhvejx3vc498pantg8vr435xa0rt6x0m6kzhp6yuqmcp8s4x8j2c","nominative" => "ATOM-axlUSDC"],
+
+
+        "ATOM-OSMO" => "kujira1hulx7cgvpfcvg83wk5h96sedqgn72n026w6nl47uht554xhvj9nsra5j5u",
+
+
+        "KUJI-LUNA" => "kujira1xqhakgvn3jeqfade0z4aufer9xylx7ft45fgyhg6z75mauhkjwks9cucyq",
+
+        "LP KUJI-ATOM (ATOM)" => "kujira1gl8js9zn7h9u2h37fx7qg8xy65jrk9t4zpa6s7j5hdlanud2uwxshqq67m",
+        "LP KUJI-ATOM (KUJI)" => "kujira1hs95lgvuy0p6jn4v7js5x8plfdqw867lsuh5xv6d2ua20jprkgesw2pujt",
+
+
+    ];
+
     private ?array $api_urls = [
         'staked_tokens' => 'https://lcd.kaiyo.kujira.setten.io/cosmos/staking/v1beta1/pool',
         'list_of_pairs' => 'https://api.kujira.app/api/coingecko/pairs',
@@ -54,42 +105,6 @@ class ApplicationGlobalsService
         'MantaStaked' => 'https://rest.cosmos.directory/kujira/cosmwasm/wasm/v1/contract/kujira12y9ltc6a0vnlce6dkdmkv23jm6euu3zgvnwcwlggd42wgexyvh2srr8r5q/smart/ewogICAgICAgICJ0b3RhbF93ZWlnaHQiOiB7CiAgICAgICAgfQogICAgfQ==',
         'Mantalocked' => 'https://lcd.kaiyo.kujira.setten.io/cosmos/bank/v1beta1/balances/kujira12y9ltc6a0vnlce6dkdmkv23jm6euu3zgvnwcwlggd42wgexyvh2srr8r5q'
     ];
-
-
-    private ?array $fin_contracts = [
-        "KUJI-axlUSD"     => "kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867",
-        "KUJI-ATOM"       => "kujira18v47nqmhvejx3vc498pantg8vr435xa0rt6x0m6kzhp6yuqmcp8s4x8j2c",
-        "JUNO-axlUSDC"    => "kujira1z7asfxkwv0t863rllul570eh5pf2zk07k3d86ag4vtghaue37l5s9epdvn",
-        "EVMOS-axlUSDC"   => "kujira182nff4ttmvshn6yjlqj5czapfcav9434l2qzz8aahf5pxnyd33tsz30aw6",
-        "wETH-axlUSDC"    => "kujira1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrsqq4jjh",
-        "axlUSDT-axlUSDC" => "kujira1xut80d09q0tgtch8p0z4k5f88d3uvt8cvtzm5h3tu3tsy4jk9xlscem692",
-        "ATOM-USK" => "kujira1yum4v0v5l92jkxn8xpn9mjg7wuldk784ctg424ue8gqvdp88qzlqr2qp2j",
-        "KUJI-USK" => "kujira193dzcmy7lwuj4eda3zpwwt9ejal00xva0vawcvhgsyyp5cfh6jyq66wfrf",
-        "axlUSDC-USK" => "kujira1rwx6w02alc4kaz7xpyg3rlxpjl4g63x5jq292mkxgg65zqpn5llq202vh5",
-        "AXL-USK" => "kujira1dtaqwlmzlk3jku5un6h6rfunttmwsqnfz7evvdf4pwr0wypsl68q49aaud",
-        "CRO-USK" => "kujira10j648ftg2g8p5vhgsu5kzfh6d907vpkrn0a5l3qch479eqy2qssqm905c4",
-        "wAVAX-axlUSDC" => "kujira1qjxu65ucccpg8c5kac8ng6yxfqq85fluwd0p9nt74g2304qw8eyq930y7w",
-        "STARS-axlUSDC" => "kujira1jkte0pytr85qg0whmgux3vmz9ehmh82w40h8gaqeg435fnkyfxqq5m32qy",
-        "LOOP-axlUSDC" => "kujira10fqy0npt7djm8lg847v9rqlng88kqfdvl8tyt4ge204wf52sy68qwmj07l",
-        "CMDX-axlUSDC" => "kujira16y344e8ryydmeu2g8yyfznq79j7jfnar4p59ngpvaazcj83jzsms6tju67",
-        "ATOM-axlUSDC" => "kujira1xr3rq8yvd7qplsw5yx90ftsr2zdhg4e9z60h5duusgxpv72hud3sl8nek6",
-        "OSMO-axlUSDC" => "kujira1aakfpghcanxtc45gpqlx8j3rq0zcpyf49qmhm9mdjrfx036h4z5sfmexun",
-        "ATOM-OSMO" => "kujira1hulx7cgvpfcvg83wk5h96sedqgn72n026w6nl47uht554xhvj9nsra5j5u",
-        "SCRT-axlUSDC" => "kujira1fkwjqyfdyktgu5f59jpwhvl23zh8aav7f98ml9quly62jx2sehysqa4unf",
-        "LUNA-axlUSDC" => "kujira1yg8930mj8pk288lmkjex0qz85mj8wgtns5uzwyn2hs25pwdnw42skp0kur",
-        "LUNA-USK" => "kujira1zz74gvmq6ss3pg5vgahvx47ugpfzr80qu75l97lf2ggdgxq04ddqxkdzey",
-        "KUJI-LUNA" => "kujira1xqhakgvn3jeqfade0z4aufer9xylx7ft45fgyhg6z75mauhkjwks9cucyq",
-        "wBNB-USK" => "kujira1a0fyanyqm496fpgneqawhlsug6uqfvqg2epnw39q0jdenw3zs8zqsjhdr0",
-        "wBNB-axlUSDC" => "kujira1apkgj87fgfsq84swvkyfaemrq7t4deuh60887lek0hkgdjh5fj0qaz7fhx",
-        "STRD-USK" => "kujira1cn922pcqrt4g2dr4va9vxk8h3w3jfxnxjqq2qp6zktjsehdzde6sz66um0",
-        "LOCAL-USK" => "kujira1sse6a00arh9dalzsyrd3q825dsn2zmrag0u4qx8q0dyks4ftnxyqrj0xds",
-        "LP KUJI-ATOM (ATOM)" => "kujira1gl8js9zn7h9u2h37fx7qg8xy65jrk9t4zpa6s7j5hdlanud2uwxshqq67m",
-        "LP KUJI-ATOM (KUJI)" => "kujira1hs95lgvuy0p6jn4v7js5x8plfdqw867lsuh5xv6d2ua20jprkgesw2pujt",
-        "wMATIC/USK" => "kujira1rrnacml8zeqq3ve2t98r5x88t4uahahdk66y9qpcrjp9qxhnuvysv59zx8",
-        "wBTC/USK" => "kujira1ulyrqqtx9vqsk92805jk7xxwz77lszmm2f548juyced96tj4lg7qugewsf",
-
-    ];
-
     private ?array $tokens = [
         'wETH' => 'ibc/1B38805B1C75352B28169284F96DF56BDEBD9E8FAC005BDCC8CF0378C82AA8E7',
         'ATOM' => 'ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2',
@@ -161,10 +176,12 @@ class ApplicationGlobalsService
     {
         return $this->tokens;
     }
+
     public function get_fin_contracts(): array
     {
         return $this->fin_contracts;
     }
+
     public function get_bow_contracts(): array
     {
         return $this->bow_contracts;

@@ -10,7 +10,9 @@ use App\Entity\Unmigrated;
 use App\Entity\UskMinted;
 use App\Entity\Wallets;
 use App\Repository\BowTvlRepository;
+use DateInterval;
 use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use PhpParser\Builder\Class_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,6 +20,7 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Contracts\Cache\ItemInterface;
 
 
@@ -44,14 +47,10 @@ class ApiController extends AbstractController
     #[Route('/')]
     public function homepage()
     {
-        $client = HttpClient::create();
-        $response = $client->request(
-            'GET',
-            'https://lcd.kaiyo.kujira.setten.io/cosmos/distribution/v1beta1/community_pool'
-        );
+        $volume =$this->_volume('kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867','1D');
 
         return new Response(
-            $response->getContent(),
+            $volume,
             Response::HTTP_OK,
             [
                 'Content-Type' => 'application/json',
@@ -237,6 +236,18 @@ class ApiController extends AbstractController
         );
     }
 
+    #[Route('/volumes')]
+
+    public function volumes (EntityManagerInterface $entityManager){
+
+        //$cache = new FilesystemAdapter();
+        //$value = $cache->get(str_replace([':','/'], '',"https://api.kujira.app/api/trades/candles?" .  $_SERVER['QUERY_STRING']), function (ItemInterface $item) {
+        // $item->expiresAfter(20);
+
+
+
+    }
+
     #[Route('/bowtvl/{pair}')]
     public function bowTvl(EntityManagerInterface $entityManager, $pair)
     {
@@ -272,6 +283,7 @@ class ApiController extends AbstractController
             ]
         );
     }
+
     /*********************************
      *  KUJIRA Proxy routes
      *********************************/
@@ -415,6 +427,25 @@ class ApiController extends AbstractController
                 'Access-Control-Allow-Origin' => '*'
             ]
         );
+    }
+
+
+    /* Calculations methods.*/
+
+    private function _fin_volume(string $contract, string $precision) {
+
+        //Format date = '2022-11-29T13:00:00.000Z'
+        $end_date = new DateTime('now');
+        $end_date_parameter = $end_date->format(DateTimeInterface::ISO8601);
+        $start_date = $end_date->sub(new DateInterval('P1Y'));
+        $start_date_parameter = $start_date->format(DateTimeInterface::ISO8601);
+        $client = HttpClient::create();
+        $response = $client->request(
+            'GET',
+            "https://kaiyo-1.gigalixirapp.com/api/trades/candles?contract=" . $contract . "&precision=". $precision . "&from=" . str_replace('+','.',$start_date_parameter) ."&to=". str_replace('+','.',$end_date_parameter)
+        );
+            return $response->getContent();
+
     }
 
 
