@@ -10,6 +10,7 @@ use App\Entity\Unmigrated;
 use App\Entity\UskMinted;
 use App\Entity\Wallets;
 use App\Repository\BowTvlRepository;
+use App\Service\ApplicationGlobalsService;
 use DateInterval;
 use DateTime;
 use DateTimeInterface;
@@ -236,15 +237,63 @@ class ApiController extends AbstractController
         );
     }
 
-    #[Route('/volume/{pair}')]
+    #[Route('/volume')]
 
-    public function volume (EntityManagerInterface $entityManager){
+    public function volume (EntityManagerInterface $entityManager,ApplicationGlobalsService $application_globals){
 
+        $fin_urls = $application_globals->get_fin_contracts();
+        $volume = [];
+        foreach ($fin_urls as $fin_url){
+            $contract[] = $fin_url['contract'];
+        }
         //$cache = new FilesystemAdapter();
         //$value = $cache->get(str_replace([':','/'], '',"https://api.kujira.app/api/trades/candles?" .  $_SERVER['QUERY_STRING']), function (ItemInterface $item) {
         // $item->expiresAfter(20);
 
 
+        return new Response(
+            json_encode(["FIN CONTRACTS" => $volume]),
+            Response::HTTP_OK,
+            [
+                'Content-Type' => 'application/json',
+                'Access-Control-Allow-Origin' => '*'
+            ]
+        );
+
+
+    }
+
+    #[Route('/volume/{pair}')]
+
+    public function volume_pair (EntityManagerInterface $entityManager,ApplicationGlobalsService $application_globals, $pair){
+
+        $fin_urls = $application_globals->get_fin_contracts();
+        $pair_value = $fin_urls[$pair];
+        $volume = $this->_fin_volume($pair_value['contract'],'1D');
+        return new Response(
+           $volume,
+            Response::HTTP_OK,
+            [
+                'Content-Type' => 'application/json',
+                'Access-Control-Allow-Origin' => '*'
+            ]
+        );
+
+    }
+    #[Route('/finpairs')]
+
+    public function fin_pairs (EntityManagerInterface $entityManager,ApplicationGlobalsService $application_globals){
+
+        $fin_urls = $application_globals->get_fin_contracts();
+        $pairs = array_keys($fin_urls);
+        return new Response(
+            json_encode ($pairs),
+            Response::HTTP_OK,
+            [
+                'Content-Type' => 'application/json',
+                'Access-Control-Allow-Origin' => '*'
+            ]
+        );
 
     }
 

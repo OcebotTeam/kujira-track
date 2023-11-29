@@ -32,6 +32,7 @@ class ApplicationGlobalsService
     ];
 
     private ?array $fin_contracts = [
+
         //AXL USDC pairs
         "KUJI_axlUSDC"      =>  ["contract" => "kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867"],
         "JUNO_axlUSDC"      =>  ["contract" => "kujira1z7asfxkwv0t863rllul570eh5pf2zk07k3d86ag4vtghaue37l5s9epdvn"],
@@ -55,7 +56,6 @@ class ApplicationGlobalsService
         "NTRN_axlUSDC"      =>  ["contract" => "kujira1kt0jxlr5fkx3xepymxav5c3h8sjnmutp3za2e6r5k9pgsta34trq8emzqj"],
 
         // USDC PAIRS
-
         "KUJI_USDC"     =>  ["contract" => "kujira1pw96huy6z02uk8hdpruk6g8u700dp8yxjhp46c24rwkzay2lfd3quqdum5"],
         "axlUSDC_USDC"  =>  ["contract" => "kujira1zg4e37hz5hzlf8kmcaxjf85nyevk3qr2dp307lafdgst2928rghqed59ed"],
         "MNTA_USDC"     =>  ["contract" => "kujira16mnw6am32ecqacsgz2kf9gfy8sh4uqyv0246f3rxnjz4up9k462q34jck5"],
@@ -119,7 +119,6 @@ class ApplicationGlobalsService
         "LINK_USK"      =>  ["contract" => "kujira12zjpumtfh88k6s2s8k4wks37ezr2c3zeha5xx6qpd65e5ehz50nq0afvrv", "priceMultiplier" => 1000000000000],
 
         // MNTA PAIRS
-
         "stATOM_MNTA"   =>  ["contract" => "kujira1l2x5c2fjjnw9uhrfhtme9snw3tzs4jt8cm0q2ysqssx6zskxatesjm7w7f", "nominative"=>"MNTA_axlUSDC"],
         "wstETH_MNTA"   =>  ["contract" => "kujira1hf44at7dqewrn3ssa392d9p8nh5mr538u59gqsukdza35663hlestqr29e", "nominative"=>"MNTA_axlUSDC"],
         "wETH_MNTA"     =>  ["contract" => "kujira13xyuyw93pv6t7c4h248tc8t6kgu874v5qasmjfzqjfjhfp6hawlse5u5tz", "nominative"=>"MNTA_axlUSDC"],
@@ -145,19 +144,28 @@ class ApplicationGlobalsService
         "ampMNTA_MNTA"  =>  ["contract" => "kujira1pwldj8n88f99wl5sykff9q7sl2settejutlr84mjysny9wfqgluqcp6fu4", "nominative"=>"MNTA_axlUSDC"],
         "wFTM_MNTA"     =>  ["contract" => "kujira1dsmm4q4kgs0nfsryrmlv7wq2dxp6uzruzqalc5xp30ztlmplgm7qms2qsa", "nominative"=>"MNTA_axlUSDC"],
 
+        //KUJI PAIRS
+        "ampKUJI_KUJI"  =>  ["contract" => "kujira1lse59wt7a5yksdd08mennt299katjkfzdhmh8hvck8ln08jktcmsxrnh8s", "nominative"=>"KUJI_axlUSDC"],
+        "wETH_KUJI"     =>  ["contract" => "kujira1zdf0zjz8grfhhe2x06k8f8xpnv04y90w06f4py7fjml4nmukn3yswk3ugc", "nominative"=>"KUJI_axlUSDC"],
+        "wBTC_KUJI"     =>  ["contract" => "kujira17t9w0xlnukuy7pw6fzkr7gd3pdun9zma0hzqaueqszskw2lr95yqfqnynt", "nominative"=>"KUJI_axlUSDC"],
+        "MNTA_KUJI"     =>  ["contract" => "kujira1nkgq8xl4flsau7v3vphr3ayc7tprgazg6pzjmq8plkr76v385fhsx26qfa", "nominative"=>"KUJI_axlUSDC"],
 
-        "KUJI-ATOM"       => ["contract" => "kujira18v47nqmhvejx3vc498pantg8vr435xa0rt6x0m6kzhp6yuqmcp8s4x8j2c","nominative" => "ATOM-axlUSDC"],
+        // ATOM PAIRS
+        "KUJI-ATOM"             => ["contract" => "kujira18v47nqmhvejx3vc498pantg8vr435xa0rt6x0m6kzhp6yuqmcp8s4x8j2c", "nominative" => "ATOM_axlUSDC"],
+        "stATOM_ATOM"           => ["contract" => "kujira158zzjcvkz7r3j5hueurcw22qrjerqw4dtrzlalztr7whjykjwvrsrahdnq", "nominative" => "ATOM_axlUSDC"],
+        "LP KUJI-ATOM (ATOM)"   => ["contract" => "kujira1gl8js9zn7h9u2h37fx7qg8xy65jrk9t4zpa6s7j5hdlanud2uwxshqq67m", "nominative" => "ATOM_axlUSDC"],
+        "LP KUJI-ATOM (KUJI)"   => ["contract" => "kujira1hs95lgvuy0p6jn4v7js5x8plfdqw867lsuh5xv6d2ua20jprkgesw2pujt", "nominative" => "KUJI_axlUSDC"],
 
+        // LUNA PAIRS
+        "KUJI-LUNA" => ["contract" => "kujira1xqhakgvn3jeqfade0z4aufer9xylx7ft45fgyhg6z75mauhkjwks9cucyq", "nominative" => "LUNA_axlUSDC"],
+        "ampLUNA_LUNA" => ["contract" => "kujira172qjrk8g9l86w0shz4cc3e6rt5h9janaen4j4u6ze7xkjvjnaqfskwyyqm", "nominative" => "LUNA_axlUSDC"],
 
-        "ATOM-OSMO" => "kujira1hulx7cgvpfcvg83wk5h96sedqgn72n026w6nl47uht554xhvj9nsra5j5u",
+        //OSMO PAIRS
+        "ATOM-OSMO" => ["contract" => "kujira1hulx7cgvpfcvg83wk5h96sedqgn72n026w6nl47uht554xhvj9nsra5j5u", "nominative" => "OSMO_axlUSDC"],
 
+        // WETH PAIRS
 
-        "KUJI-LUNA" => "kujira1xqhakgvn3jeqfade0z4aufer9xylx7ft45fgyhg6z75mauhkjwks9cucyq",
-
-        "LP KUJI-ATOM (ATOM)" => "kujira1gl8js9zn7h9u2h37fx7qg8xy65jrk9t4zpa6s7j5hdlanud2uwxshqq67m",
-        "LP KUJI-ATOM (KUJI)" => "kujira1hs95lgvuy0p6jn4v7js5x8plfdqw867lsuh5xv6d2ua20jprkgesw2pujt",
-
-
+        "wstETH_wETH" => ["contract" => "kujira1ehwsdvgs3chpxuexktymjmmjj68m3h4q67p9vjj9rrgjqycc3gtsfzej24", "nominative" => "wETH_axlUSDC", "ethDivider" => 1]
     ];
 
     private ?array $api_urls = [
