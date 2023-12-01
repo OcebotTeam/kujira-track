@@ -27,23 +27,8 @@ use Symfony\Contracts\Cache\ItemInterface;
 
 class ApiController extends AbstractController
 {
-    private function getEntityPerDay(EntityManagerInterface $entityManager, $class) {
-        $entity_repo = $entityManager->getRepository($class);
-        $all_enities = $entity_repo->findBy([], ["tracked" => "ASC"]);
-        $prev_day_date = null;
+    private ApplicationGlobalsService $application_globals;
 
-        // Filter to get just 1 record per day
-        return array_filter($all_enities, function($item) use (&$prev_day_date) {
-            $item_date = $item->getTracked();
-
-            if (is_null($prev_day_date) || $item_date->format('Y-m-d') != $prev_day_date->format('Y-m-d')) {
-                $prev_day_date = $item_date;
-                return true;
-            }
-
-            return false;
-        });
-    }
 
     #[Route('/')]
     public function homepage()
@@ -60,191 +45,27 @@ class ApiController extends AbstractController
         );
     }
 
-    #[Route('/wallets')]
-    public function wallets(EntityManagerInterface $entityManager)
-    {
-        $wallets = $this->getEntityPerDay($entityManager, Wallets::class);
 
-        // Format key/values to meet the front needs.
-        $formatted_wallets = array_map(function ($item) {
-            return [
-                "value" => $item->getNum(),
-                "time" => $item->getTracked()->format('Y-m-d')
-            ];
-        }, $wallets);
 
-        // Return response
-        return new Response(
-            json_encode(["wallets" => array_values($formatted_wallets)]),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
 
-    #[Route('/transactions')]
-    public function transactions(EntityManagerInterface $entityManager)
-    {
-        $transactions = $this->getEntityPerDay($entityManager, Transactions::class);
 
-        // Format key/values to meet the front needs.
-        $filtered_transactions = array_map(function ($item) {
-            return [
-                "value" => $item->getNum(),
-                "time" => $item->getTracked()->format('Y-m-d')
-            ];
-        }, $transactions);
 
-        // Return response
-        return new Response(
-            json_encode(["transactions" => array_values($filtered_transactions)]),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
 
-    #[Route('/unmigrated')]
-    public function unmigrated(EntityManagerInterface $entityManager)
-    {
-        $unmigrated_tokens = $this->getEntityPerDay($entityManager, Unmigrated::class);
 
-        // Format key/values to meet the front needs.
-        $filtered_unmigrated_tokens = array_map(function ($item) {
-            return [
-                "value" => $item->getNum(),
-                "time" => $item->getTracked()->format('Y-m-d')
-            ];
-        }, $unmigrated_tokens);
 
-        // Return response
-        return new Response(
-            json_encode(["unmigrated" => array_values($filtered_unmigrated_tokens)]),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
 
-    #[Route('/stakedtokens')]
-    public function stakedTokens(EntityManagerInterface $entityManager)
-    {
-        $staked_tokens = $this->getEntityPerDay($entityManager, StakedTokens::class);
-
-        // Format key/values to meet the front needs.
-        $filtered_staked_tokens = array_map(function ($item) {
-            return [
-                "value" => $item->getBondedTokens(),
-                "time" => $item->getTracked()->format('Y-m-d')
-            ];
-        }, $staked_tokens);
-
-        // Return response
-        return new Response(
-            json_encode(["stakedtokens" => array_values($filtered_staked_tokens)]),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
-
-    #[Route('/mantastaked')]
-    public function mantaStaked(EntityManagerInterface $entityManager)
-    {
-        $manta_staked = $this->getEntityPerDay($entityManager, StakedManta::class);
-
-        // Format key/values to meet the front needs.
-        $filtered_manta_staked = array_map(function ($item) {
-            return [
-                "value" => $item->getBonded(),
-                "time" => $item->getTracked()->format('Y-m-d')
-            ];
-        }, $manta_staked);
-
-        // Return response
-        return new Response(
-            json_encode(["mantastaked" => array_values($filtered_manta_staked)]),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
-
-    #[Route('/uskminted')]
-    public function uskMinted(EntityManagerInterface $entityManager)
-    {
-        $usk_minted = $this->getEntityPerDay($entityManager, UskMinted::class);
-
-        // Format key/values to meet the front needs.
-        $filtered_usk_minted = array_map(function ($item) {
-            return [
-                "value" => $item->getNum(),
-                "time" => $item->getTracked()->format('Y-m-d')
-            ];
-        }, $usk_minted);
-
-        // Return response
-        return new Response(
-            json_encode(["uskminted" => array_values($filtered_usk_minted)]),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
-
-    #[Route('v2/uskminted')]
-    public function uskMintedv2(EntityManagerInterface $entityManager)
-    {
-        //$usk_minted = $this->getEntityPerDay($entityManager, UskMinted::class);
-
-        $usk_minted_repo = $entityManager->getRepository(UskMinted::class);
-        $usk_minted_all = $usk_minted_repo->findBy([], ["tracked" => "ASC"]);
-        $result = [];
-
-        foreach($usk_minted_all as $item) {
-            $date = $item->getTracked()->format('Y-m-d');
-            $collateral = $item->getCollateral();
-            $result[$collateral][$date] = [
-                "value" => $item->getNum(),
-                "time" => $item->getTracked()->format('Y-m-d')
-            ];
-        }
-
-        foreach ($result as &$collateral) {
-            $collateral = array_values($collateral);
-        }
-
-        // Return response
-        return new Response(
-            json_encode(["uskminted" => $result]),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
 
     #[Route('/volume')]
 
     public function volume (EntityManagerInterface $entityManager,ApplicationGlobalsService $application_globals){
 
-        $fin_urls = $application_globals->get_fin_contracts();
+        $fin_contracts = $application_globals->get_fin_contracts();
         $volume = [];
-        foreach ($fin_urls as $fin_url){
-            $contract[] = $fin_url['contract'];
+        $all_candles = [];
+        dump ($fin_contracts);
+        foreach ($fin_contracts as $fin_contract){
+            $all_candles[] = $this->volume_pair($fin_contract["contract"]);
+
         }
         //$cache = new FilesystemAdapter();
         //$value = $cache->get(str_replace([':','/'], '',"https://api.kujira.app/api/trades/candles?" .  $_SERVER['QUERY_STRING']), function (ItemInterface $item) {
@@ -269,7 +90,7 @@ class ApiController extends AbstractController
 
         $fin_urls = $application_globals->get_fin_contracts();
         $pair_value = $fin_urls[$pair];
-        $volume = $this->_fin_volume($pair_value['contract'],'1D');
+        $volume = $this->_fin_pair_volume($pair_value['contract'],'1D');
         return new Response(
            $volume,
             Response::HTTP_OK,
@@ -284,16 +105,7 @@ class ApiController extends AbstractController
 
     public function fin_pairs (EntityManagerInterface $entityManager,ApplicationGlobalsService $application_globals){
 
-        $fin_urls = $application_globals->get_fin_contracts();
-        $pairs = array_keys($fin_urls);
-        return new Response(
-            json_encode ($pairs),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
+        return $this->_get_fin_pairs();
 
     }
 
@@ -337,151 +149,11 @@ class ApiController extends AbstractController
      *  KUJIRA Proxy routes
      *********************************/
 
-    #[Route('/kbridge/candles')]
-    public function kbridge_candles()
-    {
-        $client = HttpClient::create();
-        $response = $client->request(
-            'GET',
-            "https://kaiyo-1.gigalixirapp.com/api/trades/candles?" . $_SERVER['QUERY_STRING']
-        );
-
-        return new Response(
-            $response->getContent(),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
-
-    #[Route('/kbridge/cached/candles')]
-    public function kbridge_cached_candles(){
-
-        $cache = new FilesystemAdapter();
-        $value = $cache->get(str_replace([':','/'], '',"https://api.kujira.app/api/trades/candles?" .  $_SERVER['QUERY_STRING']), function (ItemInterface $item) {
-        $item->expiresAfter(20);
-
-        // ... do some HTTP request or heavy computations
-        $client = HttpClient::create();
-        $response = $client->request(
-            'GET',
-            "https://kaiyo-1.gigalixirapp.com/api/trades/candles?" . $_SERVER['QUERY_STRING']
-        );
-
-        return new Response(
-            $response->getContent(),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    });
-    return $value;
-
-    }
-
-    #[Route('/kbridge/txs/count')]
-    public function kbridge_txs_count()
-    {
-        $client = HttpClient::create();
-        $response = $client->request(
-            'GET',
-            "https://kaiyo-1.gigalixirapp.com/api/txs/count?" . $_SERVER['QUERY_STRING']
-        );
-
-        return new Response(
-            $response->getContent(),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
-
-    #[Route('/kbridge/staking/pool')]
-    public function kbridge_staking_pool()
-    {
-        $client = HttpClient::create();
-        $response = $client->request(
-            'GET',
-            "https://lcd.kaiyo.kujira.setten.io/cosmos/staking/v1beta1/pool?" . $_SERVER['QUERY_STRING']
-        );
-
-        return new Response(
-            $response->getContent(),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
-
-    #[Route('/kbridge/coingecko/tickers')]
-    public function kbridge_coingecko_tickers()
-    {
-        $client = HttpClient::create();
-        $response = $client->request(
-            'GET',
-            "https://api.kujira.app/api/coingecko/tickers" . $_SERVER['QUERY_STRING']
-        );
-
-        return new Response(
-            $response->getContent(),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
-
-    #[Route('/kbridge/coingecko/orderbook')]
-    public function kbridge_coingecko_orderbook()
-    {
-        $client = HttpClient::create();
-        $response = $client->request(
-            'GET',
-            "https://api.kujira.app/api/coingecko/orderbook?" . $_SERVER['QUERY_STRING']
-        );
-
-        return new Response(
-            $response->getContent(),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
-
-    #[Route('/kbridge/trades')]
-    public function kbridge_trades()
-    {
-        $client = HttpClient::create();
-        $response = $client->request(
-            'GET',
-            "https://api.kujira.app/api/trades?" . $_SERVER['QUERY_STRING']
-        );
-
-        return new Response(
-            $response->getContent(),
-            Response::HTTP_OK,
-            [
-                'Content-Type' => 'application/json',
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
-    }
 
 
     /* Calculations methods.*/
 
-    private function _fin_volume(string $contract, string $precision) {
+    private function _fin_pair_volume(string $contract, string $precision) {
 
         //Format date = '2022-11-29T13:00:00.000Z'
         $end_date = new DateTime('now');
@@ -497,6 +169,37 @@ class ApiController extends AbstractController
 
     }
 
+    private function _all_fin_pair_volume() {
+
+        $available_tickers = $this->_get_fin_pairs();
+        $this->application_globals = new ApplicationGlobalsService();
+        $volume = [];
+        $available_pairs = $this->application_globals->get_fin_contracts();
+        foreach ($available_pairs as $pair){
+        }
+
+
+
+
+
+
+    }
+
+    private function _get_fin_pairs(){
+        $this->application_globals = new ApplicationGlobalsService();
+        $fin_urls = $this->application_globals->get_fin_contracts();
+        $pairs = array_keys($fin_urls);
+
+        return new Response(
+            json_encode ($pairs),
+            Response::HTTP_OK,
+            [
+                'Content-Type' => 'application/json',
+                'Access-Control-Allow-Origin' => '*'
+            ]
+        );
+
+    }
 
 
 }
