@@ -28,8 +28,6 @@ use Symfony\Contracts\Cache\ItemInterface;
 class ApiController extends AbstractController
 {
     private ApplicationGlobalsService $application_globals;
-
-
     #[Route('/')]
     public function homepage()
     {
@@ -55,21 +53,19 @@ class ApiController extends AbstractController
 
 
 
-    #[Route('/volume')]
+    #[Route('/volume/{precision}')]
 
-    public function volume (EntityManagerInterface $entityManager,ApplicationGlobalsService $application_globals){
+    public function volume (ApplicationGlobalsService $application_globals, string $precision = '1D'){
 
-        $fin_contracts = $application_globals->get_fin_contracts();
         $volume = [];
-        $all_candles = [];
-        dump ($fin_contracts);
-        foreach ($fin_contracts as $fin_contract){
-            $all_candles[] = $this->volume_pair($fin_contract["contract"]);
 
-        }
+        $volume[] = $this->_all_fin_pair_volume($application_globals, $precision);
+
+
         //$cache = new FilesystemAdapter();
         //$value = $cache->get(str_replace([':','/'], '',"https://api.kujira.app/api/trades/candles?" .  $_SERVER['QUERY_STRING']), function (ItemInterface $item) {
         // $item->expiresAfter(20);
+
 
 
         return new Response(
@@ -86,13 +82,13 @@ class ApiController extends AbstractController
 
     #[Route('/volume/{pair}')]
 
-    public function volume_pair (EntityManagerInterface $entityManager,ApplicationGlobalsService $application_globals, $pair){
+    public function volume_pair (ApplicationGlobalsService $application_globals, $pair){
 
         $fin_urls = $application_globals->get_fin_contracts();
         $pair_value = $fin_urls[$pair];
         $volume = $this->_fin_pair_volume($pair_value['contract'],'1D');
         return new Response(
-           $volume,
+           json_decode($volume),
             Response::HTTP_OK,
             [
                 'Content-Type' => 'application/json',
@@ -153,7 +149,7 @@ class ApiController extends AbstractController
 
     /* Calculations methods.*/
 
-    private function _fin_pair_volume(string $contract, string $precision) {
+    private function _fin_pair_volume(string $contract, string $precision)  {
 
         //Format date = '2022-11-29T13:00:00.000Z'
         $end_date = new DateTime('now');
@@ -165,24 +161,36 @@ class ApiController extends AbstractController
             'GET',
             "https://kaiyo-1.gigalixirapp.com/api/trades/candles?contract=" . $contract . "&precision=". $precision . "&from=" . str_replace('+','.',$start_date_parameter) ."&to=". str_replace('+','.',$end_date_parameter)
         );
-            return $response->getContent();
+            return json_decode($response->getContent());
 
     }
 
-    private function _all_fin_pair_volume() {
+    private function _all_fin_pair_volume(ApplicationGlobalsService $applicationGlobalsService, $precision = '1D') {
+        $fin_contracts = $applicationGlobalsService->get_fin_contracts();
 
-        $available_tickers = $this->_get_fin_pairs();
-        $this->application_globals = new ApplicationGlobalsService();
-        $volume = [];
-        $available_pairs = $this->application_globals->get_fin_contracts();
-        foreach ($available_pairs as $pair){
+        $volume  = [];
+        $volume[] = [];
+
+        foreach ($fin_contracts as $key => $value){
+            foreach($this->_fin_pair_volume($value['contract'],$precision) as $pairVolume){
+                dump ($pairVolume);
+               for ($i = 0 ; $i < count($pairVolume); $i++){
+                    $volume[$i]['date'] = 0;
+                    $volume[$i]['volume'] = 0;
+                }
+
+                for ($i = 0 ; $i < count($pairVolume); $i++){
+                    $date = $this->_format_date($pairVolume[$i]->bin);
+                    $volume[$i]['date'] = $date;
+                    $volume[$i]['volume'] += $pairVolume[$i]->volume ;
+                }
+
+            }
+
         }
+        dump($volume);
 
-
-
-
-
-
+        //return $all_candles;
     }
 
     private function _get_fin_pairs(){
@@ -191,7 +199,7 @@ class ApiController extends AbstractController
         $pairs = array_keys($fin_urls);
 
         return new Response(
-            json_encode ($pairs),
+            json_decode ($pairs),
             Response::HTTP_OK,
             [
                 'Content-Type' => 'application/json',
@@ -199,6 +207,12 @@ class ApiController extends AbstractController
             ]
         );
 
+    }
+
+    private function _format_date($date)
+    {
+        $date = explode('T', $date);
+        return $date[0];
     }
 
 
