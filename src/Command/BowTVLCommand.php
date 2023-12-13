@@ -9,7 +9,6 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-
 #[AsCommand(
     name: 'app:bow_tvl',
     description: 'Store bw_vaults status',
@@ -19,19 +18,18 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class BowTVLCommand extends Command
 {
-
     private $entityManager;
     private $BowTvlService;
 
 
     public function __construct(EntityManagerInterface $entityManager, BowTvlService $BowTvlService)
     {
-       parent::__construct();
+        parent::__construct();
         $this->entityManager = $entityManager;
         $this->BowTvlService = $BowTvlService;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output):int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'Storing Bow info',

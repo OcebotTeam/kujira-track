@@ -9,7 +9,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use App\Service\TotalValueLockedService;
 
-
 #[AsCommand(
     name: 'app:store-token',
     description: 'Store token list information',
@@ -19,19 +18,18 @@ use App\Service\TotalValueLockedService;
 
 class StoreTokenCommand extends Command
 {
-
     private $entityManager;
     private $storedTokenService;
 
 
     public function __construct(EntityManagerInterface $entityManager, TotalValueLockedService $storedTokenService)
     {
-       parent::__construct();
+        parent::__construct();
         $this->entityManager = $entityManager;
         $this->storedTokenService = $storedTokenService;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output):int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'Storing token info',

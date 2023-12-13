@@ -9,8 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Classes\Helpers;
 
-class TransactionsController extends AbstractController {
-
+class TransactionsController extends AbstractController
+{
     #[Route('/transactions')]
     public function transactions(EntityManagerInterface $entityManager)
     {

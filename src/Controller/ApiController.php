@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use App\Entity\BowTvl;
 use App\Service\ApplicationGlobalsService;
 use Doctrine\ORM\EntityManagerInterface;
@@ -10,17 +11,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-
 class ApiController extends AbstractController
 {
     private ApplicationGlobalsService $application_globals;
     #[Route('/')]
     public function homepage()
     {
-        $volume =$this->_volume('kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867','1D');
-
         return new Response(
-            $volume,
+            'OK',
             Response::HTTP_OK,
             [
                 'Content-Type' => 'application/json',
@@ -29,34 +27,15 @@ class ApiController extends AbstractController
         );
     }
 
-
-
-
-
-
-
-
-
-
-
     #[Route('/volume/{precision}')]
-
-    public function volume (ApplicationGlobalsService $application_globals, string $precision = '1D'){
+    public function volume(ApplicationGlobalsService $application_globals, string $precision = '1D')
+    {
 
         $request = Request::createFromGlobals();
         $from = $request->query->get('from');
         $to = $request->query->get('to');
         $volume = [];
         $volume[] = $this->_all_fin_pair_volume($application_globals, $precision, $from, $to);
-
-
-
-
-        //$cache = new FilesystemAdapter();
-        //$value = $cache->get(str_replace([':','/'], '',"https://api.kujira.app/api/trades/candles?" .  $_SERVER['QUERY_STRING']), function (ItemInterface $item) {
-        // $item->expiresAfter(20);
-
-
 
         return new Response(
             json_encode(["totalVolume" => $volume]),
@@ -66,19 +45,18 @@ class ApiController extends AbstractController
                 'Access-Control-Allow-Origin' => '*'
             ]
         );
-
-
     }
 
     #[Route('/volume/{pair}')]
 
-    public function volume_pair (ApplicationGlobalsService $application_globals, $pair){
+    public function volume_pair(ApplicationGlobalsService $application_globals, $pair)
+    {
 
         $fin_urls = $application_globals->get_fin_contracts();
         $pair_value = $fin_urls[$pair];
-        $volume = $this->_fin_pair_info($pair_value['contract'],'1D');
+        $volume = $this->_fin_pair_info($pair_value['contract'], '1D');
         return new Response(
-           json_decode($volume),
+            json_decode($volume),
             Response::HTTP_OK,
             [
                 'Content-Type' => 'application/json',
@@ -89,7 +67,8 @@ class ApiController extends AbstractController
     }
     #[Route('/finpairs')]
 
-    public function fin_pairs (EntityManagerInterface $entityManager,ApplicationGlobalsService $application_globals){
+    public function fin_pairs(EntityManagerInterface $entityManager, ApplicationGlobalsService $application_globals)
+    {
 
         return $this->_get_fin_pairs();
 
@@ -102,7 +81,7 @@ class ApiController extends AbstractController
 
         $bow_pairs = $entityManager->getRepository(BowTvl::class);
 
-        $bow_pairs_all = $bow_pairs->findBy(["pair" => str_replace("_","/",$pair)], ["tracked" => "ASC"],200);
+        $bow_pairs_all = $bow_pairs->findBy(["pair" => str_replace("_", "/", $pair)], ["tracked" => "ASC"], 200);
         $result = [];
 
         foreach($bow_pairs_all as $item) {
@@ -139,7 +118,8 @@ class ApiController extends AbstractController
 
     /* Calculations methods.*/
 
-    private function _fin_pair_info(array $contract, string $precision, string $from, string $to)  {
+    private function _fin_pair_info(array $contract, string $precision, string $from, string $to)
+    {
 
         $client = HttpClient::create();
         $response = $client->request(
@@ -150,32 +130,33 @@ class ApiController extends AbstractController
 
     }
 
-    private function _all_fin_pair_volume(ApplicationGlobalsService $applicationGlobalsService, $precision = '1D', $from , $to) {
+    private function _all_fin_pair_volume(ApplicationGlobalsService $applicationGlobalsService, $precision = '1D', $from, $to)
+    {
         $fin_contracts = $applicationGlobalsService->get_fin_contracts();
 
         $volume  = [];
         $volume[] = [];
 
-        for ($i = 0 ; $i < count($fin_contracts); $i++){
+        for ($i = 0 ; $i < count($fin_contracts); $i++) {
             $volume[$i]['date'] = 0;
             $volume[$i]['volume'] = 0;
         }
 
-       $nominatives =  $this->_get_nominatives();
+        $nominatives =  $this->_get_nominatives();
         $nominativeCandles = [];
-       for($i = 0; $i < count($nominatives) ; $i++){
-           $nominativeCandles[$nominatives[$i]] = $this->_fin_pair_info($this->_get_contract($nominatives[$i]), $precision, $from, $to);
-       }
+        for($i = 0; $i < count($nominatives) ; $i++) {
+            $nominativeCandles[$nominatives[$i]] = $this->_fin_pair_info($this->_get_contract($nominatives[$i]), $precision, $from, $to);
+        }
 
-        foreach ($fin_contracts as $key => $value){
+        foreach ($fin_contracts as $key => $value) {
             $pairCandles = $this->_fin_pair_info($value, $precision, $from, $to);
 
             $candles = $pairCandles->candles;
-            for ($i = 0 ; $i <count($candles); $i++){
+            for ($i = 0 ; $i < count($candles); $i++) {
                 $date = $candles[$i]->bin;
                 $volume[$i]['date'] = $date;
 
-                if(isset($value['nominative']) && $nomin_key = array_search($value['nominative'], $nominatives)){
+                if(isset($value['nominative']) && $nomin_key = array_search($value['nominative'], $nominatives)) {
                     $nominative = $nominativeCandles[$nominatives[$nomin_key]];
                     $price = $nominative->candles[$i]->close;
                     $volume[$i]['volume'] += $candles[$i]->volume * $price;
@@ -193,13 +174,14 @@ class ApiController extends AbstractController
         return $volume;
     }
 
-    private function _get_fin_pairs(){
+    private function _get_fin_pairs()
+    {
         $this->application_globals = new ApplicationGlobalsService();
         $fin_urls = $this->application_globals->get_fin_contracts();
         $pairs = array_keys($fin_urls);
 
         return new Response(
-            json_decode ($pairs),
+            json_decode($pairs),
             Response::HTTP_OK,
             [
                 'Content-Type' => 'application/json',
@@ -215,20 +197,24 @@ class ApiController extends AbstractController
         return $date[0];
     }
 
-    private function _get_contract($ticker){
+    private function _get_contract($ticker)
+    {
         $this->application_globals = new ApplicationGlobalsService();
         $contracts = $this->application_globals->get_fin_contracts();
         return $contracts[$ticker];
     }
 
-    private function _get_nominatives(){
+    private function _get_nominatives()
+    {
         $this->application_globals = new ApplicationGlobalsService();
         $contracts = $this->application_globals->get_fin_contracts();
         $nominative_tickers = [];
-        foreach ($contracts as $contract){
-            if(isset($contract['nominative']))
-                if(!in_array($contract['nominative'], $nominative_tickers))
+        foreach ($contracts as $contract) {
+            if(isset($contract['nominative'])) {
+                if(!in_array($contract['nominative'], $nominative_tickers)) {
                     $nominative_tickers[] = $contract['nominative'];
+                }
+            }
         }
         return $nominative_tickers;
     }

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -32,14 +33,14 @@ class CommunityPoolService
 
         $community_pool_json = json_decode($response->getContent());
 
-        foreach ($community_pool_json as $pool){
+        foreach ($community_pool_json as $pool) {
             $tokens = count($pool);
-            for($i = 0; $i < $tokens ; $i++){
+            for($i = 0; $i < $tokens ; $i++) {
                 $community_pool = new CommunityPool();
                 $community_pool->setDenom($pool[$i]->denom);
                 $community_pool->setAmount($pool[$i]->amount);
                 $community_pool->setTracked($stored);
-                $community_pool->setToken(array_search($pool[$i]->denom,$token_list));
+                $community_pool->setToken(array_search($pool[$i]->denom, $token_list));
                 $doctrine->persist($community_pool);
                 $doctrine->flush();
             }

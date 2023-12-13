@@ -6,10 +6,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use App\Entity\LockedManta;
 
-
 class LockedMantaService
 {
-
     private $entityManager;
     private $application_globals;
 
@@ -31,7 +29,7 @@ class LockedMantaService
         $tracked = new \DateTime("now");
         $tokens = json_decode($response->getContent());
         $staked_tokens = new LockedManta();
-        $staked_tokens->setLocked(floor($tokens->balances[0]->amount/1000000));
+        $staked_tokens->setLocked(floor($tokens->balances[0]->amount / 1000000));
         $staked_tokens->setTracked($tracked);
         $doctrine->persist($staked_tokens);
         $doctrine->flush();

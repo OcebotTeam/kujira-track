@@ -18,18 +18,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class UskMintedCommand extends Command
 {
-
     private $entityManager;
     private $UskMintedService;
 
     public function __construct(EntityManagerInterface $entityManager, UskMintedService $UskMintedService)
     {
-       parent::__construct();
+        parent::__construct();
         $this->entityManager = $entityManager;
         $this->UskMintedService = $UskMintedService;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output):int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'Storing token info',

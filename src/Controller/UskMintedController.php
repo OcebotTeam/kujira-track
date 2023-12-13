@@ -9,7 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Classes\Helpers;
 
-class UskMintedController extends AbstractController {
+class UskMintedController extends AbstractController
+{
     #[Route('/uskminted')]
     public function uskMinted(EntityManagerInterface $entityManager)
     {

@@ -9,9 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-class UnmigratedController extends AbstractController {
-
+class UnmigratedController extends AbstractController
+{
     #[Route('/unmigrated')]
     public function unmigrated(EntityManagerInterface $entityManager)
     {

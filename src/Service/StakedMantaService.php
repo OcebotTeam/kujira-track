@@ -6,10 +6,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use App\Entity\StakedManta;
 
-
 class StakedMantaService
 {
-
     private $entityManager;
     private $application_globals;
 

@@ -9,7 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Classes\Helpers;
 
-class StakedTokensController extends AbstractController {
+class StakedTokensController extends AbstractController
+{
     #[Route('/stakedtokens')]
     public function stakedTokens(EntityManagerInterface $entityManager)
     {

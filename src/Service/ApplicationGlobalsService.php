@@ -119,36 +119,36 @@ class ApplicationGlobalsService
 "LINK_USK"      =>  ["contract" => "kujira12zjpumtfh88k6s2s8k4wks37ezr2c3zeha5xx6qpd65e5ehz50nq0afvrv", "priceMultiplier" => 1000000000000],
 //
 //// MNTA PAIRS
-"stATOM_MNTA"   =>  ["contract" => "kujira1l2x5c2fjjnw9uhrfhtme9snw3tzs4jt8cm0q2ysqssx6zskxatesjm7w7f", "nominative"=>"MNTA_axlUSDC"],
-"wstETH_MNTA"   =>  ["contract" => "kujira1hf44at7dqewrn3ssa392d9p8nh5mr538u59gqsukdza35663hlestqr29e", "nominative"=>"MNTA_axlUSDC"],
-"wETH_MNTA"     =>  ["contract" => "kujira13xyuyw93pv6t7c4h248tc8t6kgu874v5qasmjfzqjfjhfp6hawlse5u5tz", "nominative"=>"MNTA_axlUSDC"],
-"STARS_MNTA"    =>  ["contract" => "kujira1hsdzhyvuc2z3f8d3yae84uk62d69vk68vxgudkun7gccz6hvrvfq0vx6fd", "nominative"=>"MNTA_axlUSDC"],
-"wBTC_MNTA"     =>  ["contract" => "kujira1y50nul39ql5sf42p67nrsy9j0luly2mvaxmlkmx6888pnzw66k6qc0gku9", "nominative"=>"MNTA_axlUSDC"],
-"OSMO_MNTA"     =>  ["contract" => "kujira12zc52j25xac565t297rmd3huj8zh62usrecy66rzxnsf9mchaepqnwx3cg", "nominative"=>"MNTA_axlUSDC"],
-"SOMM_MNTA"     =>  ["contract" => "kujira1nx5lqc2j4w0ak5dxevj82lar5kunxwj5yamr39xqfazmkksx4f2sksf0hz", "nominative"=>"MNTA_axlUSDC"],
-"yieldETH_MNTA" =>  ["contract" => "kujira1sr2hf68nc8a8f2e42tsjf3zmsgjkl4jmctszdzxes0whyk2tzn5sd3avg7", "nominative"=>"MNTA_axlUSDC"],
-"STRD_MNTA"     =>  ["contract" => "kujira1u2gj9a6p07hse07p66jqnq7xchneecxrq032vl4z2z97ft2r0zeqx4hadf", "nominative"=>"MNTA_axlUSDC"],
-"SHD_MNTA"      =>  ["contract" => "kujira14u8ynhj7d8h2379yqj5q2ma0xxpvfjlrpauhzxgnj40ejq953mlsugux8d", "nominative"=>"MNTA_axlUSDC"],
-"INJ_MNTA"      =>  ["contract" => "kujira17356flrg56cjs7ardg0c6jpufwyeafegss6l4asza4chrr0ne7aqfesynu", "nominative"=>"MNTA_axlUSDC"],
-"AXL_MNTA"      =>  ["contract" => "kujira17r5u5r9gl3p9lql7p4dhdcffnv2z0f4xxafvgl8wnhw8qeez4x6q9zflp7", "nominative"=>"MNTA_axlUSDC"],
-"AKT_MNTA"      =>  ["contract" => "kujira1krepsjxnpesa5u2amklew60r6zgtrmt9h2ljx8dnzljp0wxcstnqxfy0tk", "nominative"=>"MNTA_axlUSDC"],
-"NTRN_MNTA"     =>  ["contract" => "kujira1hcvm4thkc0mq55cjzttp0fmh6gu5hzrfm4trgwpkm38nmd63tu0qha647q", "nominative"=>"MNTA_axlUSDC"],
-"WINK_MNTA"     =>  ["contract" => "kujira19rmgf792tgl446fnyc4wjdj2t20jlt5t3wudxyuhfy2ccy67g0hsrt73d8", "nominative"=>"MNTA_axlUSDC"],
-"WHALE_MNTA"    =>  ["contract" => "kujira1865zmuchjd0g0xr2q5n6hm747s8xju5k8h6mympk4vmqefkuy3hqc66tcw", "nominative"=>"MNTA_axlUSDC"],
-"UMEE_MNTA"     =>  ["contract" => "kujira180qesrskvljsvvkhvlkrwvyvu5hx03jhx76lvwxveq86at4ttqxq259wz8", "nominative"=>"MNTA_axlUSDC"],
-"TIA_MNTA"      =>  ["contract" => "kujira1vwr998s2mmvqa0t2tlfayvv5uzsl7t4syxd7a94qdgstfy4720rsa3n9yp", "nominative"=>"MNTA_axlUSDC"],
-"wTAO_MNTA"     =>  ["contract" => "kujira1tgd479qm2cu30yr4568l23aaz0p2wcr979wx3z7wlsgcc5fj6rxshc2uwx", "nominative"=>"MNTA_axlUSDC"],
-"whSOL_MNTA"    =>  ["contract" => "kujira1tdad4e3c6qz6htdha4wg4ta6l86chnpyy22rfm60e6luj4wv2casjsrtj0", "nominative"=>"MNTA_axlUSDC"],
-"SCRT_MNTA"     =>  ["contract" => "kujira1y5k75yuygkr9wmpl3huy5spqktgq9w2ex3zndu0zw6l2n0mzf4asz7hdat", "nominative"=>"MNTA_axlUSDC"],
-"NTSK_MNTA"     =>  ["contract" => "kujira1ff9pnz3ekflj6vkyk2taf4tvvjh4a8fp8hetw3dc59xu8ywl8tmstcf9de", "nominative"=>"MNTA_axlUSDC"],
-"ampMNTA_MNTA"  =>  ["contract" => "kujira1pwldj8n88f99wl5sykff9q7sl2settejutlr84mjysny9wfqgluqcp6fu4", "nominative"=>"MNTA_axlUSDC"],
-"wFTM_MNTA"     =>  ["contract" => "kujira1dsmm4q4kgs0nfsryrmlv7wq2dxp6uzruzqalc5xp30ztlmplgm7qms2qsa", "nominative"=>"MNTA_axlUSDC"],
+"stATOM_MNTA"   =>  ["contract" => "kujira1l2x5c2fjjnw9uhrfhtme9snw3tzs4jt8cm0q2ysqssx6zskxatesjm7w7f", "nominative" => "MNTA_axlUSDC"],
+"wstETH_MNTA"   =>  ["contract" => "kujira1hf44at7dqewrn3ssa392d9p8nh5mr538u59gqsukdza35663hlestqr29e", "nominative" => "MNTA_axlUSDC"],
+"wETH_MNTA"     =>  ["contract" => "kujira13xyuyw93pv6t7c4h248tc8t6kgu874v5qasmjfzqjfjhfp6hawlse5u5tz", "nominative" => "MNTA_axlUSDC"],
+"STARS_MNTA"    =>  ["contract" => "kujira1hsdzhyvuc2z3f8d3yae84uk62d69vk68vxgudkun7gccz6hvrvfq0vx6fd", "nominative" => "MNTA_axlUSDC"],
+"wBTC_MNTA"     =>  ["contract" => "kujira1y50nul39ql5sf42p67nrsy9j0luly2mvaxmlkmx6888pnzw66k6qc0gku9", "nominative" => "MNTA_axlUSDC"],
+"OSMO_MNTA"     =>  ["contract" => "kujira12zc52j25xac565t297rmd3huj8zh62usrecy66rzxnsf9mchaepqnwx3cg", "nominative" => "MNTA_axlUSDC"],
+"SOMM_MNTA"     =>  ["contract" => "kujira1nx5lqc2j4w0ak5dxevj82lar5kunxwj5yamr39xqfazmkksx4f2sksf0hz", "nominative" => "MNTA_axlUSDC"],
+"yieldETH_MNTA" =>  ["contract" => "kujira1sr2hf68nc8a8f2e42tsjf3zmsgjkl4jmctszdzxes0whyk2tzn5sd3avg7", "nominative" => "MNTA_axlUSDC"],
+"STRD_MNTA"     =>  ["contract" => "kujira1u2gj9a6p07hse07p66jqnq7xchneecxrq032vl4z2z97ft2r0zeqx4hadf", "nominative" => "MNTA_axlUSDC"],
+"SHD_MNTA"      =>  ["contract" => "kujira14u8ynhj7d8h2379yqj5q2ma0xxpvfjlrpauhzxgnj40ejq953mlsugux8d", "nominative" => "MNTA_axlUSDC"],
+"INJ_MNTA"      =>  ["contract" => "kujira17356flrg56cjs7ardg0c6jpufwyeafegss6l4asza4chrr0ne7aqfesynu", "nominative" => "MNTA_axlUSDC"],
+"AXL_MNTA"      =>  ["contract" => "kujira17r5u5r9gl3p9lql7p4dhdcffnv2z0f4xxafvgl8wnhw8qeez4x6q9zflp7", "nominative" => "MNTA_axlUSDC"],
+"AKT_MNTA"      =>  ["contract" => "kujira1krepsjxnpesa5u2amklew60r6zgtrmt9h2ljx8dnzljp0wxcstnqxfy0tk", "nominative" => "MNTA_axlUSDC"],
+"NTRN_MNTA"     =>  ["contract" => "kujira1hcvm4thkc0mq55cjzttp0fmh6gu5hzrfm4trgwpkm38nmd63tu0qha647q", "nominative" => "MNTA_axlUSDC"],
+"WINK_MNTA"     =>  ["contract" => "kujira19rmgf792tgl446fnyc4wjdj2t20jlt5t3wudxyuhfy2ccy67g0hsrt73d8", "nominative" => "MNTA_axlUSDC"],
+"WHALE_MNTA"    =>  ["contract" => "kujira1865zmuchjd0g0xr2q5n6hm747s8xju5k8h6mympk4vmqefkuy3hqc66tcw", "nominative" => "MNTA_axlUSDC"],
+"UMEE_MNTA"     =>  ["contract" => "kujira180qesrskvljsvvkhvlkrwvyvu5hx03jhx76lvwxveq86at4ttqxq259wz8", "nominative" => "MNTA_axlUSDC"],
+"TIA_MNTA"      =>  ["contract" => "kujira1vwr998s2mmvqa0t2tlfayvv5uzsl7t4syxd7a94qdgstfy4720rsa3n9yp", "nominative" => "MNTA_axlUSDC"],
+"wTAO_MNTA"     =>  ["contract" => "kujira1tgd479qm2cu30yr4568l23aaz0p2wcr979wx3z7wlsgcc5fj6rxshc2uwx", "nominative" => "MNTA_axlUSDC"],
+"whSOL_MNTA"    =>  ["contract" => "kujira1tdad4e3c6qz6htdha4wg4ta6l86chnpyy22rfm60e6luj4wv2casjsrtj0", "nominative" => "MNTA_axlUSDC"],
+"SCRT_MNTA"     =>  ["contract" => "kujira1y5k75yuygkr9wmpl3huy5spqktgq9w2ex3zndu0zw6l2n0mzf4asz7hdat", "nominative" => "MNTA_axlUSDC"],
+"NTSK_MNTA"     =>  ["contract" => "kujira1ff9pnz3ekflj6vkyk2taf4tvvjh4a8fp8hetw3dc59xu8ywl8tmstcf9de", "nominative" => "MNTA_axlUSDC"],
+"ampMNTA_MNTA"  =>  ["contract" => "kujira1pwldj8n88f99wl5sykff9q7sl2settejutlr84mjysny9wfqgluqcp6fu4", "nominative" => "MNTA_axlUSDC"],
+"wFTM_MNTA"     =>  ["contract" => "kujira1dsmm4q4kgs0nfsryrmlv7wq2dxp6uzruzqalc5xp30ztlmplgm7qms2qsa", "nominative" => "MNTA_axlUSDC"],
 
 //KUJI PAIRS
-"ampKUJI_KUJI"  =>  ["contract" => "kujira1lse59wt7a5yksdd08mennt299katjkfzdhmh8hvck8ln08jktcmsxrnh8s", "nominative"=>"KUJI_axlUSDC"],
-"wETH_KUJI"     =>  ["contract" => "kujira1zdf0zjz8grfhhe2x06k8f8xpnv04y90w06f4py7fjml4nmukn3yswk3ugc", "nominative"=>"KUJI_axlUSDC"],
-"wBTC_KUJI"     =>  ["contract" => "kujira17t9w0xlnukuy7pw6fzkr7gd3pdun9zma0hzqaueqszskw2lr95yqfqnynt", "nominative"=>"KUJI_axlUSDC"],
-"MNTA_KUJI"     =>  ["contract" => "kujira1nkgq8xl4flsau7v3vphr3ayc7tprgazg6pzjmq8plkr76v385fhsx26qfa", "nominative"=>"KUJI_axlUSDC"],
+"ampKUJI_KUJI"  =>  ["contract" => "kujira1lse59wt7a5yksdd08mennt299katjkfzdhmh8hvck8ln08jktcmsxrnh8s", "nominative" => "KUJI_axlUSDC"],
+"wETH_KUJI"     =>  ["contract" => "kujira1zdf0zjz8grfhhe2x06k8f8xpnv04y90w06f4py7fjml4nmukn3yswk3ugc", "nominative" => "KUJI_axlUSDC"],
+"wBTC_KUJI"     =>  ["contract" => "kujira17t9w0xlnukuy7pw6fzkr7gd3pdun9zma0hzqaueqszskw2lr95yqfqnynt", "nominative" => "KUJI_axlUSDC"],
+"MNTA_KUJI"     =>  ["contract" => "kujira1nkgq8xl4flsau7v3vphr3ayc7tprgazg6pzjmq8plkr76v385fhsx26qfa", "nominative" => "KUJI_axlUSDC"],
 //
 // ATOM PAIRS
 "KUJI-ATOM"             => ["contract" => "kujira18v47nqmhvejx3vc498pantg8vr435xa0rt6x0m6kzhp6yuqmcp8s4x8j2c", "nominative" => "ATOM_axlUSDC"],
@@ -273,17 +273,20 @@ class ApplicationGlobalsService
         return $this->bow_contracts;
     }
 
-    public function get_uskminted_endpoints(): array{
+    public function get_uskminted_endpoints(): array
+    {
         return $this->USKMintedEndpoints;
     }
 
-    public function get_uskmargin_endpoints(): array{
+    public function get_uskmargin_endpoints(): array
+    {
         return $this->USKMarginEndpoints;
     }
 
-    public function get_token_name($ibc_string,$tokens){
+    public function get_token_name($ibc_string, $tokens)
+    {
 
-        return array_keys($tokens,$ibc_string);
+        return array_keys($tokens, $ibc_string);
     }
 
 }

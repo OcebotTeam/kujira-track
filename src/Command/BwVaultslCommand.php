@@ -9,7 +9,6 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-
 #[AsCommand(
     name: 'app:bw_vaults',
     description: 'Store bw_vaults status',
@@ -19,19 +18,18 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class BwVaultslCommand extends Command
 {
-
     private $entityManager;
     private $BwVaultsService;
 
 
     public function __construct(EntityManagerInterface $entityManager, BwVaultsService $BwVaultsService)
     {
-       parent::__construct();
+        parent::__construct();
         $this->entityManager = $entityManager;
         $this->BwVaultsService = $BwVaultsService;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output):int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'Storing Bw info',

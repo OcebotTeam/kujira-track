@@ -18,18 +18,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class GhostDepositCommand extends Command
 {
-
     private $entityManager;
     private $ghostDepositService;
 
     public function __construct(EntityManagerInterface $entityManager, GhostDepositService $ghostDepositService)
     {
-       parent::__construct();
+        parent::__construct();
         $this->entityManager = $entityManager;
         $this->ghostDepositService = $ghostDepositService;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output):int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'Storing token info',

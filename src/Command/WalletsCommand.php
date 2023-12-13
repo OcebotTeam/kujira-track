@@ -18,18 +18,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class WalletsCommand extends Command
 {
-
     private $entityManager;
     private $WalletsService;
 
     public function __construct(EntityManagerInterface $entityManager, WalletsService $WalletsService)
     {
-       parent::__construct();
+        parent::__construct();
         $this->entityManager = $entityManager;
         $this->WalletsService = $WalletsService;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output):int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'Storing token info',

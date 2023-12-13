@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -35,7 +36,7 @@ class TotalValueLockedService
 
             $tvl_json = json_decode($response->getContent());
 
-            foreach ($tvl_json->balances as $balance){
+            foreach ($tvl_json->balances as $balance) {
                 $totalValueLocked = new TotalValueLocked();
                 $totalValueLocked->setPair($pair);
                 $totalValueLocked->setDenom($balance->denom);

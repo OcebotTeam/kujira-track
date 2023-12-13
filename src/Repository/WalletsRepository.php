@@ -39,28 +39,28 @@ class WalletsRepository extends ServiceEntityRepository
         }
     }
 
-   /**
-    * @return Wallets[] Returns an array of Wallets objects
-    */
-   public function findByTrackedField($value): array
-   {
-       return $this->createQueryBuilder('w')
-           ->andWhere('w.tracked like :val')
-           ->setParameter('val', $value)
-           ->orderBy('w.id', 'ASC')
-           ->setMaxResults(40)
-           ->getQuery()
-           ->getResult()
-       ;
-   }
+    /**
+     * @return Wallets[] Returns an array of Wallets objects
+     */
+    public function findByTrackedField($value): array
+    {
+        return $this->createQueryBuilder('w')
+            ->andWhere('w.tracked like :val')
+            ->setParameter('val', $value)
+            ->orderBy('w.id', 'ASC')
+            ->setMaxResults(40)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
-   public function findOneByDate($value): ?Wallets
-   {
-       return $this->createQueryBuilder('w')
-           ->andWhere('w.exampleField like :val')
-           ->setParameter('val', $value)
-           ->getQuery()
-           ->getOneOrNullResult()
-       ;
-   }
+    public function findOneByDate($value): ?Wallets
+    {
+        return $this->createQueryBuilder('w')
+            ->andWhere('w.exampleField like :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
 }

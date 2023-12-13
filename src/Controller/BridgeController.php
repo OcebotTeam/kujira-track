@@ -9,7 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Cache\ItemInterface;
 
-class BridgeController extends AbstractController {
+class BridgeController extends AbstractController
+{
     #[Route('/kbridge/candles')]
     public function kbridge_candles()
     {
@@ -30,10 +31,11 @@ class BridgeController extends AbstractController {
     }
 
     #[Route('/kbridge/cached/candles')]
-    public function kbridge_cached_candles(){
+    public function kbridge_cached_candles()
+    {
 
         $cache = new FilesystemAdapter();
-        $value = $cache->get(str_replace([':','/'], '',"https://api.kujira.app/api/trades/candles?" .  $_SERVER['QUERY_STRING']), function (ItemInterface $item) {
+        $value = $cache->get(str_replace([':','/'], '', "https://api.kujira.app/api/trades/candles?" .  $_SERVER['QUERY_STRING']), function (ItemInterface $item) {
             $item->expiresAfter(20);
 
             // ... do some HTTP request or heavy computations

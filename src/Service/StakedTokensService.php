@@ -6,10 +6,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use App\Entity\StakedTokens;
 
-
 class StakedTokensService
 {
-
     private $entityManager;
     private $application_globals;
 

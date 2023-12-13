@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -39,19 +40,19 @@ class BwVaultsService
 
         $bw_vault_json = json_decode($response->getContent());
 
-        foreach ($bw_vault_json as $vault){
+        foreach ($bw_vault_json as $vault) {
 
-                $bw_vault = new BwVaults();
-                $bw_vault->setPair($vault->pair);
-                $bw_vault->setVaultAddress($vault->vault_address);
-                $bw_vault->setPerformance($vault->performance);
-                $bw_vault->setProfitInUsdc($vault->profit_in_usdc);
-                $bw_vault->setLiquidity($vault->liquidity);
-                $bw_vault->setBaseDenom($vault->base_denom);
-                $bw_vault->setQuoteDenom($vault->quote_denom);
-                $bw_vault->setTracked($stored);
-                $doctrine->persist($bw_vault);
-                $doctrine->flush();
+            $bw_vault = new BwVaults();
+            $bw_vault->setPair($vault->pair);
+            $bw_vault->setVaultAddress($vault->vault_address);
+            $bw_vault->setPerformance($vault->performance);
+            $bw_vault->setProfitInUsdc($vault->profit_in_usdc);
+            $bw_vault->setLiquidity($vault->liquidity);
+            $bw_vault->setBaseDenom($vault->base_denom);
+            $bw_vault->setQuoteDenom($vault->quote_denom);
+            $bw_vault->setTracked($stored);
+            $doctrine->persist($bw_vault);
+            $doctrine->flush();
 
         }
 

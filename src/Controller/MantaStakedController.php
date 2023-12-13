@@ -9,7 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Classes\Helpers;
 
-class MantaStakedController extends AbstractController {
+class MantaStakedController extends AbstractController
+{
     #[Route('/mantastaked')]
     public function mantaStaked(EntityManagerInterface $entityManager)
     {

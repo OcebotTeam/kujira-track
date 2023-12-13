@@ -18,18 +18,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class GhostBorrowedCommand extends Command
 {
-
     private $entityManager;
     private $GhostBorrowedService;
 
     public function __construct(EntityManagerInterface $entityManager, GhostBorrowedService $GhostBorrowedService)
     {
-       parent::__construct();
+        parent::__construct();
         $this->entityManager = $entityManager;
         $this->GhostBorrowedService = $GhostBorrowedService;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output):int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'Storing token info',

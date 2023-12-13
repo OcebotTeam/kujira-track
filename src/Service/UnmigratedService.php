@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -32,7 +33,7 @@ class UnmigratedService
 
         $wallets_json = json_decode($response->getContent());
         $unmigrated = new Unmigrated();
-        $unmigrated->setNum((int) $wallets_json->unmigrated/1000000);
+        $unmigrated->setNum((int) $wallets_json->unmigrated / 1000000);
         $unmigrated->setTracked($stored);
         $doctrine->persist($unmigrated);
         $doctrine->flush();

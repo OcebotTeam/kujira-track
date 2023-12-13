@@ -9,8 +9,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use App\Service\StakedTokensService;
 
-
-
 #[AsCommand(
     name: 'app:staked-token',
     description: 'Staked token',
@@ -20,18 +18,17 @@ use App\Service\StakedTokensService;
 
 class StakedTokensCommand extends Command
 {
-
     private $entityManager;
     private $stakedTokensService;
 
-        public function __construct(EntityManagerInterface $entityManager, StakedTokensService $stakedTokensService)
+    public function __construct(EntityManagerInterface $entityManager, StakedTokensService $stakedTokensService)
     {
-       parent::__construct();
+        parent::__construct();
         $this->entityManager = $entityManager;
         $this->stakedTokensService = $stakedTokensService;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output):int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'Storing Staked token info',

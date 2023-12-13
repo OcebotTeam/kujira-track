@@ -18,18 +18,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class UnmigratedCommand extends Command
 {
-
     private $entityManager;
     private $UnmigratedService;
 
     public function __construct(EntityManagerInterface $entityManager, UnmigratedService $UnmigratedService)
     {
-       parent::__construct();
+        parent::__construct();
         $this->entityManager = $entityManager;
         $this->UnmigratedService = $UnmigratedService;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output):int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'Storing token info',

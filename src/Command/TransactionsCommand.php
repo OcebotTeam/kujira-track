@@ -10,7 +10,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use App\Service\TotalValueLockedService;
 
-
 #[AsCommand(
     name: 'app:transactions',
     description: 'Store transactions',
@@ -20,19 +19,18 @@ use App\Service\TotalValueLockedService;
 
 class TransactionsCommand extends Command
 {
-
     private $entityManager;
     private $TransactionsService;
 
 
     public function __construct(EntityManagerInterface $entityManager, TransactionsService $TransactionsService)
     {
-       parent::__construct();
+        parent::__construct();
         $this->entityManager = $entityManager;
         $this->TransactionsService = $TransactionsService;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output):int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'Storing token info',

@@ -9,8 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Classes\Helpers;
 
-class WalletsController extends AbstractController {
-
+class WalletsController extends AbstractController
+{
     #[Route('/wallets')]
     public function wallets(EntityManagerInterface $entityManager)
     {

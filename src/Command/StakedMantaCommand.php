@@ -9,8 +9,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use App\Service\StakedMantaService;
 
-
-
 #[AsCommand(
     name: 'app:staked-manta',
     description: 'Staked token',
@@ -20,18 +18,17 @@ use App\Service\StakedMantaService;
 
 class StakedMantaCommand extends Command
 {
-
     private $entityManager;
     private $stakedMantaService;
 
-        public function __construct(EntityManagerInterface $entityManager, StakedMantaService $stakedMantaService )
+    public function __construct(EntityManagerInterface $entityManager, StakedMantaService $stakedMantaService)
     {
-       parent::__construct();
+        parent::__construct();
         $this->entityManager = $entityManager;
         $this->stakedMantaService = $stakedMantaService;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output):int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'Storing Staked token info',
