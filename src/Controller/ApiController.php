@@ -14,28 +14,27 @@ use Symfony\Component\HttpFoundation\Response;
 class ApiController extends AbstractController
 {
     private ApplicationGlobalsService $application_globals;
+
     #[Route('/')]
-    public function homepage()
+    public function homepage(ApplicationGlobalsService $applicationGlobalsService)
     {
         return new Response(
             'OK',
             Response::HTTP_OK,
             [
-                'Content-Type' => 'application/json',
                 'Access-Control-Allow-Origin' => '*'
             ]
         );
     }
 
     #[Route('/volume/{precision}')]
-    public function volume(ApplicationGlobalsService $application_globals, string $precision = '1D')
+    public function volume(ApplicationGlobalsService $applicationGlobalsService, string $precision = '1D')
     {
-
         $request = Request::createFromGlobals();
         $from = $request->query->get('from');
         $to = $request->query->get('to');
         $volume = [];
-        $volume[] = $this->_all_fin_pair_volume($application_globals, $precision, $from, $to);
+        $volume[] = $this->_all_fin_pair_volume($applicationGlobalsService, $precision, $from, $to);
 
         return new Response(
             json_encode(["totalVolume" => $volume]),
@@ -69,9 +68,7 @@ class ApiController extends AbstractController
 
     public function fin_pairs(EntityManagerInterface $entityManager, ApplicationGlobalsService $application_globals)
     {
-
         return $this->_get_fin_pairs();
-
     }
 
     #[Route('/bowtvl/{pair}')]
@@ -110,12 +107,6 @@ class ApiController extends AbstractController
         );
     }
 
-    /*********************************
-     *  KUJIRA Proxy routes
-     *********************************/
-
-
-
     /* Calculations methods.*/
 
     private function _fin_pair_info(array $contract, string $precision, string $from, string $to)
@@ -130,48 +121,46 @@ class ApiController extends AbstractController
 
     }
 
-    private function _all_fin_pair_volume(ApplicationGlobalsService $applicationGlobalsService, $precision = '1D', $from, $to)
+    private function _all_fin_pair_volume(ApplicationGlobalsService $applicationGlobalsService, $precision, $from, $to)
     {
         $fin_contracts = $applicationGlobalsService->get_fin_contracts();
-
-        $volume  = [];
-        $volume[] = [];
-
-        for ($i = 0 ; $i < count($fin_contracts); $i++) {
-            $volume[$i]['date'] = 0;
-            $volume[$i]['volume'] = 0;
-        }
-
+        $volumes  = [[]];
         $nominatives =  $this->_get_nominatives();
         $nominativeCandles = [];
-        for($i = 0; $i < count($nominatives) ; $i++) {
+
+        for ($i = 0; $i < count($nominatives) ; $i++) {
             $nominativeCandles[$nominatives[$i]] = $this->_fin_pair_info($this->_get_contract($nominatives[$i]), $precision, $from, $to);
         }
 
         foreach ($fin_contracts as $key => $value) {
             $pairCandles = $this->_fin_pair_info($value, $precision, $from, $to);
-
             $candles = $pairCandles->candles;
+
             for ($i = 0 ; $i < count($candles); $i++) {
                 $date = $candles[$i]->bin;
-                $volume[$i]['date'] = $date;
+                $volumes[$i]['date'] = $date;
 
-                if(isset($value['nominative']) && $nomin_key = array_search($value['nominative'], $nominatives)) {
-                    $nominative = $nominativeCandles[$nominatives[$nomin_key]];
-                    $price = $nominative->candles[$i]->close;
-                    $volume[$i]['volume'] += $candles[$i]->volume * $price;
+                if (!isset($volumes[$i]['volume'])) {
+                    $volumes[$i]['volume'] = 0;
+                }
 
-                    if (isset($value['priceMultiplier'])) {
-                        $volume[$i]['volume'] /= $value['priceMultiplier'];
-                    }
+                if (isset($value['nominative'])) {
+                    $nominative_key = array_search($value["nominative"], $nominatives);
+                    $nominative = $nominativeCandles[$nominatives[$nominative_key]];
+                    $nominativeClosePrice = $nominative->candles[$i]->close;
+                    $volume_value = $candles[$i]->volume * $nominativeClosePrice;
+                    $volumes[$i]['volume'] += isset($value['decimals']) ? $volume_value / ($value['decimals'] * 10) : $volume_value;
                 } else {
-                    $volume[$i]['volume'] += $candles[$i]->volume  ;
+                    $volumes[$i]['volume'] += isset($value['decimals']) ? $candles[$i]->volume / ($value['decimals'] * 10) : $candles[$i]->volume;
                 }
             }
-
         }
 
-        return $volume;
+        foreach ($volumes as &$volume) {
+            $volume['volume'] /= 1000000;
+        }
+
+        return $volumes;
     }
 
     private function _get_fin_pairs()
