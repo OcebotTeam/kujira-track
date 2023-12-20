@@ -34,6 +34,7 @@ final class Version20231213121005 extends AbstractMigration
         $this->addSql('CREATE TABLE unmigrated (id INT AUTO_INCREMENT NOT NULL, num INT NOT NULL, tracked DATETIME NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE usk_minted (id INT AUTO_INCREMENT NOT NULL, num DOUBLE PRECISION NOT NULL, collateral LONGTEXT NOT NULL, tracked DATETIME NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE wallets (id INT AUTO_INCREMENT NOT NULL, num INT NOT NULL, tracked DATETIME NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE liquidations (id INT AUTO_INCREMENT NOT NULL, liquidation_id VARCHAR(255) NOT NULL, timestamp INT NOT NULL, burn_amount VARCHAR(255) NOT NULL, contract_address VARCHAR(255) NOT NULL, refund_amount VARCHAR(255) NOT NULL, liquidate_amount VARCHAR(255) NOT NULL, fee_amount VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
     }
 
     public function down(Schema $schema): void
@@ -53,5 +54,6 @@ final class Version20231213121005 extends AbstractMigration
         $this->addSql('DROP TABLE unmigrated');
         $this->addSql('DROP TABLE usk_minted');
         $this->addSql('DROP TABLE wallets');
+        $this->addSql('DROP TABLE liquidations');
     }
 }

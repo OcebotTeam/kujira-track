@@ -187,7 +187,8 @@ class ApplicationGlobalsService
         'ghostUSKKUJI' => 'https://lcd.kaiyo.kujira.setten.io/cosmwasm/wasm/v1/contract/kujira1fpqcnev8dq6cd9pkum3wnt4jraxjeflmjcr9xqush2fr4ke4aupq6d3c6h/smart/eyJzdGF0dXMiOnt9fQ==',
         'MantaFees' => 'https://api.kujira.app/api/txs?q=kujira1fx4a4wzh4v247laumjllkkw8r692drdj65m5wrcsglydqyrdjq5s57a89f&limit=10&offset=0&order_by=rowid&order_dir=desc',
         'MantaStaked' => 'https://rest.cosmos.directory/kujira/cosmwasm/wasm/v1/contract/kujira12y9ltc6a0vnlce6dkdmkv23jm6euu3zgvnwcwlggd42wgexyvh2srr8r5q/smart/ewogICAgICAgICJ0b3RhbF93ZWlnaHQiOiB7CiAgICAgICAgfQogICAgfQ==',
-        'Mantalocked' => 'https://lcd.kaiyo.kujira.setten.io/cosmos/bank/v1beta1/balances/kujira12y9ltc6a0vnlce6dkdmkv23jm6euu3zgvnwcwlggd42wgexyvh2srr8r5q'
+        'Mantalocked' => 'https://lcd.kaiyo.kujira.setten.io/cosmos/bank/v1beta1/balances/kujira12y9ltc6a0vnlce6dkdmkv23jm6euu3zgvnwcwlggd42wgexyvh2srr8r5q',
+        'liquidations' => '/liquidations?age=604800'
     ];
     private ?array $tokens = [
         'wETH' => 'ibc/1B38805B1C75352B28169284F96DF56BDEBD9E8FAC005BDCC8CF0378C82AA8E7',
@@ -250,6 +251,8 @@ class ApplicationGlobalsService
 
 
     ];
+
+
 
     public function get_api_urls(): array
     {
