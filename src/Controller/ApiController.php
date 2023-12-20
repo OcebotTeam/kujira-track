@@ -6,10 +6,12 @@ use App\Entity\BowTvl;
 use App\Service\ApplicationGlobalsService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Contracts\Cache\ItemInterface;
 
 class ApiController extends AbstractController
 {
@@ -35,6 +37,8 @@ class ApiController extends AbstractController
         $to = $request->query->get('to');
         $volume = [];
         $volume[] = $this->_all_fin_pair_volume($applicationGlobalsService, $precision, $from, $to);
+
+
 
         return new Response(
             json_encode(["totalVolume" => $volume]),
@@ -112,12 +116,19 @@ class ApiController extends AbstractController
     private function _fin_pair_info(array $contract, string $precision, string $from, string $to)
     {
 
-        $client = HttpClient::create();
-        $response = $client->request(
-            'GET',
-            "https://kaiyo-1.gigalixirapp.com/api/trades/candles?contract=" . $contract['contract'] . "&precision=". $precision . "&from=" . $from ."&to=". $to
-        );
-        return json_decode($response->getContent());
+        $cache = new FilesystemAdapter();
+        $value = $cache->get(str_replace([':','/'], '', "https://kaiyo-1.gigalixirapp.com/api/trades/candles?contract=" . $contract['contract'] . "&precision=". $precision . "&from=" . $from ."&to=". $to), function (ItemInterface $item) use ($contract, $precision, $from, $to) {
+            $item->expiresAfter(3600);
+            $client = HttpClient::create();
+            $response = $client->request(
+                'GET',
+                "https://kaiyo-1.gigalixirapp.com/api/trades/candles?contract=" . $contract['contract'] . "&precision=". $precision . "&from=" . $from ."&to=". $to
+            );
+
+            return json_decode( $response->getContent());
+        });
+
+        return $value;
 
     }
 
@@ -147,7 +158,7 @@ class ApiController extends AbstractController
                 if (isset($value['nominative'])) {
                     $nominative_key = array_search($value["nominative"], $nominatives);
                     $nominative = $nominativeCandles[$nominatives[$nominative_key]];
-                    $nominativeClosePrice = $nominative->candles[$i]->close;
+                    isset($nominative->candles[$i]) ? $nominativeClosePrice = $nominative->candles[$i]->close : 0;
                     $volume_value = $candles[$i]->volume * $nominativeClosePrice;
                     $volumes[$i]['volume'] += isset($value['decimals']) ? $volume_value / ($value['decimals'] * 10) : $volume_value;
                 } else {
