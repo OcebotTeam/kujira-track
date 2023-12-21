@@ -40,7 +40,7 @@ class LiquidationsCommand extends Command
 
         $em = $this->entityManager;
 
-        $this->LiquidationService->setLiquidations($em,$this->LiquidationRepository);
+        $this->LiquidationService->setLiquidations($em, $this->LiquidationRepository);
 
         $output->writeln([
             'Done!',

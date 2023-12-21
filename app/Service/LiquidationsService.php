@@ -13,7 +13,7 @@ class LiquidationsService
     private $application_globals;
     private $liquidationsRepository;
 
-    public function __construct(EntityManagerInterface $entityManager, ApplicationGlobalsService $application_globals,LiquidationsRepository $liquidationsRepository)
+    public function __construct(EntityManagerInterface $entityManager, ApplicationGlobalsService $application_globals, LiquidationsRepository $liquidationsRepository)
     {
 
         $this->entityManager = $entityManager;
@@ -28,21 +28,21 @@ class LiquidationsService
         $endpoint = $endpoints['base_url'].$endpoints['liquidations'];
 
 
-            $client = HttpClient::create();
-            $response = $client->request(
-                'GET',
-                $endpoint
-            );
-            $liquidations = $response->getContent();
-            $liquidations_array = json_decode($liquidations);
-            $liquidations_iterative = $liquidations_array->liquidations;
+        $client = HttpClient::create();
+        $response = $client->request(
+            'GET',
+            $endpoint
+        );
+        $liquidations = $response->getContent();
+        $liquidations_array = json_decode($liquidations);
+        $liquidations_iterative = $liquidations_array->liquidations;
 
         foreach ($liquidations_iterative as $item) {
 
 
             $liquidation = new Liquidations();
 
-            if(empty($liquidationsRepository->findByLiquidationID($item->id))){
+            if(empty($liquidationsRepository->findByLiquidationID($item->id))) {
                 $liquidation->setLiquidationId($item->id);
                 $liquidation->setTimestamp(strtotime($item->timestamp));
                 $liquidation->setBurnAmount($item->burn_amount);

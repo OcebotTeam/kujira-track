@@ -39,9 +39,9 @@ class LiquidationsRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Liquidations[] Returns an array of Liquidations objects
-//     */
+    //    /**
+    //     * @return Liquidations[] Returns an array of Liquidations objects
+    //     */
     public function findByLiquidationID($value): array
     {
         return $this->createQueryBuilder('l')
@@ -54,13 +54,13 @@ class LiquidationsRepository extends ServiceEntityRepository
         ;
     }
 
-//    public function findOneBySomeField($value): ?Liquidations
-//    {
-//        return $this->createQueryBuilder('l')
-//            ->andWhere('l.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    //    public function findOneBySomeField($value): ?Liquidations
+    //    {
+    //        return $this->createQueryBuilder('l')
+    //            ->andWhere('l.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }

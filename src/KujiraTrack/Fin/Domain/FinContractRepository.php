@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain;
+namespace Ocebot\KujiraTrack\Fin\Domain;
 
 interface FinContractRepository
 {

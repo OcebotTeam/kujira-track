@@ -37,7 +37,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "app/",
+            "Ocebot\\KujiraTrack\\": "src/KujiraTrack"
         }
     },
     "autoload-dev": {
@@ -65,7 +66,10 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "lint": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src"
+        "lint": [
+            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix app",
+            "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src/KujiraTrack"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"

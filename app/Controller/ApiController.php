@@ -5,9 +5,11 @@ namespace App\Controller;
 use App\Entity\BowTvl;
 use App\Service\ApplicationGlobalsService;
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\Fin\Application\Find\FinContractFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,15 +20,9 @@ class ApiController extends AbstractController
     private ApplicationGlobalsService $application_globals;
 
     #[Route('/')]
-    public function homepage(ApplicationGlobalsService $applicationGlobalsService)
+    public function homepage()
     {
-        return new Response(
-            'OK',
-            Response::HTTP_OK,
-            [
-                'Access-Control-Allow-Origin' => '*'
-            ]
-        );
+        return new JsonResponse('KujiraTrack Backend: OK');
     }
 
     #[Route('/volume/{precision}')]
@@ -125,7 +121,7 @@ class ApiController extends AbstractController
                 "https://kaiyo-1.gigalixirapp.com/api/trades/candles?contract=" . $contract['contract'] . "&precision=". $precision . "&from=" . $from ."&to=". $to
             );
 
-            return json_decode( $response->getContent());
+            return json_decode($response->getContent());
         });
 
         return $value;

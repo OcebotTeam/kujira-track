@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repository;
+namespace Ocebot\KujiraTrack\Fin\Infrastructure;
 
-use App\Domain\FinContract;
-use App\Domain\FinContractRepository;
-use App\Domain\FinContracts;
+use Ocebot\KujiraTrack\Fin\Domain\FinContract;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
+use Ocebot\KujiraTrack\Fin\Domain\FinContracts;
 
 class FinContractRepositoryInMemory implements FinContractRepository
 {
@@ -163,7 +163,8 @@ class FinContractRepositoryInMemory implements FinContractRepository
     {
         foreach ($this->finContracts as $InMemorytTickerId => $contractValues) {
             if ($InMemorytTickerId === $tickerId) {
-                return new FinContract($contractValues["contract"], $tickerId, $contractValues['nominative'] ?? null, $contractValues['decimals'] ?? null);;
+                return new FinContract($contractValues["contract"], $tickerId, $contractValues['nominative'] ?? null, $contractValues['decimals'] ?? null);
+                ;
             }
         }
 
