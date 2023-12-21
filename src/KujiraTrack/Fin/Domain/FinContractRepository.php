@@ -6,5 +6,5 @@ interface FinContractRepository
 {
     public function getAll(): FinContracts;
 
-    public function getByTickerId(string $tickerId): ?FinContract;
+    public function getByTickerId(FinContractTickerId $tickerId): ?FinContract;
 }

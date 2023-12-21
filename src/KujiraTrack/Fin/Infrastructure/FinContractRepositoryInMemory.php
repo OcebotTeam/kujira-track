@@ -5,6 +5,7 @@ namespace Ocebot\KujiraTrack\Fin\Infrastructure;
 use Ocebot\KujiraTrack\Fin\Domain\FinContract;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
 use Ocebot\KujiraTrack\Fin\Domain\FinContracts;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 
 class FinContractRepositoryInMemory implements FinContractRepository
 {
@@ -436,17 +437,26 @@ class FinContractRepositoryInMemory implements FinContractRepository
         $finContractsArray = [];
 
         foreach ($this->finContracts as $tickerId => $contractValues) {
-            $finContractsArray[] = new FinContract($contractValues["contract"], $tickerId, $contractValues['nominative'] ?? null, $contractValues['decimals'] ?? null);
+            $finContractsArray[] = new FinContract(
+                $contractValues["contract"],
+                new FinContractTickerId($tickerId),
+                $contractValues['nominative'] ?? null,
+                $contractValues['decimals'] ?? null
+            );
         }
 
         return new FinContracts($finContractsArray);
     }
 
-    public function getByTickerId(string $tickerId): ?FinContract
+    public function getByTickerId(FinContractTickerId $tickerId): ?FinContract
     {
         foreach ($this->finContracts as $InMemorytTickerId => $contractValues) {
-            if ($InMemorytTickerId === $tickerId) {
-                return new FinContract($contractValues["contract"], $tickerId, $contractValues['nominative'] ?? null, $contractValues['decimals'] ?? null);
+            if ($InMemorytTickerId === $tickerId->value()) {
+                return new FinContract(
+                    $contractValues["contract"],
+                    $tickerId,
+                    $contractValues['nominative'] ?? null,
+                    $contractValues['decimals'] ?? null);
             }
         }
 

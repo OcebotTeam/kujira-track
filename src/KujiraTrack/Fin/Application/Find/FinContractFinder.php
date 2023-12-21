@@ -3,19 +3,25 @@
 namespace Ocebot\KujiraTrack\Fin\Application\Find;
 
 use Ocebot\KujiraTrack\Fin\Domain\FinContract;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractNotFound;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 
 final class FinContractFinder
 {
-    private FinContractRepository $repository;
-
-    public function __construct(FinContractRepository $repository)
+    public function __construct(
+        private readonly FinContractRepository $repository)
     {
-        $this->repository = $repository;
     }
 
-    public function __invoke(string $tickerId): FinContract
+    public function __invoke(FinContractTickerId $tickerId): FinContract
     {
-        return $this->repository->getByTickerId($tickerId);
+        $finContract = $this->repository->getByTickerId($tickerId);
+
+        if (is_null($finContract)) {
+            throw new FinContractNotFound($tickerId);
+        }
+
+        return $finContract;
     }
 }

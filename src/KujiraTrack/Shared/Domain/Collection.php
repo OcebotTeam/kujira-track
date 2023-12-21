@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ocebot\KujiraTrack\Fin\Domain;
+namespace Ocebot\KujiraTrack\Shared\Domain;
 
 use ArrayIterator;
 use Countable;

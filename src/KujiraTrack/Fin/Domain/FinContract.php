@@ -6,28 +6,28 @@ final class FinContract
 {
     public function __construct(
         private readonly string $contract,
-        private readonly string $tickerId,
+        private readonly FinContractTickerId $tickerId,
         private readonly ?string $nominative,
         private readonly ?int $decimals
     ) {
     }
 
-    public function getContract(): string
+    public function contract(): string
     {
         return $this->contract;
     }
 
-    public function getTickerId(): string
+    public function tickerId(): FinContractTickerId
     {
         return $this->tickerId;
     }
 
-    public function getNominative(): ?string
+    public function nominative(): ?string
     {
         return $this->nominative;
     }
 
-    public function getDecimals(): ?int
+    public function decimals(): ?int
     {
         return $this->decimals;
     }
