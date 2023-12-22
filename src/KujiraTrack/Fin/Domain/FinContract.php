@@ -2,7 +2,9 @@
 
 namespace Ocebot\KujiraTrack\Fin\Domain;
 
-final class FinContract
+use Ocebot\KujiraTrack\Shared\Domain\Aggregate\AggregateRoot;
+
+final class FinContract extends AggregateRoot
 {
     public function __construct(
         private readonly string $contract,

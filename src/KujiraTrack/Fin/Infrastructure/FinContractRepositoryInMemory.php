@@ -9,11 +9,11 @@ use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 
 class FinContractRepositoryInMemory implements FinContractRepository
 {
-    private readonly array $finContracts;
+    private array $finContracts = [];
 
     public function __construct()
     {
-        $this->finContracts = [
+        $finContracts = [
             // *** axlUSDC pairs
             "KUJI_axlUSDC" => [
                 "contract" => "kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867"
@@ -430,33 +430,29 @@ class FinContractRepositoryInMemory implements FinContractRepository
             ]
 
         ];
-    }
 
-    public function getAll(): FinContracts
-    {
-        $finContractsArray = [];
-
-        foreach ($this->finContracts as $tickerId => $contractValues) {
-            $finContractsArray[] = new FinContract(
+        foreach ($finContracts as $tickerId => $contractValues) {
+            $this->finContracts[] = new FinContract(
                 $contractValues["contract"],
                 new FinContractTickerId($tickerId),
                 $contractValues['nominative'] ?? null,
                 $contractValues['decimals'] ?? null
             );
         }
-
-        return new FinContracts($finContractsArray);
     }
 
-    public function getByTickerId(FinContractTickerId $tickerId): ?FinContract
+    public function findAll(): FinContracts
     {
-        foreach ($this->finContracts as $InMemorytTickerId => $contractValues) {
-            if ($InMemorytTickerId === $tickerId->value()) {
-                return new FinContract(
-                    $contractValues["contract"],
-                    $tickerId,
-                    $contractValues['nominative'] ?? null,
-                    $contractValues['decimals'] ?? null);
+        return new FinContracts($this->finContracts);
+    }
+
+    public function find(FinContractTickerId $tickerId): ?FinContract
+    {
+        $finContracts = $this->findAll();
+
+        foreach ($finContracts as $finContract) {
+            if ($finContract->tickerId()->value() === $tickerId->value()) {
+                return $finContract;
             }
         }
 

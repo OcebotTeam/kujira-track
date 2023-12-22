@@ -16,7 +16,7 @@ final class FinContractFinder
 
     public function __invoke(FinContractTickerId $tickerId): FinContract
     {
-        $finContract = $this->repository->getByTickerId($tickerId);
+        $finContract = $this->repository->find($tickerId);
 
         if (is_null($finContract)) {
             throw new FinContractNotFound($tickerId);

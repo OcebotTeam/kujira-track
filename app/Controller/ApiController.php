@@ -6,6 +6,7 @@ use App\Entity\BowTvl;
 use App\Service\ApplicationGlobalsService;
 use Doctrine\ORM\EntityManagerInterface;
 use Ocebot\KujiraTrack\Fin\Application\Find\FinContractFinder;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\HttpClient\HttpClient;
@@ -20,9 +21,10 @@ class ApiController extends AbstractController
     private ApplicationGlobalsService $application_globals;
 
     #[Route('/')]
-    public function homepage()
+    public function homepage(FinContractFinder $finder)
     {
-        return new JsonResponse('KujiraTrack Backend: OK');
+        $response = 'KujiraTrack Backend: OK';
+        return new JsonResponse($response);
     }
 
     #[Route('/volume/{precision}')]
