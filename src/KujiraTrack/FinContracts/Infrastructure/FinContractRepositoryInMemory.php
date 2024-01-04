@@ -1,11 +1,11 @@
 <?php
 
-namespace Ocebot\KujiraTrack\Fin\Infrastructure;
+namespace Ocebot\KujiraTrack\FinContracts\Infrastructure;
 
-use Ocebot\KujiraTrack\Fin\Domain\FinContract;
-use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
-use Ocebot\KujiraTrack\Fin\Domain\FinContracts;
-use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
+use Ocebot\KujiraTrack\FinContracts\Domain\FinContract;
+use Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository;
+use Ocebot\KujiraTrack\FinContracts\Domain\FinContracts;
+use Ocebot\KujiraTrack\FinContracts\Domain\FinContractTickerId;
 
 class FinContractRepositoryInMemory implements FinContractRepository
 {
@@ -434,9 +434,9 @@ class FinContractRepositoryInMemory implements FinContractRepository
         foreach ($finContracts as $tickerId => $contractValues) {
             $this->finContracts[] = new FinContract(
                 $contractValues["contract"],
-                new FinContractTickerId($tickerId),
-                $contractValues['nominative'] ?? null,
-                $contractValues['decimals'] ?? null
+                $tickerId,
+                $contractValues['decimals'] ?? 5,
+                $contractValues['nominative'] ?? null
             );
         }
     }

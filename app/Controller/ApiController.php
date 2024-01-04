@@ -5,15 +5,14 @@ namespace App\Controller;
 use App\Entity\BowTvl;
 use App\Service\ApplicationGlobalsService;
 use Doctrine\ORM\EntityManagerInterface;
-use Ocebot\KujiraTrack\Fin\Application\Find\FinContractFinder;
-use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
+use Ocebot\KujiraTrack\FinContracts\Application\FinContractFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Cache\ItemInterface;
 
 class ApiController extends AbstractController
@@ -23,6 +22,7 @@ class ApiController extends AbstractController
     #[Route('/')]
     public function homepage(FinContractFinder $finder)
     {
+        $finContract = $finder("KUJI_USK");
         $response = 'KujiraTrack Backend: OK';
         return new JsonResponse($response);
     }

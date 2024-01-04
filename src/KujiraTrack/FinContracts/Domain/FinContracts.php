@@ -1,6 +1,6 @@
 <?php
 
-namespace Ocebot\KujiraTrack\Fin\Domain;
+namespace Ocebot\KujiraTrack\FinContracts\Domain;
 
 use Ocebot\KujiraTrack\Shared\Domain\Collection;
 
