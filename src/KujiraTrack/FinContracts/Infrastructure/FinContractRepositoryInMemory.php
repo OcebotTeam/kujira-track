@@ -446,12 +446,12 @@ class FinContractRepositoryInMemory implements FinContractRepository
         return new FinContracts($this->finContracts);
     }
 
-    public function find(FinContractTickerId $tickerId): ?FinContract
+    public function findByTickerId(FinContractTickerId $tickerId): ?FinContract
     {
         $finContracts = $this->findAll();
 
         foreach ($finContracts as $finContract) {
-            if ($finContract->tickerId()->value() === $tickerId->value()) {
+            if ($finContract->tickerId() === $tickerId->value()) {
                 return $finContract;
             }
         }

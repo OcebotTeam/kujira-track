@@ -39,7 +39,7 @@
         "psr-4": {
             "App\\": "app/",
             "Ocebot\\KujiraTrack\\FinContracts\\": "src/KujiraTrack/FinContracts",
-            "Ocebot\\KujiraTrack\\FinContractVolumes\\": "src/KujiraTrack/FinContractVolumes",
+            "Ocebot\\KujiraTrack\\FinContractCharts\\": "src/KujiraTrack/FinContractCharts",
             "Ocebot\\KujiraTrack\\Shared\\": "src/KujiraTrack/Shared"
         }
     },

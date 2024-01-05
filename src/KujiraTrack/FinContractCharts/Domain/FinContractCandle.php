@@ -1,6 +1,6 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContractVolumes\Domain;
+namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
 
 use DateTime;
 

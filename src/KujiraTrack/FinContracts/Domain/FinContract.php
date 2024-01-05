@@ -6,22 +6,22 @@ use Ocebot\KujiraTrack\Shared\Domain\Aggregate\AggregateRoot;
 
 final class FinContract extends AggregateRoot
 {
-    private readonly string $contract;
+    private readonly FinContractAddress $address;
     private readonly FinContractTickerId $tickerId;
     private readonly int $decimals;
     private readonly ?string $nominative;
 
-    public function __construct(string $contract, string $tickerId, int $decimals, ?string $nominative)
+    public function __construct(string $address, string $tickerId, int $decimals, ?string $nominative)
     {
-        $this->contract = $contract;
+        $this->address = new FinContractAddress($address);
         $this->tickerId = new FinContractTickerId($tickerId);
         $this->nominative = $nominative;
         $this->decimals = $decimals;
     }
 
-    public function contract(): string
+    public function address(): string
     {
-        return $this->contract;
+        return $this->address;
     }
 
     public function tickerId(): string
