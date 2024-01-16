@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\BowTvl;
 use App\Service\ApplicationGlobalsService;
 use Doctrine\ORM\EntityManagerInterface;
-use Ocebot\KujiraTrack\FinContractCharts\Application\FinContratChartRequester;
+use Ocebot\KujiraTrack\FinContractCharts\Application\FinContractChartRequester;
 use Ocebot\KujiraTrack\FinContracts\Application\FinContractFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
@@ -21,11 +21,10 @@ class ApiController extends AbstractController
     private ApplicationGlobalsService $application_globals;
 
     #[Route('/')]
-    public function homepage(FinContractFinder $contractFinder, FinContratChartRequester $chartRequester)
+    public function homepage(FinContractFinder $contractFinder, FinContractChartRequester $chartRequester)
     {
-        $finContract = $contractFinder("KUJI_USK");
-        $finChart = $chartRequester($finContract->address(), "day1", date(""), date(""));
-
+        // $finContract = $contractFinder("KUJI_USK");
+        // $finChart = $chartRequester($finContract->address(), "day1", "now", "now");
         $response = 'KujiraTrack Backend: OK';
         return new JsonResponse($response);
     }

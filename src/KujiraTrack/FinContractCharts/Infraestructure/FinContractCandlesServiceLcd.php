@@ -2,7 +2,7 @@
 
 namespace Ocebot\KujiraTrack\FinContractCharts\Infraestructure;
 
-use DateTime;
+use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandle;
 use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandles;
 use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandlesService;
 use Ocebot\KujiraTrack\FinContractCharts\Domain\TimeFrame;
@@ -20,17 +20,31 @@ class FinContractCandlesServiceLcd implements FinContractCandlesService
     }
 
 
-    public function requestCandles(FinContractAddress $address, TimeFrame $timeframe, string $from, string $to): FinContractCandles
+    public function requestCandles(string $address, string $timeframe, string $from, string $to): FinContractCandles
     {
         $response = $this->httpClient->request('GET', self::CANDLES_ENDPOINT, [
             "query"  => [
-                "contract" => $address->value(),
-                "precision" => $timeframe->precision(),
+                "contract" => $address,
+                "precision" => $timeframe,
                 "from" => $from,
                 "to" => $to
             ]
         ]);
 
-        return new FinContractCandles([]);
+        $responseContent = json_decode($response->getContent());
+        $candlesArray = [];
+
+        foreach ($responseContent->candles as $candle) {
+            $candlesArray[] = new FinContractCandle(
+                (float) $candle->low,
+                (float) $candle->high,
+                (float) $candle->close,
+                (float) $candle->open,
+                $candle->bin,
+                (int) $candle->volume
+            );
+        }
+
+        return new FinContractCandles($candlesArray);
     }
 }

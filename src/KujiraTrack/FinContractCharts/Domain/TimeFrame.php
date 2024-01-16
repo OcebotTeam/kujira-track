@@ -6,8 +6,8 @@ namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
 final class TimeFrame
 {
     const VALID_PRECISION = [
-        "day1" => [],
-        "month1" => []
+        "day1" => "1D",
+        "month1" => "1M"
     ];
 
     private readonly string $precision;
@@ -18,9 +18,9 @@ final class TimeFrame
         $this->precision = $key;
     }
 
-    public function precision()
+    public function precision(): string
     {
-        return $this->precision;
+        return self::VALID_PRECISION[$this->precision];
     }
 
     private function checkIfSupported(string $timeframeKey): void
