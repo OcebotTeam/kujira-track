@@ -2,8 +2,6 @@
 
 namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
 
-use DateTime;
-
 class FinContractCandle
 {
     private readonly float $low;

@@ -12,9 +12,7 @@
 	// "customizations": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [
-		8000
-	],
+	"forwardPorts": [],
 	"features": {
 		"ghcr.io/shyim/devcontainers-features/symfony-cli:0": {}
 	},
