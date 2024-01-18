@@ -1,0 +1,5 @@
+FROM ../Dockerfile as Dev
+
+RUN rm -rf /var/www/html
+
+RUN ln -s /var/www/html /workspaces
