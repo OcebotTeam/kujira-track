@@ -21,4 +21,3 @@ final class FinContractNotFoundError extends DomainError
         return sprintf('FIN contract with ticker ID <%s> has not been found', $this->tickerId);
     }
 }
-

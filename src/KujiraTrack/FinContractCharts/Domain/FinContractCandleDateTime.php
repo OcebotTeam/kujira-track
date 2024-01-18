@@ -2,7 +2,6 @@
 
 namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
 
-
 use DateTimeImmutable;
 
 class FinContractCandleDateTime

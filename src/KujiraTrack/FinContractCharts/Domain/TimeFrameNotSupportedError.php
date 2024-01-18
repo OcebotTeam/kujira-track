@@ -6,7 +6,6 @@ use Ocebot\KujiraTrack\Shared\Domain\DomainError;
 
 class TimeFrameNotSupportedError extends DomainError
 {
-
     public function __construct(private readonly string $timeframeKey)
     {
         parent::__construct();

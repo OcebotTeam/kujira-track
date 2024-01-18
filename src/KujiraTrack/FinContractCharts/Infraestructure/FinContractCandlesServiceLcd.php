@@ -9,14 +9,12 @@ use Ocebot\KujiraTrack\FinContractCharts\Domain\TimeFrame;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-
 class FinContractCandlesServiceLcd implements FinContractCandlesService
 {
-    const CANDLES_ENDPOINT = "https://kaiyo-1.gigalixirapp.com/api/trades/candles";
+    public const CANDLES_ENDPOINT = "https://kaiyo-1.gigalixirapp.com/api/trades/candles";
 
-    public function __construct(
-        private HttpClientInterface $httpClient,
-    ) {
+    public function __construct(private HttpClientInterface $httpClient)
+    {
     }
 
 

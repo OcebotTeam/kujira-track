@@ -2,10 +2,9 @@
 
 namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
 
-
 final class TimeFrame
 {
-    const VALID_PRECISION = [
+    public const VALID_PRECISION = [
         "day1" => "1D",
         "month1" => "1M"
     ];

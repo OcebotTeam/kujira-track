@@ -18,9 +18,9 @@ final class FinContractChart extends AggregateRoot
         string $contractAddress,
         string $timeFrame,
         string $from,
-        string $to)
+        string $to
+    )
     {
-
         $this->from = new FinContractCandleDateTime($from);
         $this->to = new FinContractCandleDateTime($to);
         $this->address = new FinContractAddress($contractAddress);

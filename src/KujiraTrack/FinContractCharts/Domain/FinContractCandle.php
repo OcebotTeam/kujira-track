@@ -6,7 +6,6 @@ use DateTime;
 
 class FinContractCandle
 {
-
     private readonly float $low;
     private readonly float $high;
     private readonly float $close;
@@ -24,7 +23,8 @@ class FinContractCandle
         $this->low = $low;
     }
 
-    public function toArray() {
+    public function toArray()
+    {
         return [
             "volume" => $this->volume,
             "time" => $this->time->value(),

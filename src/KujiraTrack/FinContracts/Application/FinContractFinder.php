@@ -9,8 +9,7 @@ use Ocebot\KujiraTrack\FinContracts\Domain\FinContractTickerId;
 
 final class FinContractFinder
 {
-    public function __construct(
-        private readonly FinContractRepository $repository)
+    public function __construct(private readonly FinContractRepository $repository)
     {
     }
 
