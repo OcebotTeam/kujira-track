@@ -14,7 +14,7 @@ final class FinContractFinder
     {
     }
 
-    public function __invoke(string $tickerId): FinContract
+    public function __invoke(string $tickerId): array
     {
         $finContract = $this->repository->findByTickerId(new FinContractTickerId($tickerId));
 
@@ -22,6 +22,11 @@ final class FinContractFinder
             throw new FinContractNotFoundError($tickerId);
         }
 
-        return $finContract;
+        return [
+            'address' => $finContract->address(),
+            'tickerId' => $finContract->tickerId(),
+            'decimals' => $finContract->decimals(),
+            'nominative' => $finContract->nominative(),
+        ];
     }
 }

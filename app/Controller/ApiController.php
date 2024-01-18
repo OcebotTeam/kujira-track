@@ -21,10 +21,8 @@ class ApiController extends AbstractController
     private ApplicationGlobalsService $application_globals;
 
     #[Route('/')]
-    public function homepage(FinContractFinder $contractFinder, FinContractChartRequester $chartRequester)
+    public function homepage()
     {
-        // $finContract = $contractFinder("KUJI_USK");
-        // $finChart = $chartRequester($finContract->address(), "day1", "now", "now");
         $response = 'KujiraTrack Backend: OK';
         return new JsonResponse($response);
     }
