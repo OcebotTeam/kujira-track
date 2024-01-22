@@ -1,0 +1,21 @@
+schemaVersion: 2.2.0
+metadata:
+  name: 'Dev environment configuration for Kujira-track in Jetbrains Space'
+attributes:
+  space:
+    # regular, large, xlarge
+    instanceType: regular
+  editor:
+    # (Required) IDE type: Idea, WebStorm, PyCharm,
+    # RubyMine, CLion, Fleet, GoLand, PhpStorm
+    type: PhpStorm
+    version: '2023.3'
+    # Space uses JetBrains Toolbox App to install IDEs to a dev environment.
+    # updateChannel defines IDE version release stage: Release, EAP
+    updateChannel: Release
+components:
+  - name: dev-container
+    # Dev environment container config
+    container:
+      # use image from a Space Packages registry
+      image: mcr.microsoft.com/devcontainers/php:1-8.2-bullseye
