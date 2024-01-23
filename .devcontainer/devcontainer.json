@@ -23,7 +23,8 @@
 				"GitHub.copilot-chat",
 				"k--kato.intellij-idea-keybindings",
 				"xdebug.php-debug",
-				"bmewburn.vscode-intelephense-client"
+				"bmewburn.vscode-intelephense-client",
+				"st-pham.php-refactor-tool"
 			]
 		}
 	}
