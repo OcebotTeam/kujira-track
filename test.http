@@ -1,0 +1,7 @@
+### GET All FIN Contracts
+GET localhost:8000/fin/contracts
+Accept: application/json
+
+### GET specific FIN Contract
+GET localhost:8000/fin/contracts/KUJI_USK
+Accept: application/json
