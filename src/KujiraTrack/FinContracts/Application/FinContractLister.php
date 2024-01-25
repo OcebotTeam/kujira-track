@@ -5,7 +5,7 @@ namespace Ocebot\KujiraTrack\FinContracts\Application;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContract;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository;
 
-final class FinContractsObtainer
+final class FinContractLister
 {
     public function __construct(private readonly FinContractRepository $repository)
     {
