@@ -40,7 +40,7 @@ class TokenRepository extends ServiceEntityRepository
     }
 
     //    /**
-    //     * @return Token[] Returns an array of Token objects
+    //     * @return Tokens[] Returns an array of Tokens objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -54,7 +54,7 @@ class TokenRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Token
+    //    public function findOneBySomeField($value): ?Tokens
     //    {
     //        return $this->createQueryBuilder('t')
     //            ->andWhere('t.exampleField = :val')

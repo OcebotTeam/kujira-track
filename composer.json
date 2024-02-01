@@ -38,9 +38,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Ocebot\\KujiraTrack\\FinContracts\\": "src/KujiraTrack/FinContracts",
-            "Ocebot\\KujiraTrack\\FinContractCharts\\": "src/KujiraTrack/FinContractCharts",
-            "Ocebot\\KujiraTrack\\Shared\\": "src/KujiraTrack/Shared"
+            "Ocebot\\KujiraTrack\\": "src/KujiraTrack/"
         }
     },
     "autoload-dev": {
