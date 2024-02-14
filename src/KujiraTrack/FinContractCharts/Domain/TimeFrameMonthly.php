@@ -2,15 +2,15 @@
 
 namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
 
-final class TimeFrameDaily extends TimeFrame
+final class TimeFrameMonthly extends TimeFrame
 {
     public function dateTimeKey(): string
     {
-        return 'day';
+        return 'month';
     }
 
     public function apiKey(): string
     {
-        return '1D';
+        return '1M';
     }
 }

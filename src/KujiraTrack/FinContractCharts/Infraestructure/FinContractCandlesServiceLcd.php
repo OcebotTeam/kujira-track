@@ -21,8 +21,11 @@ class FinContractCandlesServiceLcd implements FinContractCandlesService
 
     public function requestCandles(FinContractAddress $address, TimeFrame $timeframe, int $page): FinContractCandles
     {
-        $fromDate = new FinContractCandleDateTime(-$page-self::BATCH_SIZE . ' ' . $timeframe->dateTimeKey());
-        $toDate = new FinContractCandleDateTime(-$page . ' ' . $timeframe->dateTimeKey());
+        $toAmountBack = -$page * self::BATCH_SIZE;
+        $fromAmountBack = $toAmountBack - self::BATCH_SIZE + 1;
+
+        $fromDate = new FinContractCandleDateTime($fromAmountBack . ' ' . $timeframe->dateTimeKey());
+        $toDate = new FinContractCandleDateTime($toAmountBack . ' ' . $timeframe->dateTimeKey());
 
         $response = $this->httpClient->request('GET', self::CANDLES_ENDPOINT, [
             "query"  => [

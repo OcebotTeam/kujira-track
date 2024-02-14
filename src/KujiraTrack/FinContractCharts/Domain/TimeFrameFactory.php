@@ -8,6 +8,7 @@ abstract class TimeFrameFactory
     {
         return match ($precision) {
             'daily' => new TimeFrameDaily($precision),
+            'monthly' => new TimeFrameMonthly($precision),
             default => throw new TimeFrameNotSupportedError($precision),
         };
     }
