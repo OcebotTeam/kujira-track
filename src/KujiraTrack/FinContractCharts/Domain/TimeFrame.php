@@ -2,30 +2,18 @@
 
 namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
 
-final class TimeFrame
+abstract class TimeFrame
 {
-    public const VALID_PRECISION = [
-        "day1" => "1D",
-        "month1" => "1M"
-    ];
-
-    private readonly string $precision;
-
-    public function __construct(string $key)
+    public function __construct(private readonly string $precision)
     {
-        $this->checkIfSupported($key);
-        $this->precision = $key;
     }
 
     public function precision(): string
     {
-        return self::VALID_PRECISION[$this->precision];
+        return $this->precision;
     }
 
-    private function checkIfSupported(string $timeframeKey): void
-    {
-        if (!in_array($timeframeKey, array_keys(self::VALID_PRECISION))) {
-            throw new TimeFrameNotSupportedError($timeframeKey);
-        }
-    }
+    abstract public function apiKey(): string;
+
+    abstract public function dateTimeKey(): string;
 }

@@ -3,6 +3,7 @@
 namespace Ocebot\KujiraTrack\FinContractCharts\Infraestructure;
 
 use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandle;
+use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandleDateTime;
 use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandles;
 use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandlesService;
 use Ocebot\KujiraTrack\FinContractCharts\Domain\TimeFrame;
@@ -18,14 +19,17 @@ class FinContractCandlesServiceLcd implements FinContractCandlesService
     }
 
 
-    public function requestCandles(string $address, string $timeframe, string $from, string $to): FinContractCandles
+    public function requestCandles(FinContractAddress $address, TimeFrame $timeframe, int $page): FinContractCandles
     {
+        $fromDate = new FinContractCandleDateTime(-$page-1 . ' ' . $timeframe->dateTimeKey());
+        $toDate = new FinContractCandleDateTime(-$page . ' ' . $timeframe->dateTimeKey());
+
         $response = $this->httpClient->request('GET', self::CANDLES_ENDPOINT, [
             "query"  => [
-                "contract" => $address,
-                "precision" => $timeframe,
-                "from" => $from,
-                "to" => $to
+                "contract" => $address->value(),
+                "precision" => $timeframe->apiKey(),
+                "from" => $fromDate->value(),
+                "to" => $toDate->value(),
             ]
         ]);
 

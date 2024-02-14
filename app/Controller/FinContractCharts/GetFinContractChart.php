@@ -20,7 +20,7 @@ class GetFinContractChart extends AbstractController
     public function __invoke(string $tickerId)
     {
         $contract = $this->contractFinder->__invoke($tickerId);
-        $chart = $this->chartRequest->__invoke($contract['address'], 'day1', 'yesterday', 'now');
+        $chart = $this->chartRequest->__invoke($contract['address'], 'daily', 0);
         return new JsonResponse($chart);
     }
 }
