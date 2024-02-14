@@ -12,7 +12,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class FinContractCandlesServiceLcd implements FinContractCandlesService
 {
-    public const CANDLES_ENDPOINT = "https://kaiyo-1.gigalixirapp.com/api/trades/candles";
+    private const CANDLES_ENDPOINT = "https://kaiyo-1.gigalixirapp.com/api/trades/candles";
 
     public function __construct(private HttpClientInterface $httpClient)
     {
@@ -21,7 +21,7 @@ class FinContractCandlesServiceLcd implements FinContractCandlesService
 
     public function requestCandles(FinContractAddress $address, TimeFrame $timeframe, int $page): FinContractCandles
     {
-        $fromDate = new FinContractCandleDateTime(-$page-1 . ' ' . $timeframe->dateTimeKey());
+        $fromDate = new FinContractCandleDateTime(-$page-self::BATCH_SIZE . ' ' . $timeframe->dateTimeKey());
         $toDate = new FinContractCandleDateTime(-$page . ' ' . $timeframe->dateTimeKey());
 
         $response = $this->httpClient->request('GET', self::CANDLES_ENDPOINT, [
