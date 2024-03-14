@@ -39,11 +39,9 @@ class UskMintedController extends AbstractController
     #[Route('v2/uskminted')]
     public function uskMintedv2(EntityManagerInterface $entityManager)
     {
-        $helper = new Helpers();
-        $usk_minted = $helper->getEntityPerDay($entityManager, UskMinted::class);
 
         $usk_minted_repo = $entityManager->getRepository(UskMinted::class);
-        $usk_minted_all = $usk_minted_repo->findBy([], ["tracked" => "ASC"]);
+        $usk_minted_all = $usk_minted_repo->findBy([], ["tracked" => "ASC"], 10000);
         $result = [];
 
         foreach($usk_minted_all as $item) {
