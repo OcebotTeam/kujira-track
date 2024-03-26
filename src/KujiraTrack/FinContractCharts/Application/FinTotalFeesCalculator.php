@@ -23,6 +23,7 @@ final class FinTotalFeesCalculator
             return $contract['tickerId'] !== 'axlUSDC_USDC';
         });
 
+
         foreach ($feesContracts as $contract) {
             $candles = $this->chartRequester->__invoke(new FinContractAddress($contract['address']), 'day1', $from, $to);
             $totalVolume += array_reduce($candles, function ($carry, $candle) {
