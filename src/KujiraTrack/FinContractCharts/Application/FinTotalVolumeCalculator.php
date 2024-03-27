@@ -20,7 +20,7 @@ final class FinTotalVolumeCalculator
     {
         $contracts = $this->contractLister->__invoke();
         $totalVolume = 0;
-        $i = 0;
+
         foreach ($contracts as $contract) {
             $candles = $this->chartRequester->__invoke(new FinContractAddress($contract['address']), $timeframe, $from, $to);
             $totalVolume += array_reduce($candles, function ($carry, $candle) use ($contract, $timeframe, $from, $to) {
