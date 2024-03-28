@@ -1,4 +1,3 @@
 services:
-
     Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository:
         alias: Ocebot\KujiraTrack\FinContracts\Infrastructure\FinContractRepositoryInMemoryDev
