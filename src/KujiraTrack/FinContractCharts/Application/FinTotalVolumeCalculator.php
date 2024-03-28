@@ -16,26 +16,29 @@ final class FinTotalVolumeCalculator
     {
     }
 
-    public function __invoke(string $timeframe, string $from, string $to): int
+    public function __invoke(string $timeframe, int $page): int
     {
         $contracts = $this->contractLister->__invoke();
         $totalVolume = 0;
 
         foreach ($contracts as $contract) {
-            $candles = $this->chartRequester->__invoke(new FinContractAddress($contract['address']), $timeframe, $from, $to);
-            $totalVolume += array_reduce($candles, function ($carry, $candle) use ($contract, $timeframe, $from, $to) {
+            $candles = $this->chartRequester->__invoke(new FinContractAddress($contract['address']), $timeframe, $page);
+
+            $totalVolume += array_reduce($candles, function ($carry, $candle) use ($contract, $timeframe, $page) {
                 if ($contract['nominative']) {
                     //Find contract address using a ticker
                     $nominativeAddress = $this->finContractFinder->__invoke($contract['tickerId']);
-                    $nominativeCandle = $this->chartRequester->__invoke(new FinContractAddress($nominativeAddress['address']), $timeframe, $from, $to);
-
+                    $nominativeCandle = $this->chartRequester->__invoke(new FinContractAddress($nominativeAddress['address']), $timeframe, $page);
                 }
+
                 $closePrice = $nominativeCandle[0]['close'] ?? 1;
                 $dollarsVolume = $candle['volume'] * $closePrice;
                 $normalizedVolume = $dollarsVolume / 10**$contract['decimals'];
+
                 return $carry + $normalizedVolume;
             }, 0);
         }
+
         return $totalVolume;
     }
 }

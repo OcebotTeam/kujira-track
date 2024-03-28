@@ -5,8 +5,6 @@ namespace App\Controller;
 use App\Entity\BowTvl;
 use App\Service\ApplicationGlobalsService;
 use Doctrine\ORM\EntityManagerInterface;
-use Ocebot\KujiraTrack\FinContractCharts\Application\FinContractChartRequester;
-use Ocebot\KujiraTrack\FinContracts\Application\FinContractFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\HttpClient\HttpClient;

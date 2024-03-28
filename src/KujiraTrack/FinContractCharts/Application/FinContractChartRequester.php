@@ -12,9 +12,9 @@ final class FinContractChartRequester
     {
     }
 
-    public function __invoke(string $contractAddress, string $timeframe, string $from, string $to): array
+    public function __invoke(string $contractAddress, string $timeframe, int $page): array
     {
-        $finContractChart = new FinContractChart($this->candlesService, $contractAddress, $timeframe, $from, $to);
+        $finContractChart = new FinContractChart($this->candlesService, $contractAddress, $timeframe, $page);
         return $finContractChart->candles();
     }
 }

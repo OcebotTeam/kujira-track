@@ -10,18 +10,18 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final class GetFinTotalVolume extends AbstractController
 {
-    public function __construct(private readonly FinTotalVolumeCalculator $calculator)
-    {
+    public function __construct(
+        private readonly FinTotalVolumeCalculator $calculator
+    ) {
     }
 
     #[Route('/fin/volume', name: 'fin_total_volume', methods: ['GET'])]
     public function __invoke(Request $request): JsonResponse
     {
-        $from = $request->query->get('from');
-        $to = $request->query->get('to');
-        $timeframe = $request->query->get('timeframe');
+        $timeframe = $request->query->get('timeframe', 'daily');
+        $page = $request->query->get('page', 0);
 
-        $totalVolume = $this->calculator->__invoke($timeframe, $from, $to);
+        $totalVolume = $this->calculator->__invoke($timeframe, $page);
 
         return new JsonResponse($totalVolume);
     }
