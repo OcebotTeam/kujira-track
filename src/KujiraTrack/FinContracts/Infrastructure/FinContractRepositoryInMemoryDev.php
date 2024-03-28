@@ -22,21 +22,21 @@ class FinContractRepositoryInMemoryDev implements FinContractRepository
 //            "axlUSDC_USDC" => [
 //                "contract" => "kujira1zg4e37hz5hzlf8kmcaxjf85nyevk3qr2dp307lafdgst2928rghqed59ed"
 //            ],
-//            "MNTA_USDC" => [
-//                "contract" => "kujira16mnw6am32ecqacsgz2kf9gfy8sh4uqyv0246f3rxnjz4up9k462q34jck5"
-//            ],
+           "MNTA_USDC" => [
+               "contract" => "kujira16mnw6am32ecqacsgz2kf9gfy8sh4uqyv0246f3rxnjz4up9k462q34jck5"
+           ],
 
-            // *** USK PAIRS
-            "KUJI_USK" => [
-                "contract" => "kujira193dzcmy7lwuj4eda3zpwwt9ejal00xva0vawcvhgsyyp5cfh6jyq66wfrf"
-            ],
+            // // *** USK PAIRS
+            // "KUJI_USK" => [
+            //     "contract" => "kujira193dzcmy7lwuj4eda3zpwwt9ejal00xva0vawcvhgsyyp5cfh6jyq66wfrf"
+            // ],
 
 //            // *** MNTA PAIRS
 //
-//            "wETH_MNTA" => [
-//                "contract" => "kujira13xyuyw93pv6t7c4h248tc8t6kgu874v5qasmjfzqjfjhfp6hawlse5u5tz",
-//                "nominative" => "MNTA_USDC"
-//            ],
+           "wETH_MNTA" => [
+               "contract" => "kujira13xyuyw93pv6t7c4h248tc8t6kgu874v5qasmjfzqjfjhfp6hawlse5u5tz",
+               "nominative" => "MNTA_USDC"
+           ],
 //
 //            // *** wETH PAIRS
 //            "wstETH_wETH" => [

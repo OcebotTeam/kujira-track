@@ -16,29 +16,46 @@ final class FinTotalVolumeCalculator
     {
     }
 
-    public function __invoke(string $timeframe, int $page): int
+    public function __invoke(string $timeframe, int $page): array
     {
         $contracts = $this->contractLister->__invoke();
-        $totalVolume = 0;
+        $results = [];
+        $dailyAggregatedValues = [];
 
+        // Aggregate values
         foreach ($contracts as $contract) {
             $candles = $this->chartRequester->__invoke(new FinContractAddress($contract['address']), $timeframe, $page);
-
-            $totalVolume += array_reduce($candles, function ($carry, $candle) use ($contract, $timeframe, $page) {
-                if ($contract['nominative']) {
-                    //Find contract address using a ticker
-                    $nominativeAddress = $this->finContractFinder->__invoke($contract['tickerId']);
-                    $nominativeCandle = $this->chartRequester->__invoke(new FinContractAddress($nominativeAddress['address']), $timeframe, $page);
-                }
-
-                $closePrice = $nominativeCandle[0]['close'] ?? 1;
-                $dollarsVolume = $candle['volume'] * $closePrice;
-                $normalizedVolume = $dollarsVolume / 10**$contract['decimals'];
-
-                return $carry + $normalizedVolume;
-            }, 0);
+            $candlePosition = 0;
+            
+            foreach ($candles as $candle) {
+                $date = date('Y-m-d', strtotime($candle['time']));
+                $normalizeVolume = $this->normalizeVolume($contract, $timeframe, $page, floatval($candle['volume']), $candlePosition);
+                $dailyAggregatedValues[$date] = isset($dailyAggregatedValues[$date]) ? $dailyAggregatedValues[$date] + $normalizeVolume : $normalizeVolume;
+                $candlePosition++;
+            }
         }
 
-        return $totalVolume;
+        // Format results
+        foreach ($dailyAggregatedValues as $date => $value) {
+            $results[] = [
+                'time' => $date,
+                'value' => strval($value)
+            ];
+        }
+
+        return $results;
+    }
+
+    private function normalizeVolume(array $contract, string $timeframe, int $page, float $volume, int $candlePosition)
+    {
+        $value = $volume / (10 ** $contract['decimals']);
+
+        if ($contract['nominative']) {
+            $nominativeContract = $this->finContractFinder->__invoke($contract['nominative']);
+            $nominativeCandle = $this->chartRequester->__invoke(new FinContractAddress($nominativeContract['address']), $timeframe, $page);
+            $value *= $nominativeCandle[$candlePosition]['close'];
+        }
+
+        return $value;
     }
 }
