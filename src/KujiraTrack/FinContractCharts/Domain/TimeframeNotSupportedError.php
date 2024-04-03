@@ -4,7 +4,7 @@ namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
 
 use Ocebot\KujiraTrack\Shared\Domain\DomainError;
 
-class TimeFrameNotSupportedError extends DomainError
+class TimeframeNotSupportedError extends DomainError
 {
     public function __construct(private readonly string $timeframeKey)
     {
