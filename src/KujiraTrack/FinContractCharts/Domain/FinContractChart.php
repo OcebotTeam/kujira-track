@@ -8,18 +8,20 @@ use Ocebot\KujiraTrack\Shared\Domain\Aggregate\AggregateRoot;
 final class FinContractChart extends AggregateRoot
 {
     private readonly FinContractAddress $address;
-    private readonly TimeFrame $timeframe;
+    private readonly Timeframe $timeframe;
     private readonly FinContractCandles $candles;
+    private readonly Timeframe $timeFrame;
+    private readonly int $page;
 
     public function __construct(
         FinContractCandlesService $candlesService,
         string $contractAddress,
-        string $timeFrame,
-        private readonly string $page,
+        Timeframe $timeFrame,
+        int $page,
     ) {
+        $this->timeframe = $timeFrame;
+        $this->page = $page;
         $this->address = new FinContractAddress($contractAddress);
-        $this->timeframe = TimeFrameFactory::build($timeFrame);
-
         $this->candles = $candlesService->requestCandles(
             $this->address,
             $this->timeframe,

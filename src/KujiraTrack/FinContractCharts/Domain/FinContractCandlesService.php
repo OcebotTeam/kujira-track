@@ -8,5 +8,5 @@ interface FinContractCandlesService
 {
     const BATCH_SIZE = 100;
 
-    public function requestCandles(FinContractAddress $address, TimeFrame $timeframe, int $page): FinContractCandles;
+    public function requestCandles(FinContractAddress $address, Timeframe $timeframe, int $page): FinContractCandles;
 }
