@@ -17,4 +17,9 @@ class FinContractCandleDateTime
     {
         return $this->date->format('Y-m-d\T00:00:00.000\Z');
     }
+
+    public function unix(): string
+    {
+        return $this->date->format('U');
+    }
 }

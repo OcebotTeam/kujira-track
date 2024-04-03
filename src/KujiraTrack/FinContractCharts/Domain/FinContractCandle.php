@@ -24,8 +24,8 @@ class FinContractCandle
     public function toArray()
     {
         return [
-            "volume" => $this->volume,
-            "time" => $this->time->value(),
+            "value" => $this->volume,
+            "time" => (int) $this->time->unix(),
             "open" => $this->open,
             "close" => $this->close,
             "high" => $this->high,
