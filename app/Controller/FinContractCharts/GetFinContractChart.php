@@ -28,18 +28,6 @@ class GetFinContractChart extends AbstractController
         $contract = $this->contractFinder->__invoke($tickerId);
         $chart = $this->chartRequest->__invoke($contract['address'], $timeframe, $page);
 
-        $response = new JsonResponse($chart);
-        
-        // Get the current environment
-        $environment = $this->kernel->getEnvironment();
-
-        // Set CORS headers only in 'dev' environment
-        if ($environment === 'dev') {
-            $response->headers->set('Access-Control-Allow-Origin', '*');
-            $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-            $response->headers->set('Access-Control-Allow-Headers', 'Content-Type, Accept');
-        }
-
-        return $response;
+        return new JsonResponse($chart);
     }
 }
