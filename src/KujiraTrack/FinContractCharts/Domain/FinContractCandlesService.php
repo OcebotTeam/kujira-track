@@ -6,7 +6,7 @@ use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
 
 interface FinContractCandlesService
 {
-    const BATCH_SIZE = 10;
+    const BATCH_SIZE = 100;
 
     public function requestCandles(FinContractAddress $address, TimeFrame $timeframe, int $page): FinContractCandles;
 }
