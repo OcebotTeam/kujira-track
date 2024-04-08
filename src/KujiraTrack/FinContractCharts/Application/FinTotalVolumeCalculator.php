@@ -29,7 +29,7 @@ final class FinTotalVolumeCalculator
             
             foreach ($candles as $candle) {
                 $date = date('Y-m-d', strtotime($candle['time']));
-                $normalizeVolume = $this->normalizeVolume($contract, $timeframe, $page, floatval($candle['volume']), $candlePosition);
+                $normalizeVolume = $this->normalizeVolume($contract, $timeframe, $page, floatval($candle['value']), $candlePosition);
                 $dailyAggregatedValues[$date] = isset($dailyAggregatedValues[$date]) ? $dailyAggregatedValues[$date] + $normalizeVolume : $normalizeVolume;
                 $candlePosition++;
             }

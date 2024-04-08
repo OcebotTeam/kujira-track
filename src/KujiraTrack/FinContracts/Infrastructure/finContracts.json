@@ -465,216 +465,216 @@
         "address": "kujira1l2x5c2fjjnw9uhrfhtme9snw3tzs4jt8cm0q2ysqssx6zskxatesjm7w7f",
         "tickerId": "stATOM_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1hf44at7dqewrn3ssa392d9p8nh5mr538u59gqsukdza35663hlestqr29e",
         "tickerId": "wstETH_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira13xyuyw93pv6t7c4h248tc8t6kgu874v5qasmjfzqjfjhfp6hawlse5u5tz",
         "tickerId": "wETH_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1hsdzhyvuc2z3f8d3yae84uk62d69vk68vxgudkun7gccz6hvrvfq0vx6fd",
         "tickerId": "STARS_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1y50nul39ql5sf42p67nrsy9j0luly2mvaxmlkmx6888pnzw66k6qc0gku9",
         "tickerId": "wBTC_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira12zc52j25xac565t297rmd3huj8zh62usrecy66rzxnsf9mchaepqnwx3cg",
         "tickerId": "OSMO_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1nx5lqc2j4w0ak5dxevj82lar5kunxwj5yamr39xqfazmkksx4f2sksf0hz",
         "tickerId": "SOMM_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1sr2hf68nc8a8f2e42tsjf3zmsgjkl4jmctszdzxes0whyk2tzn5sd3avg7",
         "tickerId": "yieldETH_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1u2gj9a6p07hse07p66jqnq7xchneecxrq032vl4z2z97ft2r0zeqx4hadf",
         "tickerId": "STRD_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira14u8ynhj7d8h2379yqj5q2ma0xxpvfjlrpauhzxgnj40ejq953mlsugux8d",
         "tickerId": "SHD_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira17356flrg56cjs7ardg0c6jpufwyeafegss6l4asza4chrr0ne7aqfesynu",
         "tickerId": "INJ_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira17r5u5r9gl3p9lql7p4dhdcffnv2z0f4xxafvgl8wnhw8qeez4x6q9zflp7",
         "tickerId": "AXL_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1krepsjxnpesa5u2amklew60r6zgtrmt9h2ljx8dnzljp0wxcstnqxfy0tk",
         "tickerId": "AKT_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1hcvm4thkc0mq55cjzttp0fmh6gu5hzrfm4trgwpkm38nmd63tu0qha647q",
         "tickerId": "NTRN_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira19rmgf792tgl446fnyc4wjdj2t20jlt5t3wudxyuhfy2ccy67g0hsrt73d8",
         "tickerId": "WINK_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1865zmuchjd0g0xr2q5n6hm747s8xju5k8h6mympk4vmqefkuy3hqc66tcw",
         "tickerId": "WHALE_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira180qesrskvljsvvkhvlkrwvyvu5hx03jhx76lvwxveq86at4ttqxq259wz8",
         "tickerId": "UMEE_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1vwr998s2mmvqa0t2tlfayvv5uzsl7t4syxd7a94qdgstfy4720rsa3n9yp",
         "tickerId": "TIA_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1tgd479qm2cu30yr4568l23aaz0p2wcr979wx3z7wlsgcc5fj6rxshc2uwx",
         "tickerId": "wTAO_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1tdad4e3c6qz6htdha4wg4ta6l86chnpyy22rfm60e6luj4wv2casjsrtj0",
         "tickerId": "whSOL_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1y5k75yuygkr9wmpl3huy5spqktgq9w2ex3zndu0zw6l2n0mzf4asz7hdat",
         "tickerId": "SCRT_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1ff9pnz3ekflj6vkyk2taf4tvvjh4a8fp8hetw3dc59xu8ywl8tmstcf9de",
         "tickerId": "NTSK_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1pwldj8n88f99wl5sykff9q7sl2settejutlr84mjysny9wfqgluqcp6fu4",
         "tickerId": "ampMNTA_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1dsmm4q4kgs0nfsryrmlv7wq2dxp6uzruzqalc5xp30ztlmplgm7qms2qsa",
         "tickerId": "wFTM_MNTA",
         "decimals": 6,
-        "nominative": "MNTA_USDC"
+        "nominative": "MNTA_axlUSDC"
     },
     {
         "address": "kujira1lse59wt7a5yksdd08mennt299katjkfzdhmh8hvck8ln08jktcmsxrnh8s",
         "tickerId": "ampKUJI_KUJI",
         "decimals": 6,
-        "nominative": "KUJI_USDC"
+        "nominative": "KUJI_axlUSDC"
     },
     {
         "address": "kujira1zdf0zjz8grfhhe2x06k8f8xpnv04y90w06f4py7fjml4nmukn3yswk3ugc",
         "tickerId": "wETH_KUJI",
         "decimals": 6,
-        "nominative": "KUJI_USDC"
+        "nominative": "KUJI_axlUSDC"
     },
     {
         "address": "kujira17t9w0xlnukuy7pw6fzkr7gd3pdun9zma0hzqaueqszskw2lr95yqfqnynt",
         "tickerId": "wBTC_KUJI",
         "decimals": 6,
-        "nominative": "KUJI_USDC"
+        "nominative": "KUJI_axlUSDC"
     },
     {
         "address": "kujira1nkgq8xl4flsau7v3vphr3ayc7tprgazg6pzjmq8plkr76v385fhsx26qfa",
         "tickerId": "MNTA_KUJI",
         "decimals": 6,
-        "nominative": "KUJI_USDC"
+        "nominative": "KUJI_axlUSDC"
     },
     {
         "address": "kujira18v47nqmhvejx3vc498pantg8vr435xa0rt6x0m6kzhp6yuqmcp8s4x8j2c",
         "tickerId": "KUJI_ATOM",
         "decimals": 6,
-        "nominative": "ATOM_USDC"
+        "nominative": "ATOM_USK"
     },
     {
         "address": "kujira158zzjcvkz7r3j5hueurcw22qrjerqw4dtrzlalztr7whjykjwvrsrahdnq",
         "tickerId": "stATOM_ATOM",
         "decimals": 6,
-        "nominative": "ATOM_USDC"
+        "nominative": "ATOM_USK"
     },
     {
         "address": "kujira1gl8js9zn7h9u2h37fx7qg8xy65jrk9t4zpa6s7j5hdlanud2uwxshqq67m",
         "tickerId": "LP KUJI_ATOM (ATOM)",
         "decimals": 6,
-        "nominative": "ATOM_USDC"
+        "nominative": "ATOM_USK"
     },
     {
         "address": "kujira1hs95lgvuy0p6jn4v7js5x8plfdqw867lsuh5xv6d2ua20jprkgesw2pujt",
         "tickerId": "LP KUJI_ATOM (KUJI)",
         "decimals": 6,
-        "nominative": "KUJI_USDC"
+        "nominative": "KUJI_axlUSDC"
     },
     {
         "address": "kujira1xqhakgvn3jeqfade0z4aufer9xylx7ft45fgyhg6z75mauhkjwks9cucyq",
         "tickerId": "KUJI_LUNA",
         "decimals": 6,
-        "nominative": "LUNA_USDC"
+        "nominative": "LUNA_axlUSDC"
     },
     {
         "address": "kujira172qjrk8g9l86w0shz4cc3e6rt5h9janaen4j4u6ze7xkjvjnaqfskwyyqm",
         "tickerId": "ampLUNA_LUNA",
         "decimals": 6,
-        "nominative": "LUNA_USDC"
+        "nominative": "LUNA_axlUSDC"
     },
     {
         "address": "kujira1hulx7cgvpfcvg83wk5h96sedqgn72n026w6nl47uht554xhvj9nsra5j5u",
         "tickerId": "ATOM_OSMO",
         "decimals": 6,
-        "nominative": "OSMO_USDC"
+        "nominative": "OSMO_axlUSDC"
     },
     {
         "address": "kujira1ehwsdvgs3chpxuexktymjmmjj68m3h4q67p9vjj9rrgjqycc3gtsfzej24",
         "tickerId": "wstETH_wETH",
         "decimals": 18,
-        "nominative": "wETH_USDC"
+        "nominative": "wETH_axlUSDC"
     }
 ]
