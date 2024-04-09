@@ -1,10 +1,10 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
+namespace Ocebot\KujiraTrack\Shared\Domain;
 
 use DateTimeImmutable;
 
-class FinContractCandleDateTime
+class DateTime
 {
     private readonly DateTimeImmutable $date;
 

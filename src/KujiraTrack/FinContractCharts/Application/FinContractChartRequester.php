@@ -2,7 +2,6 @@
 
 namespace Ocebot\KujiraTrack\FinContractCharts\Application;
 
-use DateTime;
 use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandlesService;
 use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractChart;
 use Ocebot\KujiraTrack\FinContractCharts\Domain\TimeframeFactory;
