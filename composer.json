@@ -1,4 +1,6 @@
 {
+    "name": "ocebot/kujira-track",
+    "description": "Kujira Track backend application",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
@@ -19,7 +21,6 @@
         "symfony/http-foundation": "6.1.*",
         "symfony/proxy-manager-bridge": "6.1.*",
         "symfony/runtime": "6.1.*",
-        "symfony/twig-bundle": "6.1.*",
         "symfony/validator": "6.1.*",
         "symfony/yaml": "6.1.*"
     },
