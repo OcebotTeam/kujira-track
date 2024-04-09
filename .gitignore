@@ -1,8 +1,6 @@
 # CUSTOM
 /.idea
-/bin
 /tmp
-/*.cache
 
 ###> symfony/framework-bundle ###
 /.env.local
