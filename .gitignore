@@ -1,13 +1,18 @@
+# CUSTOM
 /.idea
-
-/var
-/vendor
 /bin
 /tmp
 /*.cache
 
-.env.local
-.env.*.local
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
 .phpunit.result.cache
