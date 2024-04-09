@@ -1,12 +1,13 @@
 /.idea
+
 /var
 /vendor
 /bin
 /tmp
-
 /*.cache
 
-.env
+.env.local
+.env.*.local
 
 ###> symfony/phpunit-bridge ###
 .phpunit.result.cache
