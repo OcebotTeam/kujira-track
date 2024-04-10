@@ -1,21 +1,21 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContractCharts\Application;
+namespace Ocebot\KujiraTrack\FinCandles\Application;
 
-use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandlesService;
-use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractChart;
-use Ocebot\KujiraTrack\FinContractCharts\Domain\TimeframeFactory;
+use Ocebot\KujiraTrack\FinCandles\Domain\FinCandlesService;
+use Ocebot\KujiraTrack\FinCandles\Domain\FinChart;
+use Ocebot\KujiraTrack\FinCandles\Domain\TimeframeFactory;
 
-final class FinContractChartRequester
+final class FinCandlesRequester
 {
     public function __construct(
         private readonly TimeframeFactory $timeframeFactory,
-        private readonly FinContractCandlesService $candlesService
+        private readonly FinCandlesService $candlesService
     ) {}
 
     public function __invoke(string $contractAddress, string $timeframe, int $page): array
     {
-        $finContractChart = new FinContractChart(
+        $finContractChart = new FinChart(
             $this->candlesService,
             $contractAddress,
             $this->timeframeFactory->build($timeframe),

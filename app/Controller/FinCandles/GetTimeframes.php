@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Controller\FinContractCharts;
+namespace App\Controller\FinCandles;
 
-use Ocebot\KujiraTrack\FinContractCharts\Application\TimeframeLister;
+use Ocebot\KujiraTrack\FinCandles\Application\TimeframeLister;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;

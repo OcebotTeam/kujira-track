@@ -1,23 +1,22 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
+namespace Ocebot\KujiraTrack\FinCandles\Domain;
 
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
 use Ocebot\KujiraTrack\Shared\Domain\Aggregate\AggregateRoot;
 
-final class FinContractChart extends AggregateRoot
+final class FinChart extends AggregateRoot
 {
     private readonly FinContractAddress $address;
     private readonly Timeframe $timeframe;
-    private readonly FinContractCandles $candles;
-    private readonly Timeframe $timeFrame;
+    private readonly FinCandles $candles;
     private readonly int $page;
 
     public function __construct(
-        FinContractCandlesService $candlesService,
-        string $contractAddress,
-        Timeframe $timeFrame,
-        int $page,
+        FinCandlesService $candlesService,
+        string            $contractAddress,
+        Timeframe         $timeFrame,
+        int               $page,
     ) {
         $this->timeframe = $timeFrame;
         $this->page = $page;

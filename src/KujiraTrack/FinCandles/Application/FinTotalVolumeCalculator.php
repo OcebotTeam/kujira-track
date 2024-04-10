@@ -1,6 +1,6 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContractCharts\Application;
+namespace Ocebot\KujiraTrack\FinCandles\Application;
 
 use Ocebot\KujiraTrack\FinContracts\Application\FinContractLister;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
@@ -9,9 +9,9 @@ use Ocebot\KujiraTrack\FinContracts\Application\FinContractFinder;
 final class FinTotalVolumeCalculator
 {
     public function __construct(
-        private readonly FinContractLister $contractLister,
-        private readonly FinContractChartRequester $chartRequester,
-        private readonly FinContractFinder $finContractFinder
+        private readonly FinContractLister   $contractLister,
+        private readonly FinCandlesRequester $chartRequester,
+        private readonly FinContractFinder   $finContractFinder
     )
     {
     }

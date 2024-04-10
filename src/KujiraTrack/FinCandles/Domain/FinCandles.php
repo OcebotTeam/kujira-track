@@ -1,14 +1,14 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
+namespace Ocebot\KujiraTrack\FinCandles\Domain;
 
 use Ocebot\KujiraTrack\Shared\Domain\Collection;
 
-class FinContractCandles extends Collection
+class FinCandles extends Collection
 {
     protected function type(): string
     {
-        return FinContractCandle::class;
+        return FinCandle::class;
     }
 
     public function toArray(): array

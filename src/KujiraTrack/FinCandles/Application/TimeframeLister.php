@@ -1,8 +1,8 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContractCharts\Application;
+namespace Ocebot\KujiraTrack\FinCandles\Application;
 
-use Ocebot\KujiraTrack\FinContractCharts\Domain\TimeframeFactory;
+use Ocebot\KujiraTrack\FinCandles\Domain\TimeframeFactory;
 
 class TimeframeLister
 {

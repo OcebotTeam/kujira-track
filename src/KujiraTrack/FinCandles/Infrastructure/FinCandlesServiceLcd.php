@@ -1,16 +1,16 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContractCharts\Infrastructure;
+namespace Ocebot\KujiraTrack\FinCandles\Infrastructure;
 
-use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandle;
-use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandles;
-use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandlesService;
-use Ocebot\KujiraTrack\FinContractCharts\Domain\TimeFrame;
+use Ocebot\KujiraTrack\FinCandles\Domain\FinCandle;
+use Ocebot\KujiraTrack\FinCandles\Domain\FinCandles;
+use Ocebot\KujiraTrack\FinCandles\Domain\FinCandlesService;
+use Ocebot\KujiraTrack\FinCandles\Domain\TimeFrame;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
 use Ocebot\KujiraTrack\Shared\Domain\DateTime;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-class FinContractCandlesServiceLcd implements FinContractCandlesService
+class FinCandlesServiceLcd implements FinCandlesService
 {
     private const CANDLES_ENDPOINT = "https://kaiyo-1.gigalixirapp.com/api/trades/candles";
 
@@ -20,7 +20,7 @@ class FinContractCandlesServiceLcd implements FinContractCandlesService
     }
 
 
-    public function requestCandles(FinContractAddress $address, TimeFrame $timeframe, int $page): FinContractCandles
+    public function requestCandles(FinContractAddress $address, TimeFrame $timeframe, int $page): FinCandles
     {
 
         $toAmountBack = -$page * self::BATCH_SIZE;
@@ -42,7 +42,7 @@ class FinContractCandlesServiceLcd implements FinContractCandlesService
         $responseContent = json_decode($response->getContent());
 
         foreach ($responseContent->candles as $candle) {
-            $candlesArray[] = new FinContractCandle(
+            $candlesArray[] = new FinCandle(
                 (float) $candle->low,
                 (float) $candle->high,
                 (float) $candle->close,
@@ -52,6 +52,6 @@ class FinContractCandlesServiceLcd implements FinContractCandlesService
             );
         }
 
-        return new FinContractCandles($candlesArray);
+        return new FinCandles($candlesArray);
     }
 }

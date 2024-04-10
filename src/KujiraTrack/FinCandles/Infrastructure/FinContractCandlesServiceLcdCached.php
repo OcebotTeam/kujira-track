@@ -1,15 +1,15 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContractCharts\Infrastructure;
+namespace Ocebot\KujiraTrack\FinCandles\Infrastructure;
 
-use Ocebot\KujiraTrack\FinContractCharts\Domain\FinContractCandles;
-use Ocebot\KujiraTrack\FinContractCharts\Domain\TimeFrame;
+use Ocebot\KujiraTrack\FinCandles\Domain\FinCandles;
+use Ocebot\KujiraTrack\FinCandles\Domain\TimeFrame;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-class FinContractCandlesServiceLcdCached extends FinContractCandlesServiceLcd
+class FinContractCandlesServiceLcdCached extends FinCandlesServiceLcd
 {
     public function __construct(
         HttpClientInterface $httpClient,
@@ -19,7 +19,7 @@ class FinContractCandlesServiceLcdCached extends FinContractCandlesServiceLcd
     }
 
 
-    public function requestCandles(FinContractAddress $address, TimeFrame $timeframe, int $page): FinContractCandles
+    public function requestCandles(FinContractAddress $address, TimeFrame $timeframe, int $page): FinCandles
     {
         $cacheKey = md5($address->value() . $timeframe->apiKey() . $page);
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Controller\FinContractCharts;
+namespace App\Controller\FinCandles;
 
-use Ocebot\KujiraTrack\FinContractCharts\Application\FinTotalVolumeCalculator;
+use Ocebot\KujiraTrack\FinCandles\Application\FinTotalVolumeCalculator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

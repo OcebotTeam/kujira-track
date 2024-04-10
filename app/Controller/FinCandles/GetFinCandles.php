@@ -1,26 +1,24 @@
 <?php
 
-namespace App\Controller\FinContractCharts;
+namespace App\Controller\FinCandles;
 
-use Ocebot\KujiraTrack\FinContractCharts\Application\FinContractChartRequester;
+use Ocebot\KujiraTrack\FinCandles\Application\FinCandlesRequester;
 use Ocebot\KujiraTrack\FinContracts\Application\FinContractFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\KernelInterface;
 
-class GetFinContractChart extends AbstractController
+class GetFinCandles extends AbstractController
 {
     public function __construct(
-        private readonly FinContractChartRequester $chartRequest,
-        private readonly FinContractFinder $contractFinder,
-        private readonly KernelInterface $kernel
+        private readonly FinCandlesRequester $chartRequest,
+        private readonly FinContractFinder $contractFinder
     ) {
     }
 
     #[Route('/fin/contracts/{tickerId}/candles', name: 'fin_contract_candles', methods: ['GET'])]
-    public function __invoke(Request $request, string $tickerId)
+    public function __invoke(Request $request, string $tickerId): JsonResponse
     {
         $timeframe = $request->query->get('timeframe', 'daily');
         $page = $request->query->get('page', 0);

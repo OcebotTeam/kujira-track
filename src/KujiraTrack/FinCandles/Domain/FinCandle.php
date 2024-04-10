@@ -1,10 +1,10 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContractCharts\Domain;
+namespace Ocebot\KujiraTrack\FinCandles\Domain;
 
 use Ocebot\KujiraTrack\Shared\Domain\DateTime;
 
-class FinContractCandle
+class FinCandle
 {
     private readonly float $low;
     private readonly float $high;
