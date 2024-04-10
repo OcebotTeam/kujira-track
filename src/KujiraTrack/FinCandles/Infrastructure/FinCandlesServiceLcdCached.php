@@ -9,7 +9,7 @@ use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-class FinContractCandlesServiceLcdCached extends FinCandlesServiceLcd
+class FinCandlesServiceLcdCached extends FinCandlesServiceLcd
 {
     public function __construct(
         HttpClientInterface $httpClient,
