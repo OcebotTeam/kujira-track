@@ -44,7 +44,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Ocebot\\test\\KujiraTrack\\": "tests/KujiraTrack/"
         }
     },
     "replace": {
@@ -70,6 +70,9 @@
         "lint": [
             "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix app",
             "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src/KujiraTrack"
+        ],
+        "test": [
+            "phpunit -v --testdox"
         ]
     },
     "conflict": {
