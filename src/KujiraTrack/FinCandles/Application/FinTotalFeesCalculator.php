@@ -12,8 +12,7 @@ final class FinTotalFeesCalculator
         private readonly FinContractLister   $contractLister,
         private readonly FinCandlesRequester $chartRequester,
         private readonly FinContractFinder   $finContractFinder
-    )
-    {
+    ) {
     }
 
     public function __invoke(string $from, string $to): float
@@ -38,11 +37,11 @@ final class FinTotalFeesCalculator
                 }
                 $closePrice = $nominativeCandle[0]['close'] ?? 1;
                 $dollarsVolume = $candle['volume'] * $closePrice;
-                $normalizedVolume = $dollarsVolume / 10**$contract['decimals'];
+                $normalizedVolume = $dollarsVolume / 10 ** $contract['decimals'];
                 return $carry + $normalizedVolume;
             }, 0);
         }
-        return $totalVolume*0.0025;
+        return $totalVolume * 0.0025;
     }
 
 }

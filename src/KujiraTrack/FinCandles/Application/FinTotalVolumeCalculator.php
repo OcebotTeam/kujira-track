@@ -12,8 +12,7 @@ final class FinTotalVolumeCalculator
         private readonly FinContractLister   $contractLister,
         private readonly FinCandlesRequester $chartRequester,
         private readonly FinContractFinder   $finContractFinder
-    )
-    {
+    ) {
     }
 
     public function __invoke(string $timeframe, int $page): array
@@ -26,7 +25,7 @@ final class FinTotalVolumeCalculator
         foreach ($contracts as $contract) {
             $candles = $this->chartRequester->__invoke(new FinContractAddress($contract['address']), $timeframe, $page);
             $candlePosition = 0;
-            
+
             foreach ($candles as $candle) {
                 $date = date('Y-m-d', strtotime($candle['time']));
                 $normalizeVolume = $this->normalizeVolume($contract, $timeframe, $page, floatval($candle['value']), $candlePosition);

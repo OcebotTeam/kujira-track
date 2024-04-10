@@ -8,6 +8,6 @@ final class TokenCollection extends Collection
 {
     protected function type(): string
     {
-       return Token::class;
+        return Token::class;
     }
 }

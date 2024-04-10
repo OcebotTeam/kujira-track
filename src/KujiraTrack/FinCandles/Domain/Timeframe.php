@@ -8,7 +8,8 @@ class Timeframe
         private readonly string $precision,
         private readonly string $apiKey,
         private readonly string $dateTimeKey
-    ) {}
+    ) {
+    }
 
     public function precision(): string
     {

@@ -14,7 +14,7 @@ class FinCandlesServiceLcdCached extends FinCandlesServiceLcd
     public function __construct(
         HttpClientInterface $httpClient,
         private readonly CacheInterface $cache
-    ){
+    ) {
         parent::__construct($httpClient);
     }
 
@@ -29,7 +29,7 @@ class FinCandlesServiceLcdCached extends FinCandlesServiceLcd
             // so candles doens't overlap when loading pages of different days
 
             // Cache for 30 minutes
-            $item->expiresAfter(1800); 
+            $item->expiresAfter(1800);
 
             // Call the parent method and cache its result
             $result = parent::requestCandles($address, $timeframe, $page);

@@ -16,7 +16,7 @@ class FinCandlesServiceLcd implements FinCandlesService
 
     public function __construct(
         private readonly HttpClientInterface $httpClient
-    ){
+    ) {
     }
 
 

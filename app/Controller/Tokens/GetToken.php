@@ -13,8 +13,7 @@ class GetToken extends AbstractController
     public function __construct(
         private readonly TokenFinder $tokenFinder,
         private readonly TokenPricer $tokenPricer
-    )
-    {
+    ) {
     }
 
     #[Route('/tokens/{symbol}')]
