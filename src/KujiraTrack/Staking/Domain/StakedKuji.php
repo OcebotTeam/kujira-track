@@ -7,12 +7,14 @@ use Ocebot\KujiraTrack\Shared\Domain\DateTime;
 class StakedKuji
 {
     private readonly DateTime $time;
-    private readonly int $amount;
+    private readonly int $bondedTokens;
+    private readonly int $notBondedTokens;
 
-    public function __construct(string $time, int $amount)
+    public function __construct(string $time, int $bondedTokens, int $notBondedTokens)
     {
         $this->time = new DateTime($time);
-        $this->amount = $amount;
+        $this->bondedTokens = $bondedTokens;
+        $this->notBondedTokens = $notBondedTokens;
     }
 
     public function time(): string
@@ -20,8 +22,13 @@ class StakedKuji
         return $this->time->unix();
     }
 
-    public function amount(): int
+    public function bondedTokens(): int
     {
-        return $this->amount;
+        return $this->bondedTokens;
+    }
+
+    public function notBondedTokens(): int
+    {
+        return $this->notBondedTokens;
     }
 }

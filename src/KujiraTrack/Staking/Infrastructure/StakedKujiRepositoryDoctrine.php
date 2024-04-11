@@ -3,6 +3,7 @@
 namespace Ocebot\KujiraTrack\Staking\Infrastructure;
 
 use App\Entity\StakedTokens;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Ocebot\KujiraTrack\Staking\Domain\StakedKuji;
 use Ocebot\KujiraTrack\Staking\Domain\StakedKujiCollection;
@@ -36,13 +37,25 @@ class StakedKujiRepositoryDoctrine implements StakedKujiRepository
             $time = $entity->getTracked()->format('Y-m-d');
             $stakedKuji[$time] = new StakedKuji(
                 $time,
-                $entity->getBondedTokens()
+                $entity->getBondedTokens(),
+                $entity->getNotBondedTokens()
             );
         }
 
         $stakedKuji = array_values($stakedKuji);
 
         return new StakedKujiCollection($stakedKuji);
-    });
+      });
+    }
+
+    public function store(StakedKuji $stakedKuji): void
+    {
+        $entity = new StakedTokens();
+        $entity->setTracked(new DateTime($stakedKuji->time()));
+        $entity->setBondedTokens($stakedKuji->bondedTokens());
+        $entity->setNotBondedTokens($stakedKuji->notBondedTokens());
+
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
     }
 }

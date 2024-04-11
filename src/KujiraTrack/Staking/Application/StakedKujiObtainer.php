@@ -18,7 +18,8 @@ class StakedKujiObtainer
       return array_map(function (StakedKuji $stakedKuji) {
         return [
           'time' => $stakedKuji->time(),
-          'value' => $stakedKuji->amount(),
+          'value' => $stakedKuji->bondedTokens(),
+          'notBondedTokens' => $stakedKuji->notBondedTokens()
         ];
       }, iterator_to_array($stakedKuji));
     }
