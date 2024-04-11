@@ -25,7 +25,7 @@ services:
             - { name: kernel.event_listener, event: kernel.response }
 
     Ocebot\KujiraTrack\:
-            resource: '../src/KujiraTrack'
+            resource: '../src/KujiraTrack/'
 
     Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository:
         alias: Ocebot\KujiraTrack\FinContracts\Infrastructure\FinContractRepositoryInMemory
