@@ -7,12 +7,12 @@ use Ocebot\KujiraTrack\Shared\Domain\DateTime;
 class Wallets
 {
     private readonly DateTime $time;
-    private readonly int $wallets;
+    private readonly int $amount;
 
-    public function __construct(string $time, int $wallets)
+    public function __construct(string $time, int $amount)
     {
         $this->time = new DateTime($time);
-        $this->wallets = $wallets;
+        $this->amount = $amount;
     }
 
     public function time(): string
@@ -20,9 +20,9 @@ class Wallets
         return $this->time->unix();
     }
 
-    public function wallets(): int
+    public function amount(): int
     {
-        return $this->wallets;
+        return $this->amount;
     }
 
 }
