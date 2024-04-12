@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class StakedKujiStoreCommand extends Command
 {
     public function __construct(
-      private readonly StakedKujiObtainer  $stakedKujiObtainer,
+      private readonly StakedKujiObtainer $stakedKujiObtainer,
       private readonly StakedKujiStorer $stakedKujiStorer,
     )
     {
