@@ -2,17 +2,17 @@
 
 namespace Ocebot\KujiraTrack\Staking\Domain;
 
-use Ocebot\KujiraTrack\Shared\Domain\DateTime;
+use Ocebot\KujiraTrack\Shared\Domain\KtDateTime;
 
 class StakedKuji
 {
-    private readonly DateTime $time;
+    private readonly KtDateTime $time;
     private readonly int $bondedTokens;
     private readonly int $notBondedTokens;
 
     public function __construct(string $time, int $bondedTokens, int $notBondedTokens)
     {
-        $this->time = new DateTime($time);
+        $this->time = new KtDateTime($time);
         $this->bondedTokens = $bondedTokens;
         $this->notBondedTokens = $notBondedTokens;
     }

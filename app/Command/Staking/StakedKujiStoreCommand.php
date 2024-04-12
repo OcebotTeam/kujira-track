@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Command;
+namespace App\Command\Staking;
 
 use Ocebot\KujiraTrack\Staking\Application\StakedKujiRequester;
 use Ocebot\KujiraTrack\Staking\Application\StakedKujiStorer;
@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
     name: 'kt:staking:store',
     description: 'Store kuji staking current status',
     hidden: false,
-    aliases: []
+    aliases: ['kt:staking:store']
 )]
 
 class StakedKujiStoreCommand extends Command

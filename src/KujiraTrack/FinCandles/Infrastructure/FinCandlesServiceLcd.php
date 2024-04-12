@@ -7,7 +7,7 @@ use Ocebot\KujiraTrack\FinCandles\Domain\FinCandles;
 use Ocebot\KujiraTrack\FinCandles\Domain\FinCandlesService;
 use Ocebot\KujiraTrack\FinCandles\Domain\TimeFrame;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
-use Ocebot\KujiraTrack\Shared\Domain\DateTime;
+use Ocebot\KujiraTrack\Shared\Domain\KtDateTime;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class FinCandlesServiceLcd implements FinCandlesService
@@ -26,15 +26,15 @@ class FinCandlesServiceLcd implements FinCandlesService
         $toAmountBack = -$page * self::BATCH_SIZE;
         $fromAmountBack = $toAmountBack - self::BATCH_SIZE + 1;
 
-        $fromDate = new DateTime($fromAmountBack . ' ' . $timeframe->dateTimeKey());
-        $toDate = new DateTime($toAmountBack . ' ' . $timeframe->dateTimeKey());
+        $fromDate = new KtDateTime($fromAmountBack . ' ' . $timeframe->dateTimeKey());
+        $toDate = new KtDateTime($toAmountBack . ' ' . $timeframe->dateTimeKey());
 
         $response = $this->httpClient->request('GET', self::CANDLES_ENDPOINT, [
             "query"  => [
                 "contract" => $address->value(),
                 "precision" => $timeframe->apiKey(),
-                "from" => $fromDate->value(),
-                "to" => $toDate->value(),
+                "from" => $fromDate->dateValue(),
+                "to" => $toDate->dateValue(),
             ]
         ]);
 

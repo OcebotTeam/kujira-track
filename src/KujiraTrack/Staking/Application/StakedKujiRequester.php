@@ -2,7 +2,6 @@
 
 namespace Ocebot\KujiraTrack\Staking\Application;
 
-use Ocebot\KujiraTrack\Staking\Domain\StakedKuji;
 use Ocebot\KujiraTrack\Staking\Domain\StakedKujiService;
 
 class StakedKujiRequester
@@ -12,9 +11,14 @@ class StakedKujiRequester
     ) {
     }
 
-    public function __invoke(): StakedKuji
+    public function __invoke(): array
     {
         $stakedKuji = $this->stakedKujiService->request();
-        return $this->stakedKujiService->request();
+
+        return [
+            "time" => $stakedKuji->time(),
+            "value" => $stakedKuji->bondedTokens(),
+            "notBondedTokens" => $stakedKuji->notBondedTokens()
+        ];
     }
 }

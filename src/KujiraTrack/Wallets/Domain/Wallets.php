@@ -2,16 +2,16 @@
 
 namespace Ocebot\KujiraTrack\Wallets\Domain;
 
-use Ocebot\KujiraTrack\Shared\Domain\DateTime;
+use Ocebot\KujiraTrack\Shared\Domain\KtDateTime;
 
 class Wallets
 {
-    private readonly DateTime $time;
+    private readonly KtDateTime $time;
     private readonly int $amount;
 
     public function __construct(string $time, int $amount)
     {
-        $this->time = new DateTime($time);
+        $this->time = new KtDateTime($time);
         $this->amount = $amount;
     }
 
