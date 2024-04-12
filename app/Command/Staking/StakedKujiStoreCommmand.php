@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Ocebot\KujiraTrack\Staking\Application\StakedKujiObtainer;
+use Ocebot\KujiraTrack\Staking\Application\WalletsObtainer;
 use Ocebot\KujiraTrack\Staking\Application\StakedKujiStorer;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class StakedKujiStoreCommand extends Command
 {
     public function __construct(
-      private readonly StakedKujiObtainer $stakedKujiObtainer,
+      private readonly WalletsObtainer  $stakedKujiObtainer,
       private readonly StakedKujiStorer $stakedKujiStorer,
     )
     {
