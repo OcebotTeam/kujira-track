@@ -2,7 +2,6 @@
 
 namespace Ocebot\KujiraTrack\Wallets\Infrastructure;
 
-
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Ocebot\KujiraTrack\Wallets\Domain\Wallets;
@@ -14,8 +13,8 @@ use Symfony\Contracts\Cache\ItemInterface;
 class WalletsRepositoryDoctrine implements WalletsRepository
 {
     public function __construct(
-      private readonly EntityManagerInterface $entityManager,
-      private readonly CacheInterface $cache
+        private readonly EntityManagerInterface $entityManager,
+        private readonly CacheInterface $cache
     ) {
     }
 
@@ -25,26 +24,26 @@ class WalletsRepositoryDoctrine implements WalletsRepository
      */
     public function get(): WalletsCollection
     {
-      return $this->cache->get('wallets', function (ItemInterface $item) {
-        $item->expiresAfter(3600); // 1h cache
+        return $this->cache->get('wallets', function (ItemInterface $item) {
+            $item->expiresAfter(3600); // 1h cache
 
-        $entityRepository = $this->entityManager->getRepository(\App\Entity\Wallets::class);
-        $entities = $entityRepository->findBy([], ["tracked" => "ASC"]);
+            $entityRepository = $this->entityManager->getRepository(\App\Entity\Wallets::class);
+            $entities = $entityRepository->findBy([], ["tracked" => "ASC"]);
 
-        $wallets = [];
+            $wallets = [];
 
-        foreach ($entities as $entity) {
-            $time = $entity->getTracked()->format('Y-m-d');
-            $wallets[$time] = new Wallets(
-                $time,
-                $entity->getNum(),
-            );
-        }
+            foreach ($entities as $entity) {
+                $time = $entity->getTracked()->format('Y-m-d');
+                $wallets[$time] = new Wallets(
+                    $time,
+                    $entity->getNum(),
+                );
+            }
 
-        $wallets = array_values($wallets);
+            $wallets = array_values($wallets);
 
-        return new WalletsCollection($wallets);
-      });
+            return new WalletsCollection($wallets);
+        });
     }
 
     public function store(Wallets $wallets): void

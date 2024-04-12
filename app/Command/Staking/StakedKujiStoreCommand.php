@@ -19,24 +19,23 @@ use Symfony\Component\Console\Output\OutputInterface;
 class StakedKujiStoreCommand extends Command
 {
     public function __construct(
-      private readonly StakedKujiRequester $stakedKujiRequester,
-      private readonly StakedKujiStorer $stakedKujiStorer,
-    )
-    {
+        private readonly StakedKujiRequester $stakedKujiRequester,
+        private readonly StakedKujiStorer $stakedKujiStorer,
+    ) {
         parent::__construct();
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-      $stakedKuji = $this->stakedKujiRequester->__invoke();
+        $stakedKuji = $this->stakedKujiRequester->__invoke();
 
-      $this->stakedKujiStorer->__invoke(
-        $stakedKuji['time'],
-        $stakedKuji['value'],
-        $stakedKuji['notBondedTokens']
-      );
+        $this->stakedKujiStorer->__invoke(
+            $stakedKuji['time'],
+            $stakedKuji['value'],
+            $stakedKuji['notBondedTokens']
+        );
 
-      return Command::SUCCESS;
+        return Command::SUCCESS;
     }
 
     protected function configure(): void

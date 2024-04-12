@@ -4,7 +4,7 @@ namespace Ocebot\KujiraTrack\Staking\Application;
 
 use Ocebot\KujiraTrack\Staking\Domain\StakedKujiRepository;
 
-class StakedKujiObtainer
+class StakedKujiDiffObtainer
 {
     public function __construct(
         private readonly StakedKujiRepository $stakedKujiRepository
@@ -14,6 +14,6 @@ class StakedKujiObtainer
     public function __invoke(): array
     {
         $stakedKujiCollection = $this->stakedKujiRepository->get();
-        return $stakedKujiCollection->toArray();
+        return $stakedKujiCollection->diff();
     }
 }

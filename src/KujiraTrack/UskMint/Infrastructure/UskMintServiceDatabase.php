@@ -3,14 +3,13 @@
 namespace Ocebot\KujiraTrack\UskMint\Infrastructure;
 
 use Ocebot\KujiraTrack\UskMint\Domain\UskMintService;
-use \Ocebot\KujiraTrack\UskMint\Domain\UskMint;
-
+use Ocebot\KujiraTrack\UskMint\Domain\UskMint;
 
 class UskMintServiceDatabase implements UskMintService
 {
     public function __construct(
         private readonly Database $database
-    ){
+    ) {
     }
 
     public function requestUskMint(string $collateral): UskMint

@@ -6,8 +6,8 @@ use Ocebot\KujiraTrack\Shared\Domain\Collection;
 
 class WalletsCollection extends Collection
 {
-  public function type(): string
-  {
-    return Wallets::class;
-  }
+    public function type(): string
+    {
+        return Wallets::class;
+    }
 }
