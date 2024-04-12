@@ -34,8 +34,8 @@ class StakedKujiCollection extends Collection
             $prev = $value;
         }
 
-        // Remove the first element as it doesn't have a previous value
-        unset($stakedKujiDiff[0]);
+        // Remove the last element as it doesn't have a previous value
+        array_pop($stakedKujiDiff);
 
         return array_values($stakedKujiDiff);
     }
