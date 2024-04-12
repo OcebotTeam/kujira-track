@@ -28,7 +28,7 @@ class WalletsRepositoryDoctrine implements WalletsRepository
       return $this->cache->get('wallets', function (ItemInterface $item) {
         $item->expiresAfter(3600); // 1h cache
 
-        $entityRepository = $this->entityManager->getRepository(Wallets::class);
+        $entityRepository = $this->entityManager->getRepository(\App\Entity\Wallets::class);
         $entities = $entityRepository->findBy([], ["tracked" => "ASC"]);
 
         $wallets = [];
@@ -37,7 +37,7 @@ class WalletsRepositoryDoctrine implements WalletsRepository
             $time = $entity->getTracked()->format('Y-m-d');
             $wallets[$time] = new Wallets(
                 $time,
-                $entity->wallets(),
+                $entity->getNum(),
             );
         }
 
@@ -51,7 +51,7 @@ class WalletsRepositoryDoctrine implements WalletsRepository
     {
         $entity = new \App\Entity\Wallets();
         $entity->setTracked(new DateTime($wallets->time()));
-        $entity->setNum($wallets->wallets());
+        $entity->setNum($wallets->amount());
 
         $this->entityManager->persist($entity);
         $this->entityManager->flush();
