@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Ocebot\KujiraTrack\Staking\Application\StakedKujiObtainer;
+use Ocebot\KujiraTrack\Staking\Application\StakedKujiRequester;
 use Ocebot\KujiraTrack\Staking\Application\StakedKujiStorer;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class StakedKujiStoreCommand extends Command
 {
     public function __construct(
-      private readonly StakedKujiObtainer $stakedKujiObtainer,
+      private readonly StakedKujiRequester $stakedKujiRequester,
       private readonly StakedKujiStorer $stakedKujiStorer,
     )
     {
@@ -28,7 +28,7 @@ class StakedKujiStoreCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-      $stakedKuji = $this->stakedKujiObtainer->__invoke();
+      $stakedKuji = $this->stakedKujiRequester->__invoke();
 
       $this->stakedKujiStorer->__invoke(
         $stakedKuji['time'],
