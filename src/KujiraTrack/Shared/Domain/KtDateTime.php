@@ -29,7 +29,7 @@ class KtDateTime
         return $this->date->format('Y-m-d\TH:i:s.u\Z');
     }
 
-    public function unix(): string
+    public function unix(): int
     {
         return $this->date->format('U');
     }

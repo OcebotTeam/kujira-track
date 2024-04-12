@@ -25,11 +25,6 @@ class StakedKujiCollection extends Collection
     {
         $stakedKujiDiff = $this->toArray();
 
-        // Sort array by time
-        usort($stakedKujiDiff, function ($a, $b) {
-            return $a['time'] <=> $b['time'];
-        });
-
         // Process prev array to modify the value to be the difference between the current and the previous value
         $prev = null;
         foreach ($stakedKujiDiff as $key => $value) {
@@ -42,6 +37,6 @@ class StakedKujiCollection extends Collection
         // Remove the first element as it doesn't have a previous value
         unset($stakedKujiDiff[0]);
 
-        return $stakedKujiDiff;
+        return array_values($stakedKujiDiff);
     }
 }

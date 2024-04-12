@@ -17,7 +17,7 @@ class StakedKuji
         $this->notBondedTokens = $notBondedTokens;
     }
 
-    public function time(): string
+    public function time(): int
     {
         return $this->time->unix();
     }
