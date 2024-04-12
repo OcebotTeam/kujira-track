@@ -2,7 +2,7 @@
 
 namespace App\Controller\Staking;
 
-use Ocebot\KujiraTrack\Staking\Application\WalletsObtainer;
+use Ocebot\KujiraTrack\Staking\Application\StakedKujiObtainer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class GetStaking extends AbstractController
 {
     public function __construct(
-        private readonly WalletsObtainer $stakedKujiObtainer
+        private readonly StakedKujiObtainer $stakedKujiObtainer
     ) {
     }
 
