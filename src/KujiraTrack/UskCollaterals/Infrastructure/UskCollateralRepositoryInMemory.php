@@ -8,22 +8,23 @@ use Ocebot\KujiraTrack\UskCollaterals\Domain\UskCollaterals;
 
 class UskCollateralRepositoryInMemory implements UskCollateralRepository
 {
- protected array $collaterals = [];
+    protected array $collaterals = [];
 
- public function __construct(){
+    public function __construct()
+    {
 
-     $collateralsJson = file_get_contents(__DIR__ . '/UskCollaterals.json');
-     $collaterals = json_decode($collateralsJson, true);
-     foreach ($collaterals as $collateralData) {
-         $this->collaterals[] = new UskCollateral(
-             $collateralData["token"],
-             $collateralData["address"],
-             $collateralData["margin"]
-         );
-     }
+        $collateralsJson = file_get_contents(__DIR__ . '/UskCollaterals.json');
+        $collaterals = json_decode($collateralsJson, true);
+        foreach ($collaterals as $collateralData) {
+            $this->collaterals[] = new UskCollateral(
+                $collateralData["token"],
+                $collateralData["address"],
+                $collateralData["margin"]
+            );
+        }
 
 
- }
+    }
 
     public function findAll(): UskCollaterals
     {

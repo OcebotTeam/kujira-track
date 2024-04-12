@@ -17,11 +17,11 @@ class UskCollateral extends AggregateRoot
         $this->margin = $margin;
     }
 
-    public function token() : string
+    public function token(): string
     {
         return $this->token;
     }
-    public function contract() : string
+    public function contract(): string
     {
         return $this->contract;
     }

@@ -9,9 +9,9 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 final class TokenPriceServiceCoinGecko implements TokenPriceService
 {
-    const COIN_LIST_API_URL = 'https://api.coingecko.com/api/v3/coins/list';
+    public const COIN_LIST_API_URL = 'https://api.coingecko.com/api/v3/coins/list';
     //const PRICE_API_URL = 'https://api.coingecko.com/api/v3/simple/price';
-    const PRICE_API_URL = 'https://api.kujira.app/api/coingecko/api/v3/simple/price';
+    public const PRICE_API_URL = 'https://api.kujira.app/api/coingecko/api/v3/simple/price';
 
     public function __construct(private readonly HttpClientInterface $httpClient)
     {
@@ -29,7 +29,7 @@ final class TokenPriceServiceCoinGecko implements TokenPriceService
             $cache->save($coinList);
         }
 
-        $match = array_filter($coinList->get(), fn($coin) => $coin->symbol === strtolower($symbol));
+        $match = array_filter($coinList->get(), fn ($coin) => $coin->symbol === strtolower($symbol));
         $match = reset($match);
         return $match->id;
     }

@@ -20,11 +20,22 @@ services:
             - '../app/Entity/'
             - '../app/Kernel.php'
 
-    Ocebot\KujiraTrack\:
-        resource: '../src/KujiraTrack'
-
     App\EventListener\CorsListener:
         tags:
             - { name: kernel.event_listener, event: kernel.response }
+
+    Ocebot\KujiraTrack\:
+            resource: '../src/KujiraTrack/'
+
+    Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository:
+        alias: Ocebot\KujiraTrack\FinContracts\Infrastructure\FinContractRepositoryInMemory
+
+    Ocebot\KujiraTrack\FinCandles\Domain\FinCandlesService:
+        alias: Ocebot\KujiraTrack\FinCandles\Infrastructure\FinCandlesServiceLcdCached
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+
+
+

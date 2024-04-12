@@ -15,13 +15,12 @@ final class TokenLister
     {
         $tokens = $this->tokenRepository->findAll();
 
-        return array_map(function(Token $token) {
+        return array_map(function (Token $token) {
             return [
                 'symbol' => $token->symbol(),
                 'ibc' => $token->ibc(),
             ];
-        }
-        , iterator_to_array($tokens));
+        }, iterator_to_array($tokens));
     }
 
 }

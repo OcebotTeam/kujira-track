@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-
 class GetUskCollateral extends AbstractController
 {
     public function __construct(private readonly UskCollateralFinder $uskCollateralFinder)
