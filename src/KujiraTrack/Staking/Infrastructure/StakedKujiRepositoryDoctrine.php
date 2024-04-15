@@ -4,7 +4,6 @@ namespace Ocebot\KujiraTrack\Staking\Infrastructure;
 
 use App\Entity\StakedTokens;
 use DateTime;
-use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Ocebot\KujiraTrack\Staking\Domain\StakedKuji;
 use Ocebot\KujiraTrack\Staking\Domain\StakedKujiCollection;
@@ -12,8 +11,10 @@ use Ocebot\KujiraTrack\Staking\Domain\StakedKujiRepository;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 
+
 class StakedKujiRepositoryDoctrine implements StakedKujiRepository
 {
+    private const PRECISION = 1000000;
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
         private readonly CacheInterface $cache
@@ -38,7 +39,7 @@ class StakedKujiRepositoryDoctrine implements StakedKujiRepository
                 $time = $entity->getTracked()->format('Y-m-d');
                 $stakedKuji[$time] = new StakedKuji(
                     $time,
-                    $entity->getBondedTokens(),
+                    $entity->getBondedTokens()  / self::PRECISION,
                     $entity->getNotBondedTokens()
                 );
             }
