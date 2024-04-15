@@ -19,7 +19,7 @@ class WalletsObtainer
         return array_map(function (Wallets $wallets) {
             return [
               'time' => $wallets->time(),
-              'value' => $wallets->amount(),
+              'value' => $wallets->amount()
             ];
         }, iterator_to_array($wallets));
     }

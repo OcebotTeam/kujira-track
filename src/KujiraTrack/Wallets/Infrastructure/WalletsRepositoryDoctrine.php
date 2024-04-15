@@ -48,8 +48,11 @@ class WalletsRepositoryDoctrine implements WalletsRepository
 
     public function store(Wallets $wallets): void
     {
+        $trackDate = new DateTime();
+        $trackDate->setTimestamp($wallets->time());
+
         $entity = new \App\Entity\Wallets();
-        $entity->setTracked(new DateTime($wallets->time()));
+        $entity->setTracked($trackDate);
         $entity->setNum($wallets->amount());
 
         $this->entityManager->persist($entity);

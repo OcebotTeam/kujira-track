@@ -2,19 +2,18 @@
 
 namespace Ocebot\KujiraTrack\Wallets\Application;
 
-use Ocebot\KujiraTrack\Wallets\Domain\Wallets;
 use Ocebot\KujiraTrack\Wallets\Domain\WalletsRepository;
 
-class WalletsStorer
+class WalletsDiffObtainer
 {
     public function __construct(
         private readonly WalletsRepository $walletsRepository
     ) {
     }
 
-    public function __invoke(string $time, int $amount): void
+    public function __invoke(): array
     {
-        $wallets = new Wallets($time, $amount);
-        $this->walletsRepository->store($wallets);
+        $wallets =  $this->walletsRepository->get();
+        return $wallets->diff();
     }
 }
