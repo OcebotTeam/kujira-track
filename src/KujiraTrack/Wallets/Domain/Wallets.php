@@ -15,7 +15,7 @@ class Wallets
         $this->amount = $amount;
     }
 
-    public function time(): string
+    public function time(): int
     {
         return $this->time->unix();
     }
