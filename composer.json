@@ -73,6 +73,9 @@
         ],
         "test": [
             "phpunit -v --testdox"
+        ],
+        "cr": [
+            "composer dump-autoload && php bin/console cache:clear"
         ]
     },
     "conflict": {

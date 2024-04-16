@@ -20,7 +20,7 @@ class BowTvl
     #[ORM\Column(length: 255)]
     private ?string $token = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: Types::STRING, length: 50)]
     private ?string $balance = null;
 
 
