@@ -21,6 +21,8 @@ services:
       MYSQL_DATABASE: db
       MYSQL_USER: db
       MYSQL_PASSWORD: db
+    ports:
+      - "3306:3306"
     volumes:
       - database_data:/var/lib/mysql
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
