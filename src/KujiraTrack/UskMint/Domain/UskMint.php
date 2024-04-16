@@ -6,23 +6,23 @@ use Ocebot\KujiraTrack\Shared\Domain\KtDateTime;
 
 class UskMint
 {
-    private readonly string $token;
     private readonly float $amount;
     private readonly KtDateTime $time;
 
-    public function __construct(string $token, float $amount, string $time)
+    public function __construct(float $amount, string $time)
     {
-        $this->token = $token;
         $this->amount = $amount;
         $this->time = new KtDateTime($time);
     }
 
-    public function toArray()
+    public function time(): int
     {
-        return [
-            "token" => $this->token,
-            "amount" => $this->amount,
-            "time" => (int) $this->time->unix(),
-        ];
+        return $this->time->unix();
     }
+
+    public function amount(): float
+    {
+        return $this->amount;
+    }
+
 }
