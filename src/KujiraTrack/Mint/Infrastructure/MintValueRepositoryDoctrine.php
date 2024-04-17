@@ -3,6 +3,7 @@
 namespace Ocebot\KujiraTrack\Mint\Infrastructure;
 
 use App\Entity\UskMinted;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Ocebot\KujiraTrack\Mint\Domain\MintValue;
 use Ocebot\KujiraTrack\Mint\Domain\MintValueCollection;
@@ -74,5 +75,29 @@ class MintValueRepositoryDoctrine implements MintValueRepository
 
             return new MintValueCollection($UskMinted);
         });
+    }
+
+    public function store(string $collateral, MintValue $mintValue): void
+    {
+        // Get last record
+        $entityRepository = $this->entityManager->getRepository(UskMinted::class);
+        $lastEntity = $entityRepository->findOneBy(["collateral" => $collateral], ["tracked" => "DESC"]);
+        $currentDateTime = new DateTime();
+
+        // If tracked of the last record date is from current day then skip
+        if ($lastEntity && $lastEntity->getTracked()->format('Y-m-d') === $currentDateTime->format('Y-m-d')) {
+            return;
+        }
+
+        $trackDate = new DateTime();
+        $trackDate->setTimestamp($mintValue->time());
+
+        $entity = new UskMinted();
+        $entity->setTracked($trackDate);
+        $entity->setCollateral($collateral);
+        $entity->setNum($mintValue->amount());
+
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
     }
 }
