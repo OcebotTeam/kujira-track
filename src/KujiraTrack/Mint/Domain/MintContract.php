@@ -7,13 +7,13 @@ use Ocebot\KujiraTrack\Shared\Domain\Aggregate\AggregateRoot;
 class MintContract extends AggregateRoot
 {
     private readonly string $collateral;
-    private readonly string $contract;
+    private readonly string $address;
     private readonly bool $margin;
 
-    public function __construct(string $collateral, string $contract, ?bool $margin)
+    public function __construct(string $collateral, string $address, ?bool $margin)
     {
         $this->collateral = $collateral;
-        $this->contract = $contract;
+        $this->address = $address;
         $this->margin = $margin;
     }
 
@@ -21,9 +21,9 @@ class MintContract extends AggregateRoot
     {
         return $this->collateral;
     }
-    public function contract(): string
+    public function address(): string
     {
-        return $this->contract;
+        return $this->address;
     }
     public function isMargin()
     {

@@ -17,7 +17,7 @@ final class MintContractLister
 
         return array_map(
             fn (MintContract $mintContract) => [
-                'address' => $mintContract->contract(),
+                'address' => $mintContract->address(),
                 'collateral' => $mintContract->collateral(),
                 'margin' => $mintContract->isMargin(),
             ],

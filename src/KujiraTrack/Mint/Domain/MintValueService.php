@@ -4,5 +4,5 @@ namespace Ocebot\KujiraTrack\Mint\Domain;
 
 interface MintValueService
 {
-    public function request(string $contract): MintValue;
+    public function request(string $contractAddress): MintValue;
 }

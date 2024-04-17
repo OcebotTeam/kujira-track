@@ -20,7 +20,7 @@ final class MintContractFinder
         }
 
         return [
-            'contract' =>    $mintContract->contract(),
+            'address' =>    $mintContract->address(),
             'collateral' =>   $mintContract->collateral(),
             'margin' =>   $mintContract->isMargin(),
         ];

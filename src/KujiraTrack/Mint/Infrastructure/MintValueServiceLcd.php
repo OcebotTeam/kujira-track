@@ -18,16 +18,15 @@ class MintValueServiceLcd implements MintValueService
     ) {
     }
 
-    public function request(string $contract): MintValue
+    public function request(string $contractAddress): MintValue
     {
-            $response = $this->httpClient->request('GET', self::MINT_ENDPOINT . $contract . self::MINT_QUERY);
-            $content = json_decode($response->getContent());
-            $currentDateTime = new DateTimeImmutable();
+        $response = $this->httpClient->request('GET', self::MINT_ENDPOINT . $contractAddress . self::MINT_QUERY);
+        $content = json_decode($response->getContent());
+        $currentDateTime = new DateTimeImmutable();
 
-            return new MintValue(
-                $currentDateTime->format('Y-m-d H:i:s'),
-                $content->data->debt_amount,
-            );
-
+        return new MintValue(
+            $content->data->debt_amount,
+            $currentDateTime->format('Y-m-d H:i:s')
+        );
     }
 }
