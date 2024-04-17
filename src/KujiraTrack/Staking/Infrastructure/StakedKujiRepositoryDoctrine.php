@@ -50,8 +50,22 @@ class StakedKujiRepositoryDoctrine implements StakedKujiRepository
         });
     }
 
+    /**
+     * Store Current taked kuji in the database
+     * but only keeping last value for each day
+     */
     public function store(StakedKuji $stakedKuji): void
     {
+        // Get last record
+        $entityRepository = $this->entityManager->getRepository(StakedTokens::class);
+        $lastEntity = $entityRepository->findOneBy([], ["tracked" => "DESC"]);
+        $currentDateTime = new DateTime();
+
+        // If tracked of the last record date is from current day then skip
+        if ($lastEntity && $lastEntity->getTracked()->format('Y-m-d') === $currentDateTime->format('Y-m-d')) {
+            return;
+        }
+
         $trackDate = new DateTime();
         $trackDate->setTimestamp($stakedKuji->time());
 
