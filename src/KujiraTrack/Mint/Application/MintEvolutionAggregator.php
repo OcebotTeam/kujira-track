@@ -1,13 +1,13 @@
 <?php
 
-namespace Ocebot\KujiraTrack\UskMint\Application;
+namespace Ocebot\KujiraTrack\Mint\Application;
 
-use Ocebot\KujiraTrack\UskMint\Domain\UskMintRepository;
+use Ocebot\KujiraTrack\Mint\Domain\MintValueRepository;
 
-class UskMintAggregator
+class MintEvolutionAggregator
 {
     public function __construct(
-        private readonly UskMintRepository $uskMintRepository
+        private readonly MintValueRepository $uskMintRepository
     ) {
     }
 

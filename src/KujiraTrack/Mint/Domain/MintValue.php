@@ -1,10 +1,10 @@
 <?php
 
-namespace Ocebot\KujiraTrack\UskMint\Domain;
+namespace Ocebot\KujiraTrack\Mint\Domain;
 
 use Ocebot\KujiraTrack\Shared\Domain\KtDateTime;
 
-class UskMint
+class MintValue
 {
     private readonly float $amount;
     private readonly KtDateTime $time;

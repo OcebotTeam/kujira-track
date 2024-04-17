@@ -1,25 +1,25 @@
 <?php
 
-namespace Ocebot\KujiraTrack\UskCollaterals\Domain;
+namespace Ocebot\KujiraTrack\Mint\Domain;
 
 use Ocebot\KujiraTrack\Shared\Domain\Aggregate\AggregateRoot;
 
-class UskCollateral extends AggregateRoot
+class MintContract extends AggregateRoot
 {
-    private readonly string $token;
+    private readonly string $collateral;
     private readonly string $contract;
     private readonly bool $margin;
 
-    public function __construct(string $token, string $contract, ?bool $margin)
+    public function __construct(string $collateral, string $contract, ?bool $margin)
     {
-        $this->token = $token;
+        $this->collateral = $collateral;
         $this->contract = $contract;
         $this->margin = $margin;
     }
 
-    public function token(): string
+    public function collateral(): string
     {
-        return $this->token;
+        return $this->collateral;
     }
     public function contract(): string
     {

@@ -1,17 +1,17 @@
 <?php
 
-namespace Ocebot\KujiraTrack\UskMint\Infrastructure;
+namespace Ocebot\KujiraTrack\Mint\Infrastructure;
 
 use App\Entity\UskMinted;
 use Doctrine\ORM\EntityManagerInterface;
-use Ocebot\KujiraTrack\UskMint\Domain\UskMint;
-use Ocebot\KujiraTrack\UskMint\Domain\UskMintCollection;
-use Ocebot\KujiraTrack\UskMint\Domain\UskMintRepository;
+use Ocebot\KujiraTrack\Mint\Domain\MintValue;
+use Ocebot\KujiraTrack\Mint\Domain\MintValueCollection;
+use Ocebot\KujiraTrack\Mint\Domain\MintValueRepository;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 
 
-class UskMintRepositoryDoctrine implements UskMintRepository
+class MintValueRepositoryDoctrine implements MintValueRepository
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
@@ -19,10 +19,10 @@ class UskMintRepositoryDoctrine implements UskMintRepository
     ) {
     }
 
-    public function getAll(): UskMintCollection
+    public function getAll(): MintValueCollection
     {
-        //return $this->cache->get('UskMint', function (ItemInterface $item) {
-            //$item->expiresAfter(3600); // 1h cache
+        return $this->cache->get('MintValues', function (ItemInterface $item) {
+            $item->expiresAfter(3600); // 1h cache
 
             $entityRepository = $this->entityManager->getRepository(UskMinted::class);
             $entities = $entityRepository->findBy([], ['tracked' => 'ASC']);
@@ -43,20 +43,20 @@ class UskMintRepositoryDoctrine implements UskMintRepository
                 foreach ($collateral as $value) {
                     $sum += $value[0];
                 }
-                $UskMinted[$date] = new UskMint(
+                $UskMinted[$date] = new MintValue(
                     $sum,
                     $date
                 );
             }
 
 
-            return new UskMintCollection($UskMinted);
-        //});
+            return new MintValueCollection($UskMinted);
+        });
     }
 
-    public function getByCollateral(string $collateral): UskMintCollection
+    public function getByCollateral(string $collateral): MintValueCollection
     {
-        return $this->cache->get('UskMintCollateral', function (ItemInterface $item) use  ($collateral) {
+        return $this->cache->get('mintValues' . $collateral, function (ItemInterface $item) use  ($collateral) {
             $item->expiresAfter(3600); // 1h cache
 
             $entityRepository = $this->entityManager->getRepository(UskMinted::class);
@@ -66,13 +66,13 @@ class UskMintRepositoryDoctrine implements UskMintRepository
 
             foreach ($entities as $entity) {
                 $date = $entity->getTracked()->format('Y-m-d');
-                $UskMinted[$date] = new UskMint(
+                $UskMinted[$date] = new MintValue(
                     $entity->getNum(),
                     $date
                 );
             }
 
-            return new UskMintCollection($UskMinted);
+            return new MintValueCollection($UskMinted);
         });
     }
 }
