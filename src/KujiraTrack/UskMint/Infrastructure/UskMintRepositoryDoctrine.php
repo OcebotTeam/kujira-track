@@ -50,8 +50,6 @@ class UskMintRepositoryDoctrine implements UskMintRepository
             }
 
 
-            die();
-
             return new UskMintCollection($UskMinted);
         //});
     }
