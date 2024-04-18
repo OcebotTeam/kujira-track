@@ -13,34 +13,21 @@ class MintValueCollection extends Collection
         return MintValue::class;
     }
 
-    public function diff(): array
+    public function diff(): self
     {
-        $mintValue = $this->toArray();
-
-        // Process prev array to modify the value to be the difference between the current and the previous value
         $prev = null;
-        foreach ($mintValue as $key => $value) {
+        $mintValues = [];
+
+        foreach ($this->items() as $key => $value) {
             if ($prev !== null) {
-                $mintValue[$key]['value'] = $value['value'] / self::DIVIDER  - $prev['value'] / self::DIVIDER;
+                $mintValues[$key]['value'] = $value['value'] / self::DIVIDER  - $prev['value'] / self::DIVIDER;
             }
             $prev = $value;
         }
 
-        // Remove the last element as it doesn't have a previous value
-        array_pop($mintValue);
+        // Remove the last element as it doesn't have a previous value to compare to
+        array_pop($mintValues);
 
-        return array_values($mintValue);
-    }
-
-    public function toArray(): array
-    {
-        $mintValues = array_map(function (MintValue $uskMint) {
-            return [
-                'time' => $uskMint->time(),
-                'value' => $uskMint->amount(),
-            ];
-        }, $this->items());
-
-        return array_values($mintValues);
+        return new self($mintValues);
     }
 }

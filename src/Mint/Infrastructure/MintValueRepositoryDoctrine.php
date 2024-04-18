@@ -50,7 +50,7 @@ class MintValueRepositoryDoctrine implements MintValueRepository
             }
 
 
-            return new MintValueCollection($UskMinted);
+            return new MintValueCollection(array_values($UskMinted));
         });
     }
 
@@ -72,7 +72,7 @@ class MintValueRepositoryDoctrine implements MintValueRepository
                 );
             }
 
-            return new MintValueCollection($UskMinted);
+            return new MintValueCollection(array_values($UskMinted));
         });
     }
 

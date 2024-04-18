@@ -2,6 +2,7 @@
 
 namespace Ocebot\KujiraTrack\Mint\Application;
 
+use Ocebot\KujiraTrack\Mint\Domain\MintValue;
 use Ocebot\KujiraTrack\Mint\Domain\MintValueRepository;
 
 class MintEvolutionObtainer
@@ -13,7 +14,11 @@ class MintEvolutionObtainer
 
     public function __invoke(string $collateral): array
     {
-        $MintValues = $this->repository->getByCollateral($collateral);
-        return $MintValues->toArray();
+        $mintValues = $this->repository->getByCollateral($collateral);
+
+        return array_map(fn (MintValue $mintValue) => [
+            "time" => $mintValue->time(),
+            "value" => $mintValue->amount(),
+        ], iterator_to_array($mintValues));
     }
 }
