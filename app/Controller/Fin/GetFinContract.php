@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\FinContracts;
+namespace App\Controller\Fin;
 
 use Ocebot\KujiraTrack\Fin\Application\FinContractFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

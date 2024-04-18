@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\FinCandles;
+namespace App\Controller\Fin;
 
 use Ocebot\KujiraTrack\Fin\Application\FinCandlesRequester;
 use Ocebot\KujiraTrack\Fin\Application\FinContractFinder;
