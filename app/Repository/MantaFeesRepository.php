@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository;
+namespace Ocebot\KujiraTrack\App\Repository;
 
 use App\Entity\MantaFees;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;

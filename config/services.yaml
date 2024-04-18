@@ -13,19 +13,19 @@ services:
 
     # makes classes in app/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
-    App\:
+    Ocebot\KujiraTrack\App\:
         resource: '../app/'
         exclude:
             - '../app/DependencyInjection/'
             - '../app/Entity/'
             - '../app/Kernel.php'
 
-    App\EventListener\CorsListener:
+    Ocebot\KujiraTrack\App\EventListener\CorsListener:
         tags:
             - { name: kernel.event_listener, event: kernel.response }
 
     Ocebot\KujiraTrack\:
-            resource: '../src/KujiraTrack/'
+            resource: '../src/'
 
     Ocebot\KujiraTrack\Fin\Domain\FinContractRepository:
         alias: Ocebot\KujiraTrack\FinContracts\Infrastructure\FinContractRepositoryInMemory

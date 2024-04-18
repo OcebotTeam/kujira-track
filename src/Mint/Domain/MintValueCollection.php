@@ -2,7 +2,6 @@
 
 namespace Ocebot\KujiraTrack\Mint\Domain;
 
-use DateTime;
 use Ocebot\KujiraTrack\Shared\Domain\Collection;
 
 class MintValueCollection extends Collection

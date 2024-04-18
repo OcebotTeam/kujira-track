@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Service;
+namespace Ocebot\KujiraTrack\App\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\App\Entity\LockedManta;
 use Symfony\Component\HttpClient\HttpClient;
-use App\Entity\LockedManta;
 
 class LockedMantaService
 {

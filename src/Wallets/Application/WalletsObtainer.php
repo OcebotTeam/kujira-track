@@ -2,8 +2,8 @@
 
 namespace Ocebot\KujiraTrack\Wallets\Application;
 
-use Ocebot\KujiraTrack\Wallets\Domain\WalletsRepository;
 use Ocebot\KujiraTrack\Wallets\Domain\Wallets;
+use Ocebot\KujiraTrack\Wallets\Domain\WalletsRepository;
 
 class WalletsObtainer
 {

@@ -2,9 +2,9 @@
 
 namespace Ocebot\KujiraTrack\Staking\Infrastructure;
 
-use App\Entity\StakedTokens;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\App\Entity\StakedTokens;
 use Ocebot\KujiraTrack\Staking\Domain\StakedKuji;
 use Ocebot\KujiraTrack\Staking\Domain\StakedKujiCollection;
 use Ocebot\KujiraTrack\Staking\Domain\StakedKujiRepository;

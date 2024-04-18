@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controller\Wallets;
+namespace Ocebot\KujiraTrack\App\Controller\Wallets;
 
 use Ocebot\KujiraTrack\Wallets\Application\WalletsObtainer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Annotation\Route;
 
 class GetWallets extends AbstractController
 {

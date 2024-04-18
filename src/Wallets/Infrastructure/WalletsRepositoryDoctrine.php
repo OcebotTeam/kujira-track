@@ -27,7 +27,7 @@ class WalletsRepositoryDoctrine implements WalletsRepository
         return $this->cache->get('wallets', function (ItemInterface $item) {
             $item->expiresAfter(3600); // 1h cache
 
-            $entityRepository = $this->entityManager->getRepository(\App\Entity\Wallets::class);
+            $entityRepository = $this->entityManager->getRepository(\Ocebot\KujiraTrack\App\Entity\Wallets::class);
             $entities = $entityRepository->findBy([], ["tracked" => "ASC"]);
 
             $wallets = [];
@@ -51,7 +51,7 @@ class WalletsRepositoryDoctrine implements WalletsRepository
         $trackDate = new DateTime();
         $trackDate->setTimestamp($wallets->time());
 
-        $entity = new \App\Entity\Wallets();
+        $entity = new \Ocebot\KujiraTrack\App\Entity\Wallets();
         $entity->setTracked($trackDate);
         $entity->setNum($wallets->amount());
 

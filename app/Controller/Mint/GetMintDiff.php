@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Controller\Mint;
+namespace Ocebot\KujiraTrack\App\Controller\Mint;
 
-use Ocebot\KujiraTrack\Mint\Application\MintEvolutionAggregator;
 use Ocebot\KujiraTrack\Mint\Application\MintEvolutionAggregatorDiff;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;

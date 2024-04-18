@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Mint;
+namespace Ocebot\KujiraTrack\App\Controller\Mint;
 
 use Ocebot\KujiraTrack\Mint\Application\MintContractLister;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

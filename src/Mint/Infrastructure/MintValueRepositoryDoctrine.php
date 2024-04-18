@@ -2,9 +2,9 @@
 
 namespace Ocebot\KujiraTrack\Mint\Infrastructure;
 
-use App\Entity\UskMinted;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\App\Entity\UskMinted;
 use Ocebot\KujiraTrack\Mint\Domain\MintValue;
 use Ocebot\KujiraTrack\Mint\Domain\MintValueCollection;
 use Ocebot\KujiraTrack\Mint\Domain\MintValueRepository;

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controller;
+namespace Ocebot\KujiraTrack\App\Controller;
 
-use App\Entity\BowTvl;
-use App\Service\ApplicationGlobalsService;
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\App\Entity\BowTvl;
+use Ocebot\KujiraTrack\App\Service\ApplicationGlobalsService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\HttpClient\HttpClient;

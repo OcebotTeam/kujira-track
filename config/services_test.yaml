@@ -1,7 +1,7 @@
 services:
 
     Ocebot\KujiraTrack\Fin\Domain\FinContractRepository:
-        alias: Ocebot\KujiraTrack\FinContracts\Infrastructure\FinContractRepositoryInMemoryDev
+        alias: Ocebot\KujiraTrack\Fin\Infrastructure\FinContractRepositoryInMemoryDev
 
     Ocebot\KujiraTrack\Fin\Domain\FinCandlesService:
-        alias: Ocebot\KujiraTrack\FinCandles\Infrastructure\FinCandlesServiceLcdCached
+        alias: Ocebot\KujiraTrack\Fin\Infrastructure\FinCandlesServiceLcdCached

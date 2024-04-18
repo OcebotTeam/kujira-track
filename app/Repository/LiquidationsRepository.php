@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repository;
+namespace Ocebot\KujiraTrack\App\Repository;
 
-use App\Entity\Liquidations;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Ocebot\KujiraTrack\App\Entity\Liquidations;
 
 /**
  * @extends ServiceEntityRepository<Liquidations>

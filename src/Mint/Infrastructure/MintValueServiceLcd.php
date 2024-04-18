@@ -3,7 +3,6 @@
 namespace Ocebot\KujiraTrack\Mint\Infrastructure;
 
 use DateTimeImmutable;
-
 use Ocebot\KujiraTrack\Mint\Domain\MintValue;
 use Ocebot\KujiraTrack\Mint\Domain\MintValueService;
 use Symfony\Contracts\HttpClient\HttpClientInterface;

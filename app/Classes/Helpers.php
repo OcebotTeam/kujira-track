@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Classes;
+namespace Ocebot\KujiraTrack\App\Classes;
 
 use Doctrine\ORM\EntityManagerInterface;
 

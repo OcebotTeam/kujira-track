@@ -4,8 +4,8 @@ namespace Ocebot\KujiraTrack\Fin\Infrastructure;
 
 use Ocebot\KujiraTrack\Fin\Domain\FinContract;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
-use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractCollection;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 
 class FinContractRepositoryInMemory implements FinContractRepository

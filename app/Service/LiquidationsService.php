@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Service;
+namespace Ocebot\KujiraTrack\App\Service;
 
-use App\Repository\LiquidationsRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\App\Entity\Liquidations;
+use Ocebot\KujiraTrack\App\Repository\LiquidationsRepository;
 use Symfony\Component\HttpClient\HttpClient;
-use App\Entity\Liquidations;
 
 class LiquidationsService
 {

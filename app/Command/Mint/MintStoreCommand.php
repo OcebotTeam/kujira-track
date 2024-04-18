@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Command\Mint;
+namespace Ocebot\KujiraTrack\App\Command\Mint;
 
 use Ocebot\KujiraTrack\Mint\Application\MintCurrentValueBulkStorer;
 use Symfony\Component\Console\Attribute\AsCommand;

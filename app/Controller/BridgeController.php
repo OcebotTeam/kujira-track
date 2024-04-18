@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace Ocebot\KujiraTrack\App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;

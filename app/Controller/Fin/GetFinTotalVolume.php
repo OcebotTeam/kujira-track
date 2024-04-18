@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Fin;
+namespace Ocebot\KujiraTrack\App\Controller\Fin;
 
 use Ocebot\KujiraTrack\Fin\Application\FinTotalVolumeCalculator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

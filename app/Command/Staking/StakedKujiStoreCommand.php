@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Command\Staking;
+namespace Ocebot\KujiraTrack\App\Command\Staking;
 
 use Ocebot\KujiraTrack\Staking\Application\StakedKujiRequester;
 use Ocebot\KujiraTrack\Staking\Application\StakedKujiStorer;

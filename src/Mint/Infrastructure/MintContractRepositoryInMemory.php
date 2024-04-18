@@ -3,8 +3,8 @@
 namespace Ocebot\KujiraTrack\Mint\Infrastructure;
 
 use Ocebot\KujiraTrack\Mint\Domain\MintContract;
-use Ocebot\KujiraTrack\Mint\Domain\MintContractRepository;
 use Ocebot\KujiraTrack\Mint\Domain\MintContractCollection;
+use Ocebot\KujiraTrack\Mint\Domain\MintContractRepository;
 
 class MintContractRepositoryInMemory implements MintContractRepository
 {

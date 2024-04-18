@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Service;
+namespace Ocebot\KujiraTrack\App\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\App\Entity\GhostDeposit;
 use Symfony\Component\HttpClient\HttpClient;
-use App\Entity\GhostDeposit;
 
 class GhostDepositService
 {

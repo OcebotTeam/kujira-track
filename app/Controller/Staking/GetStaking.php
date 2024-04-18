@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controller\Staking;
+namespace Ocebot\KujiraTrack\App\Controller\Staking;
 
 use Ocebot\KujiraTrack\Staking\Application\StakedKujiObtainer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Annotation\Route;
 
 class GetStaking extends AbstractController
 {

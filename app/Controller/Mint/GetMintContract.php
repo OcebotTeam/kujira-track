@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Controller\Mint;
+namespace Ocebot\KujiraTrack\App\Controller\Mint;
 
 use Ocebot\KujiraTrack\Mint\Application\MintContractFinder;
 use Ocebot\KujiraTrack\Mint\Application\MintCurrentValueRequester;
-use Ocebot\KujiraTrack\Mint\Domain\MintValueService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
