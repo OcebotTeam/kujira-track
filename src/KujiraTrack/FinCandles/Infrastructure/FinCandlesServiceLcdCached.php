@@ -5,6 +5,7 @@ namespace Ocebot\KujiraTrack\FinCandles\Infrastructure;
 use Ocebot\KujiraTrack\FinCandles\Domain\FinCandles;
 use Ocebot\KujiraTrack\FinCandles\Domain\TimeFrame;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
+use Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
@@ -13,9 +14,10 @@ class FinCandlesServiceLcdCached extends FinCandlesServiceLcd
 {
     public function __construct(
         HttpClientInterface $httpClient,
+        FinContractRepository $finContractRepository,
         private readonly CacheInterface $cache
     ) {
-        parent::__construct($httpClient);
+        parent::__construct($httpClient, $finContractRepository);
     }
 
 

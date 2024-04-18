@@ -7,6 +7,7 @@ use Ocebot\KujiraTrack\FinCandles\Domain\FinCandles;
 use Ocebot\KujiraTrack\FinCandles\Domain\FinCandlesService;
 use Ocebot\KujiraTrack\FinCandles\Domain\TimeFrame;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
+use Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository;
 use Ocebot\KujiraTrack\Shared\Domain\KtDateTime;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
@@ -14,8 +15,11 @@ class FinCandlesServiceLcd implements FinCandlesService
 {
     private const CANDLES_ENDPOINT = "https://kaiyo-1.gigalixirapp.com/api/trades/candles";
 
+
+
     public function __construct(
-        private readonly HttpClientInterface $httpClient
+        private readonly HttpClientInterface $httpClient,
+        private readonly FinContractRepository $finContractRepository
     ) {
     }
 
@@ -25,6 +29,7 @@ class FinCandlesServiceLcd implements FinCandlesService
 
         $toAmountBack = -$page * self::BATCH_SIZE;
         $fromAmountBack = $toAmountBack - self::BATCH_SIZE + 1;
+        $contractFinder = $this->finContractRepository->findByAddress($address);
 
         $fromDate = new KtDateTime($fromAmountBack . ' ' . $timeframe->dateTimeKey());
         $toDate = new KtDateTime($toAmountBack . ' ' . $timeframe->dateTimeKey());
@@ -48,7 +53,7 @@ class FinCandlesServiceLcd implements FinCandlesService
                 (float) $candle->close,
                 (float) $candle->open,
                 $candle->bin,
-                (int) $candle->volume
+                (int) $candle->volume / 10 ** $contractFinder->decimals()
             );
         }
 

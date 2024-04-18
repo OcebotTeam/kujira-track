@@ -3,6 +3,7 @@
 namespace Ocebot\KujiraTrack\FinContracts\Infrastructure;
 
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContract;
+use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContracts;
 use Ocebot\KujiraTrack\FinContracts\Domain\FinContractTickerId;
@@ -41,6 +42,17 @@ class FinContractRepositoryInMemory implements FinContractRepository
             }
         }
 
+        return null;
+    }
+
+    public function findByAddress(FinContractAddress $address): ?FinContract
+    {
+        $finContracts = $this->findAll();
+        foreach ($finContracts as $finContract) {
+            if ($finContract->address() === $address->value()) {
+                return $finContract;
+            }
+        }
         return null;
     }
 }
