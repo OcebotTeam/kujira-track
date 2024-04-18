@@ -2,12 +2,12 @@
 
 namespace App\Controller\FinCandles;
 
-use Ocebot\KujiraTrack\FinCandles\Application\FinCandlesRequester;
-use Ocebot\KujiraTrack\FinContracts\Application\FinContractFinder;
+use Ocebot\KujiraTrack\Fin\Application\FinCandlesRequester;
+use Ocebot\KujiraTrack\Fin\Application\FinContractFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 class GetFinCandles extends AbstractController
 {

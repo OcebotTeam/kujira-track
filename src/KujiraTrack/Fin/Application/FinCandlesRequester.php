@@ -1,10 +1,10 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinCandles\Application;
+namespace Ocebot\KujiraTrack\Fin\Application;
 
-use Ocebot\KujiraTrack\FinCandles\Domain\FinCandlesService;
-use Ocebot\KujiraTrack\FinCandles\Domain\FinChart;
-use Ocebot\KujiraTrack\FinCandles\Domain\TimeframeFactory;
+use Ocebot\KujiraTrack\Fin\Domain\FinCandlesService;
+use Ocebot\KujiraTrack\Fin\Domain\FinChart;
+use Ocebot\KujiraTrack\Fin\Domain\TimeframeFactory;
 
 final class FinCandlesRequester
 {

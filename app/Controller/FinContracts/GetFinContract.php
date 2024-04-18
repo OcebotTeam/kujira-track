@@ -2,10 +2,10 @@
 
 namespace App\Controller\FinContracts;
 
+use Ocebot\KujiraTrack\Fin\Application\FinContractFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Ocebot\KujiraTrack\FinContracts\Application\FinContractFinder;
+use Symfony\Component\Routing\Annotation\Route;
 
 class GetFinContract extends AbstractController
 {

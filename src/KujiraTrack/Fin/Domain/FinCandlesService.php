@@ -1,8 +1,6 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinCandles\Domain;
-
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
+namespace Ocebot\KujiraTrack\Fin\Domain;
 
 interface FinCandlesService
 {

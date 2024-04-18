@@ -1,6 +1,6 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinCandles\Domain;
+namespace Ocebot\KujiraTrack\Fin\Domain;
 
 class Timeframe
 {

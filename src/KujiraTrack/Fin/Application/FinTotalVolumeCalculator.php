@@ -1,10 +1,8 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinCandles\Application;
+namespace Ocebot\KujiraTrack\Fin\Application;
 
-use Ocebot\KujiraTrack\FinContracts\Application\FinContractLister;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
-use Ocebot\KujiraTrack\FinContracts\Application\FinContractFinder;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
 
 final class FinTotalVolumeCalculator
 {

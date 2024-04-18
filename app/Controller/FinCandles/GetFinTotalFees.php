@@ -2,7 +2,7 @@
 
 namespace App\Controller\FinCandles;
 
-use Ocebot\KujiraTrack\FinCandles\Application\FinTotalFeesCalculator;
+use Ocebot\KujiraTrack\Fin\Application\FinTotalFeesCalculator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

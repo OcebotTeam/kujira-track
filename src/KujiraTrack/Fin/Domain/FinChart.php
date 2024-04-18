@@ -1,8 +1,7 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinCandles\Domain;
+namespace Ocebot\KujiraTrack\Fin\Domain;
 
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
 use Ocebot\KujiraTrack\Shared\Domain\Aggregate\AggregateRoot;
 
 final class FinChart extends AggregateRoot

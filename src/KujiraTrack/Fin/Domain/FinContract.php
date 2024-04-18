@@ -1,6 +1,6 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContracts\Domain;
+namespace Ocebot\KujiraTrack\Fin\Domain;
 
 use Ocebot\KujiraTrack\Shared\Domain\Aggregate\AggregateRoot;
 
@@ -39,7 +39,7 @@ final class FinContract extends AggregateRoot
         return $this->decimals;
     }
 
-    public function hasNominative()
+    public function hasNominative(): bool
     {
         return !is_null($this->nominative);
     }

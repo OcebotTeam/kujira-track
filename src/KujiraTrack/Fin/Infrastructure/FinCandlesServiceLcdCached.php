@@ -1,11 +1,11 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinCandles\Infrastructure;
+namespace Ocebot\KujiraTrack\Fin\Infrastructure;
 
-use Ocebot\KujiraTrack\FinCandles\Domain\FinCandles;
-use Ocebot\KujiraTrack\FinCandles\Domain\TimeFrame;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository;
+use Ocebot\KujiraTrack\Fin\Domain\FinCandles;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
+use Ocebot\KujiraTrack\Fin\Domain\TimeFrame;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;

@@ -1,11 +1,10 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContracts\Application;
+namespace Ocebot\KujiraTrack\Fin\Application;
 
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContract;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractNotFoundError;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractTickerId;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractNotFoundError;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 
 final class FinContractFinder
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContracts\Infrastructure;
+namespace Ocebot\KujiraTrack\Fin\Infrastructure;
 
 class FinContractRepositoryInMemoryDev extends FinContractRepositoryInMemory
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContracts\Domain;
+namespace Ocebot\KujiraTrack\Fin\Domain;
 
 use Ocebot\KujiraTrack\Shared\Domain\ValueObject\StringValueObject;
 

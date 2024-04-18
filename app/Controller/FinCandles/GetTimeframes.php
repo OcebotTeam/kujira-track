@@ -2,10 +2,10 @@
 
 namespace App\Controller\FinCandles;
 
-use Ocebot\KujiraTrack\FinCandles\Application\TimeframeLister;
+use Ocebot\KujiraTrack\Fin\Application\TimeframeLister;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Annotation\Route;
 
 class GetTimeframes extends AbstractController
 {

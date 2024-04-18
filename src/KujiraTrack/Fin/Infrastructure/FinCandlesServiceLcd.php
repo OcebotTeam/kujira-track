@@ -1,13 +1,13 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinCandles\Infrastructure;
+namespace Ocebot\KujiraTrack\Fin\Infrastructure;
 
-use Ocebot\KujiraTrack\FinCandles\Domain\FinCandle;
-use Ocebot\KujiraTrack\FinCandles\Domain\FinCandles;
-use Ocebot\KujiraTrack\FinCandles\Domain\FinCandlesService;
-use Ocebot\KujiraTrack\FinCandles\Domain\TimeFrame;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository;
+use Ocebot\KujiraTrack\Fin\Domain\FinCandle;
+use Ocebot\KujiraTrack\Fin\Domain\FinCandles;
+use Ocebot\KujiraTrack\Fin\Domain\FinCandlesService;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
+use Ocebot\KujiraTrack\Fin\Domain\TimeFrame;
 use Ocebot\KujiraTrack\Shared\Domain\KtDateTime;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 

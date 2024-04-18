@@ -1,12 +1,12 @@
 <?php
 
-namespace Ocebot\KujiraTrack\FinContracts\Infrastructure;
+namespace Ocebot\KujiraTrack\Fin\Infrastructure;
 
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContract;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractAddress;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractRepository;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContracts;
-use Ocebot\KujiraTrack\FinContracts\Domain\FinContractTickerId;
+use Ocebot\KujiraTrack\Fin\Domain\FinContract;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
+use Ocebot\KujiraTrack\Fin\Domain\FinContracts;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 
 class FinContractRepositoryInMemory implements FinContractRepository
 {

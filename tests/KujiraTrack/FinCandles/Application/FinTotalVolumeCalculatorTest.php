@@ -2,7 +2,7 @@
 
 namespace Ocebot\test\KujiraTrack\FinCandles\Application;
 
-use Ocebot\KujiraTrack\FinCandles\Application\FinTotalVolumeCalculator;
+use Ocebot\KujiraTrack\Fin\Application\FinTotalVolumeCalculator;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 
