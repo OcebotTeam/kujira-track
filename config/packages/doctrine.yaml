@@ -15,7 +15,7 @@ doctrine:
             App:
                 is_bundle: false
                 dir: '%kernel.project_dir%/app/Entity'
-                prefix: 'App\Entity'
+                prefix: 'Ocebot\KujiraTrack\App\Entity'
                 alias: App
 
 when@test:
