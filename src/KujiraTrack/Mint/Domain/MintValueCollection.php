@@ -7,7 +7,8 @@ use Ocebot\KujiraTrack\Shared\Domain\Collection;
 
 class MintValueCollection extends Collection
 {
-    const DIVIDER = 1000000 ;
+    private const DIVIDER = 1000000;
+
     public function type(): string
     {
         return MintValue::class;

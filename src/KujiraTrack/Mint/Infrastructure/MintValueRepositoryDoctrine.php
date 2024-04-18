@@ -11,7 +11,6 @@ use Ocebot\KujiraTrack\Mint\Domain\MintValueRepository;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 
-
 class MintValueRepositoryDoctrine implements MintValueRepository
 {
     public function __construct(
@@ -57,7 +56,7 @@ class MintValueRepositoryDoctrine implements MintValueRepository
 
     public function getByCollateral(string $collateral): MintValueCollection
     {
-        return $this->cache->get('mintValues' . $collateral, function (ItemInterface $item) use  ($collateral) {
+        return $this->cache->get('mintValues' . $collateral, function (ItemInterface $item) use ($collateral) {
             $item->expiresAfter(3600); // 1h cache
 
             $entityRepository = $this->entityManager->getRepository(UskMinted::class);

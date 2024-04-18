@@ -11,7 +11,6 @@ final class FinCandlesRequester
     public function __construct(
         private readonly TimeframeFactory $timeframeFactory,
         private readonly FinCandlesService $candlesService,
-
     ) {
     }
 

@@ -11,7 +11,6 @@ use Ocebot\KujiraTrack\Staking\Domain\StakedKujiRepository;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 
-
 class StakedKujiRepositoryDoctrine implements StakedKujiRepository
 {
     private const PRECISION = 1000000;
