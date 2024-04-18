@@ -34,11 +34,13 @@ class MintValueCollection extends Collection
 
     public function toArray(): array
     {
-        return array_map(function (MintValue $uskMint) {
+        $mintValues = array_map(function (MintValue $uskMint) {
             return [
                 'time' => $uskMint->time(),
                 'value' => $uskMint->amount(),
             ];
         }, $this->items());
+
+        return array_values($mintValues);
     }
 }
