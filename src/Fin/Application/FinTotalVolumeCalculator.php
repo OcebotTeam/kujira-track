@@ -7,9 +7,9 @@ use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
 final class FinTotalVolumeCalculator
 {
     public function __construct(
-        private readonly FinContractLister   $contractLister,
-        private readonly FinCandlesRequester $chartRequester,
-        private readonly FinContractFinder   $finContractFinder
+        private readonly FinContractLister          $contractLister,
+        private readonly FinContractCandlesObtainer $chartRequester,
+        private readonly FinContractFinder          $finContractFinder
     ) {
     }
 

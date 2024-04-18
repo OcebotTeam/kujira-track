@@ -23,15 +23,35 @@ class FinCandle
         $this->low = $low;
     }
 
-    public function toArray()
+    public function lowestPrice(): float
     {
-        return [
-            "value" => $this->volume,
-            "time" => (int) $this->time->unix(),
-            "open" => $this->open,
-            "close" => $this->close,
-            "high" => $this->high,
-            "low" => $this->low,
-        ];
+        return $this->low;
     }
+
+    public function highestPrice(): float
+    {
+        return $this->high;
+    }
+
+    public function closePrice(): float
+    {
+        return $this->close;
+    }
+
+    public function openPrice(): float
+    {
+        return $this->open;
+    }
+
+    public function time(): int
+    {
+        return $this->time->unix();
+    }
+
+    public function volume(): int
+    {
+        return $this->volume;
+    }
+
+
 }

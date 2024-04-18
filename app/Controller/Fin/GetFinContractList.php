@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-class GetFinContracts extends AbstractController
+class GetFinContractList extends AbstractController
 {
     public function __construct(private readonly FinContractLister $contractsObtainer)
     {

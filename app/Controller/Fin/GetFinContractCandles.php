@@ -2,18 +2,18 @@
 
 namespace Ocebot\KujiraTrack\App\Controller\Fin;
 
-use Ocebot\KujiraTrack\Fin\Application\FinCandlesRequester;
+use Ocebot\KujiraTrack\Fin\Application\FinContractCandlesObtainer;
 use Ocebot\KujiraTrack\Fin\Application\FinContractFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class GetFinCandles extends AbstractController
+class GetFinContractCandles extends AbstractController
 {
     public function __construct(
-        private readonly FinCandlesRequester $chartRequest,
-        private readonly FinContractFinder $contractFinder
+        private readonly FinContractFinder $contractFinder,
+        private readonly FinContractCandlesObtainer $candlesObtainer
     ) {
     }
 
@@ -24,7 +24,7 @@ class GetFinCandles extends AbstractController
         $page = $request->query->get('page', 0);
 
         $contract = $this->contractFinder->__invoke($tickerId);
-        $chart = $this->chartRequest->__invoke($contract['address'], $timeframe, $page);
+        $chart = $this->candlesObtainer->__invoke($contract['address'], $timeframe, $page);
 
         return new JsonResponse($chart);
     }
