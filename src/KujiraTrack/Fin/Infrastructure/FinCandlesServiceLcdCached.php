@@ -2,7 +2,7 @@
 
 namespace Ocebot\KujiraTrack\Fin\Infrastructure;
 
-use Ocebot\KujiraTrack\Fin\Domain\FinCandles;
+use Ocebot\KujiraTrack\Fin\Domain\FinCandleCollection;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
 use Ocebot\KujiraTrack\Fin\Domain\TimeFrame;
@@ -21,7 +21,7 @@ class FinCandlesServiceLcdCached extends FinCandlesServiceLcd
     }
 
 
-    public function requestCandles(FinContractAddress $address, TimeFrame $timeframe, int $page): FinCandles
+    public function request(FinContractAddress $address, TimeFrame $timeframe, int $page): FinCandleCollection
     {
         $cacheKey = md5($address->value() . $timeframe->apiKey() . $page);
 
@@ -34,7 +34,7 @@ class FinCandlesServiceLcdCached extends FinCandlesServiceLcd
             $item->expiresAfter(1800);
 
             // Call the parent method and cache its result
-            $result = parent::requestCandles($address, $timeframe, $page);
+            $result = parent::request($address, $timeframe, $page);
 
             return $result;
         });

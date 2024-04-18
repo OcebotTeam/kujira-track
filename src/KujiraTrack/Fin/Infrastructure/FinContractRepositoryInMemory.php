@@ -5,7 +5,7 @@ namespace Ocebot\KujiraTrack\Fin\Infrastructure;
 use Ocebot\KujiraTrack\Fin\Domain\FinContract;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
-use Ocebot\KujiraTrack\Fin\Domain\FinContracts;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractCollection;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 
 class FinContractRepositoryInMemory implements FinContractRepository
@@ -27,9 +27,9 @@ class FinContractRepositoryInMemory implements FinContractRepository
         }
     }
 
-    public function findAll(): FinContracts
+    public function findAll(): FinContractCollection
     {
-        return new FinContracts($this->finContracts);
+        return new FinContractCollection($this->finContracts);
     }
 
     public function findByTickerId(FinContractTickerId $tickerId): ?FinContract

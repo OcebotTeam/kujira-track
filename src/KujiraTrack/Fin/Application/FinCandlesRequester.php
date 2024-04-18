@@ -3,7 +3,7 @@
 namespace Ocebot\KujiraTrack\Fin\Application;
 
 use Ocebot\KujiraTrack\Fin\Domain\FinCandlesService;
-use Ocebot\KujiraTrack\Fin\Domain\FinChart;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
 use Ocebot\KujiraTrack\Fin\Domain\TimeframeFactory;
 
 final class FinCandlesRequester
@@ -17,13 +17,9 @@ final class FinCandlesRequester
 
     public function __invoke(string $contractAddress, string $timeframe, int $page): array
     {
-        $finContractChart = new FinChart(
-            $this->candlesService,
-            $contractAddress,
-            $this->timeframeFactory->build($timeframe),
-            $page
-        );
-
-        return $finContractChart->candles();
+        $timeframeVO = $this->timeframeFactory->build($timeframe);
+        $address = new FinContractAddress($contractAddress);
+        $candles = $this->candlesService->request($address, $timeframeVO, $page);
+        return $candles->toArray();
     }
 }

@@ -13,7 +13,7 @@ class TimeframeFactory
         };
     }
 
-    public function list(): Timeframes
+    public function list(): TimeframeCollection
     {
         $timeframes = [
             'daily',
@@ -25,6 +25,6 @@ class TimeframeFactory
             $timeframes
         );
 
-        return new Timeframes($timeframes);
+        return new TimeframeCollection($timeframes);
     }
 }
