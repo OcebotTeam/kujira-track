@@ -74,7 +74,7 @@ class ApiController extends AbstractController
     #[Route('/bowtvl/{pair}')]
     public function bowTvl(EntityManagerInterface $entityManager, $pair)
     {
-        //$usk_minted = $this->getEntityPerDay($entityManager, UskMintCollection::class);
+        //$usk_minted = $this->getEntityPerDay($entityManager, MintValueCollection::class);
 
         $bow_pairs = $entityManager->getRepository(BowTvl::class);
 
