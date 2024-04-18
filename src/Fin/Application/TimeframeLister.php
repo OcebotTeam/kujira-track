@@ -2,6 +2,7 @@
 
 namespace Ocebot\KujiraTrack\Fin\Application;
 
+use Ocebot\KujiraTrack\Fin\Domain\Timeframe;
 use Ocebot\KujiraTrack\Fin\Domain\TimeframeFactory;
 
 class TimeframeLister
@@ -16,7 +17,11 @@ class TimeframeLister
         $timeframes = $this->timeframeFactory->list();
 
         return array_map(
-            fn ($timeframe) => $timeframe->toArray(),
+            fn (Timeframe $timeframe) => [
+                'precision' => $timeframe->precision(),
+                'apiKey' => $timeframe->apiKey(),
+                'dateTimeKey' => $timeframe->dateTimeKey()
+            ],
             iterator_to_array($timeframes)
         );
     }

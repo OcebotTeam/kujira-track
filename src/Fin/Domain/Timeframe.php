@@ -25,13 +25,4 @@ class Timeframe
     {
         return $this->dateTimeKey;
     }
-
-    public function toArray(): array
-    {
-        return [
-            'precision' => $this->precision,
-            'apiKey' => $this->apiKey,
-            'dateTimeKey' => $this->dateTimeKey,
-        ];
-    }
 }
