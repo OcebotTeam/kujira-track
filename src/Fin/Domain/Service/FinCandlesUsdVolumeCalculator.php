@@ -42,7 +42,7 @@ final class FinCandlesUsdVolumeCalculator
             $pos = 0;
             foreach ($nominativeCandles as $nominativeCandle) {
                 if ($nominativeCandle instanceof FinCandle) {
-                    $usdValues[$pos]['value'] *= $nominativeCandle->volume();
+                    $usdValues[$pos]['value'] *= $nominativeCandle->closePrice();
                     $pos++;
                 }
             }

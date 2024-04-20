@@ -12,6 +12,8 @@ class FinContractRepositoryInMemoryDev extends FinContractRepositoryInMemory
             switch ($contract->tickerId()) {
                 case 'KUJI_USK':
                 case 'KUJI_USDC':
+                case 'MNTA_KUJI':
+                case 'KUJI_axlUSDC':
                     return true;
                 default:
                     return false;
