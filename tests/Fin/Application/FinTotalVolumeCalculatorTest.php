@@ -2,13 +2,13 @@
 
 namespace Ocebot\KujiraTrack\tests\Fin\Application;
 
-use Ocebot\KujiraTrack\Fin\Application\FinTotalVolumeCalculator;
+use Ocebot\KujiraTrack\Fin\Application\FinTotalUsdVolumeObtainer;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 
 class FinTotalVolumeCalculatorTest extends KernelTestCase
 {
-    private FinTotalVolumeCalculator $finTotalVolumeCalculator;
+    private FinTotalUsdVolumeObtainer $finTotalVolumeCalculator;
 
     /**
      * @test
@@ -18,7 +18,7 @@ class FinTotalVolumeCalculatorTest extends KernelTestCase
       self::bootKernel();
 
       $container = static::getContainer();
-      $this->finTotalVolumeCalculator = $container->get(FinTotalVolumeCalculator::class);
+      $this->finTotalVolumeCalculator = $container->get(FinTotalUsdVolumeObtainer::class);
       //$volume = $this->finTotalVolumeCalculator->__invoke('daily', 0);
 
       $this->assertGreaterThan(0, 1);

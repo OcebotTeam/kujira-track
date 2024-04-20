@@ -2,7 +2,7 @@
 
 namespace Ocebot\KujiraTrack\App\Controller\Fin;
 
-use Ocebot\KujiraTrack\Fin\Application\FinContractCandlesObtainer;
+use Ocebot\KujiraTrack\Fin\Application\FinCandlesLister;
 use Ocebot\KujiraTrack\Fin\Application\FinContractFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -13,7 +13,7 @@ class GetFinContractCandles extends AbstractController
 {
     public function __construct(
         private readonly FinContractFinder $contractFinder,
-        private readonly FinContractCandlesObtainer $candlesObtainer
+        private readonly FinCandlesLister $candlesObtainer
     ) {
     }
 

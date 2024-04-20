@@ -7,7 +7,7 @@ use Ocebot\KujiraTrack\Fin\Domain\FinCandlesService;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
 use Ocebot\KujiraTrack\Fin\Domain\TimeframeFactory;
 
-final class FinContractCandlesObtainer
+final class FinCandlesLister
 {
     public function __construct(
         private readonly TimeframeFactory $timeframeFactory,

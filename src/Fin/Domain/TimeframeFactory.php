@@ -4,7 +4,7 @@ namespace Ocebot\KujiraTrack\Fin\Domain;
 
 class TimeframeFactory
 {
-    public function build(string $precision): Timeframe
+    public static function build(string $precision): Timeframe
     {
         return match ($precision) {
             'daily' => new Timeframe($precision, '1D', 'day'),
@@ -13,7 +13,7 @@ class TimeframeFactory
         };
     }
 
-    public function list(): TimeframeCollection
+    public static function list(): TimeframeCollection
     {
         $timeframes = [
             'daily',

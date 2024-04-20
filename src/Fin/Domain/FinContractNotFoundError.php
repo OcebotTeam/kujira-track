@@ -6,8 +6,9 @@ use Ocebot\KujiraTrack\Shared\Domain\DomainError;
 
 final class FinContractNotFoundError extends DomainError
 {
-    public function __construct(private readonly string $tickerId)
-    {
+    public function __construct(
+        private readonly string $identifier
+    ) {
         parent::__construct();
     }
 
@@ -18,6 +19,6 @@ final class FinContractNotFoundError extends DomainError
 
     protected function errorMessage(): string
     {
-        return sprintf('FIN contract with ticker ID <%s> has not been found', $this->tickerId);
+        return sprintf('FIN contract <%s> has not been found', $this->identifier);
     }
 }
