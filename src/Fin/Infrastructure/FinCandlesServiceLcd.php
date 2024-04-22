@@ -48,7 +48,7 @@ class FinCandlesServiceLcd implements FinCandlesService
                 (float) $candle->high,
                 (float) $candle->close,
                 (float) $candle->open,
-                (int) $candle->volume / 10 ** $contractFinder->decimals(),
+                (int) $candle->volume,
                 $candle->bin
             );
         }
