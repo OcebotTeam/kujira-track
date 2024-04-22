@@ -13,6 +13,7 @@ class FinContractRepositoryInMemoryDev extends FinContractRepositoryInMemory
                 case 'KUJI_USK':
                 case 'KUJI_USDC':
                 case 'MNTA_KUJI':
+                case 'MNTA_USK':
                 case 'KUJI_axlUSDC':
                     return true;
                 default:

@@ -8,6 +8,7 @@ use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 use Ocebot\KujiraTrack\Fin\Domain\TimeframeFactory;
+use function Symfony\Component\DependencyInjection\Loader\Configurator\iterator;
 
 final class FinCandlesUsdVolumeCalculator
 {
