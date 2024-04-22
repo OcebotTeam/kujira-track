@@ -15,6 +15,9 @@ class FinContractRepositoryInMemoryDev extends FinContractRepositoryInMemory
                 case 'MNTA_KUJI':
                 case 'MNTA_USK':
                 case 'KUJI_axlUSDC':
+                case 'wstETH_wETH':
+                case 'wETH_USK':
+                case 'wETH_USDC':
                     return true;
                 default:
                     return false;

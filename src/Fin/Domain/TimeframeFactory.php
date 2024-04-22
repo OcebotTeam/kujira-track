@@ -21,7 +21,7 @@ class TimeframeFactory
         ];
 
         $timeframes = array_map(
-            fn ($timeframe) => $this->build($timeframe),
+            fn ($timeframe) => self::build($timeframe),
             $timeframes
         );
 
