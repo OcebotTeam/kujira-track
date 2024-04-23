@@ -3,26 +3,28 @@
 namespace Ocebot\KujiraTrack\Fin\Application;
 
 use Ocebot\KujiraTrack\Fin\Domain\FinContractNotFoundError;
-use Ocebot\KujiraTrack\Fin\Domain\GhostContractRepository;
-use Ocebot\KujiraTrack\Fin\Domain\GhostContractToken;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 
 final class GhostContractFinder
 {
-    public function __construct(private readonly GhostContractRepository $repository)
-    {
+    public function __construct(
+        private readonly FinContractRepository $repository
+    ) {
     }
 
     public function __invoke(string $token): array
     {
-        $ghostContract = $this->repository->findByToken(new GhostContractToken($token));
+        $tickerId = new FinContractTickerId($token);
+        $finContract = $this->repository->findByTickerId($tickerId);
 
-        if (is_null($ghostContract)) {
-            throw new FinContractNotFoundError($token);
+        if (is_null($finContract)) {
+            throw new FinContractNotFoundError($tickerId);
         }
 
         return [
-            'address' => $ghostContract->address(),
-            'token' => $ghostContract->token()
+            'address' => $finContract->address(),
+            'token' => $finContract->tickerId()
         ];
     }
 }

@@ -7,14 +7,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-class GetFinContract extends AbstractController
+final class GetFinContract extends AbstractController
 {
     public function __construct(private readonly FinContractFinder $finder)
     {
     }
 
     #[Route('/fin/contracts/{tickerId}')]
-    public function __invoke(string $tickerId)
+    public function __invoke(string $tickerId): JsonResponse
     {
         $contract = $this->finder->__invoke($tickerId);
         return new JsonResponse($contract);

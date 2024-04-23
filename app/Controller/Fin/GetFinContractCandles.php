@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class GetFinContractCandles extends AbstractController
+final class GetFinContractCandles extends AbstractController
 {
     public function __construct(
         private readonly FinContractFinder $contractFinder,
@@ -17,13 +17,14 @@ class GetFinContractCandles extends AbstractController
     ) {
     }
 
-    #[Route('/fin/contracts/{tickerId}/candles', name: 'fin_contract_candles', methods: ['GET'])]
-    public function __invoke(Request $request, string $tickerId): JsonResponse
+    #[Route('/fin/contracts/{identifier}/candles', name: 'fin_contract_candles', methods: ['GET'])]
+    #[Route('/ghost/contracts/{identifier}/candles', name: 'ghost_contract_candles', methods: ['GET'])]
+    public function __invoke(Request $request, string $identifier): JsonResponse
     {
         $timeframe = $request->query->get('timeframe', 'daily');
         $page = $request->query->get('page', 0);
 
-        $contract = $this->contractFinder->__invoke($tickerId);
+        $contract = $this->contractFinder->__invoke($identifier);
         $chart = $this->candlesObtainer->__invoke($contract['address'], $timeframe, $page);
 
         return new JsonResponse($chart);

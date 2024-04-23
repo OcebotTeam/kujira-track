@@ -2,14 +2,15 @@
 
 namespace Ocebot\KujiraTrack\Fin\Infrastructure;
 
-class FinContractRepositoryInMemoryDev extends FinContractRepositoryInMemory
+final class FinContractRepositoryInMemoryDev extends FinContractRepositoryInMemory
 {
     public function __construct()
     {
         parent::__construct();
 
-        $finContracts = array_filter($this->finContracts, function ($contract) {
+        $finContracts = array_filter($this->contracts, function ($contract) {
             switch ($contract->tickerId()) {
+                # FIN
                 case 'KUJI_USK':
                 case 'KUJI_USDC':
                 case 'MNTA_KUJI':
@@ -18,12 +19,14 @@ class FinContractRepositoryInMemoryDev extends FinContractRepositoryInMemory
                 case 'wstETH_wETH':
                 case 'wETH_USK':
                 case 'wETH_USDC':
+                # GHOST
+                case 'USK':
                     return true;
                 default:
                     return false;
             }
         });
 
-        $this->finContracts = array_values($finContracts);
+        $this->contracts = array_values($finContracts);
     }
 }

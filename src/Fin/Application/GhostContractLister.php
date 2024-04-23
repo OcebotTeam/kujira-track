@@ -2,25 +2,25 @@
 
 namespace Ocebot\KujiraTrack\Fin\Application;
 
-use Ocebot\KujiraTrack\Fin\Domain\GhostContract;
-use Ocebot\KujiraTrack\Fin\Domain\GhostContractRepository;
+use Ocebot\KujiraTrack\Fin\Domain\FinContract;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
 
 final class GhostContractLister
 {
-    public function __construct(private readonly GhostContractRepository $repository)
+    public function __construct(private readonly FinContractRepository $repository)
     {
     }
 
     public function __invoke(): array
     {
-        $ghostContracts = $this->repository->findAll();
+        $finContracts = $this->repository->findByType('ghost');
 
         return array_map(
-            fn (GhostContract $ghostContracts) => [
-                'address' => $ghostContracts->address(),
-                'token' => $ghostContracts->token()
+            fn (FinContract $finContract) => [
+                'address' => $finContract->address(),
+                'token' => $finContract->tickerId(),
             ],
-            iterator_to_array($ghostContracts)
+            iterator_to_array($finContracts)
         );
     }
 }

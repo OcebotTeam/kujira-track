@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class GetFinContractUsdVolume extends AbstractController
+final class GetFinContractUsdVolume extends AbstractController
 {
     public function __construct(
         private readonly FinContractUsdVolumeObtainer $usdVolumeObtainer
@@ -16,7 +16,7 @@ class GetFinContractUsdVolume extends AbstractController
     }
 
     #[Route('/fin/contracts/{tickerId}/usd-volume')]
-    public function __invoke(Request $request, string $tickerId)
+    public function __invoke(Request $request, string $tickerId): JsonResponse
     {
         $timeframe = $request->query->get('timeframe', 'daily');
         $page = $request->query->get('page', 0);

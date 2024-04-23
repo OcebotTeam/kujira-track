@@ -13,15 +13,12 @@ final class FinContractLister
 
     public function __invoke(): array
     {
-        $finContracts = $this->repository->findAll();
+        $finContracts = $this->repository->findByType('fin');
 
         return array_map(
             fn (FinContract $finContract) => [
                 'address' => $finContract->address(),
-                'tickerId' => $finContract->tickerId(),
-                'volumeDivider' => $finContract->volumePrecision(),
-                'priceDivider' => $finContract->pricePrecision(),
-                'nominative' => $finContract->nominative(),
+                'tickerId' => $finContract->tickerId()
             ],
             iterator_to_array($finContracts)
         );

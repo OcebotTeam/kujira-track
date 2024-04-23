@@ -4,7 +4,7 @@ namespace Ocebot\KujiraTrack\Fin\Domain;
 
 interface FinContractRepository
 {
-    public function findAll(): FinContractCollection;
+    public function findByType(string $type): FinContractCollection;
 
     public function findByTickerId(FinContractTickerId $tickerId): ?FinContract;
 

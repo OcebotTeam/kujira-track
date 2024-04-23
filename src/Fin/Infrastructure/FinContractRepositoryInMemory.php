@@ -10,7 +10,7 @@ use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 
 class FinContractRepositoryInMemory implements FinContractRepository
 {
-    protected array $finContracts = [];
+    protected array $contracts;
 
     public function __construct()
     {
@@ -18,19 +18,48 @@ class FinContractRepositoryInMemory implements FinContractRepository
         $finContracts = json_decode($finContractsJson, true);
 
         foreach ($finContracts as $contract) {
-            $this->finContracts[] = new FinContract(
+            $this->contracts[] = new FinContract(
                 $contract["address"],
                 $contract["tickerId"],
                 $contract['volumePrecision'],
                 $contract['pricePrecision'],
-                $contract['nominative']
+                $contract['nominative'],
+                'fin'
+            );
+        }
+
+        $ghostContractsJson = file_get_contents(__DIR__ . '/ghostContracts.json');
+        $ghostContracts = json_decode($ghostContractsJson, true);
+
+        foreach ($ghostContracts as $contract) {
+            $this->contracts[] = new FinContract(
+                $contract["address"],
+                $contract["token"],
+                1,
+                1,
+                null,
+                'ghost'
             );
         }
     }
 
-    public function findAll(): FinContractCollection
+    private function findAll(): FinContractCollection
     {
-        return new FinContractCollection($this->finContracts);
+        return new FinContractCollection($this->contracts);
+    }
+
+    public function findByType(string $type): FinContractCollection
+    {
+        $finContracts = $this->findAll();
+        $filteredContracts = [];
+
+        foreach ($finContracts as $finContract) {
+            if ($finContract->type() === $type) {
+                $filteredContracts[] = $finContract;
+            }
+        }
+
+        return new FinContractCollection($filteredContracts);
     }
 
     public function findByTickerId(FinContractTickerId $tickerId): ?FinContract
@@ -49,11 +78,13 @@ class FinContractRepositoryInMemory implements FinContractRepository
     public function findByAddress(FinContractAddress $address): ?FinContract
     {
         $finContracts = $this->findAll();
+
         foreach ($finContracts as $finContract) {
             if ($finContract->address() === $address->value()) {
                 return $finContract;
             }
         }
+
         return null;
     }
 }

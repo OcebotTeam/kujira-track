@@ -15,7 +15,7 @@ final class FinAggregatedUsdVolumeCalculator
 
     public function __invoke(string $timeframe, int $page)
     {
-        $contractCollection = $this->repository->findAll();
+        $contractCollection = $this->repository->findByType('fin');
 
         // Obtain USD volume for every contract
         $usdVolumes = array_map(fn (FinContract $contract) =>

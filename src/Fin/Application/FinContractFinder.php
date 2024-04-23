@@ -14,7 +14,8 @@ final class FinContractFinder
 
     public function __invoke(string $tickerId): array
     {
-        $finContract = $this->repository->findByTickerId(new FinContractTickerId($tickerId));
+        $tickerId = new FinContractTickerId($tickerId);
+        $finContract = $this->repository->findByTickerId($tickerId);
 
         if (is_null($finContract)) {
             throw new FinContractNotFoundError($tickerId);
@@ -23,8 +24,8 @@ final class FinContractFinder
         return [
             'address' => $finContract->address(),
             'tickerId' => $finContract->tickerId(),
-            'volumeDivider' => $finContract->volumePrecision(),
-            'priceDivider' => $finContract->pricePrecision(),
+            'volumePrecision' => $finContract->volumePrecision(),
+            'pricePrecision' => $finContract->pricePrecision(),
             'nominative' => $finContract->nominative(),
         ];
     }

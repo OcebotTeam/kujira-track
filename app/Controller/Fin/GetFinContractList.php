@@ -7,16 +7,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-class GetFinContractList extends AbstractController
+final class GetFinContractList extends AbstractController
 {
-    public function __construct(private readonly FinContractLister $contractsObtainer)
+    public function __construct(private readonly FinContractLister $lister)
     {
     }
 
     #[Route('/fin/contracts')]
-    public function __invoke()
+    public function __invoke(): JsonResponse
     {
-        $contracts = $this->contractsObtainer->__invoke();
+        $contracts = $this->lister->__invoke();
         return new JsonResponse($contracts);
     }
 }
