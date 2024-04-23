@@ -2,792 +2,792 @@
   {
     "address": "kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867",
     "tickerId": "KUJI_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1z7asfxkwv0t863rllul570eh5pf2zk07k3d86ag4vtghaue37l5s9epdvn",
     "tickerId": "JUNO_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira182nff4ttmvshn6yjlqj5czapfcav9434l2qzz8aahf5pxnyd33tsz30aw6",
     "tickerId": "EVMOS_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrsqq4jjh",
     "tickerId": "wETH_axlUSDC",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1xut80d09q0tgtch8p0z4k5f88d3uvt8cvtzm5h3tu3tsy4jk9xlscem692",
     "tickerId": "axlUSDT_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1qjxu65ucccpg8c5kac8ng6yxfqq85fluwd0p9nt74g2304qw8eyq930y7w",
     "tickerId": "xAVAX_axlUSDC",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1jkte0pytr85qg0whmgux3vmz9ehmh82w40h8gaqeg435fnkyfxqq5m32qy",
     "tickerId": "STARS_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira10fqy0npt7djm8lg847v9rqlng88kqfdvl8tyt4ge204wf52sy68qwmj07l",
     "tickerId": "LOOP_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira16y344e8ryydmeu2g8yyfznq79j7jfnar4p59ngpvaazcj83jzsms6tju67",
     "tickerId": "CMDX_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1xr3rq8yvd7qplsw5yx90ftsr2zdhg4e9z60h5duusgxpv72hud3sl8nek6",
     "tickerId": "ATOM_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1aakfpghcanxtc45gpqlx8j3rq0zcpyf49qmhm9mdjrfx036h4z5sfmexun",
     "tickerId": "OSMO_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1fkwjqyfdyktgu5f59jpwhvl23zh8aav7f98ml9quly62jx2sehysqa4unf",
     "tickerId": "SCRT_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1yg8930mj8pk288lmkjex0qz85mj8wgtns5uzwyn2hs25pwdnw42skp0kur",
     "tickerId": "LUNA_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1apkgj87fgfsq84swvkyfaemrq7t4deuh60887lek0hkgdjh5fj0qaz7fhx",
     "tickerId": "wBNB_axlUSDC",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1w4t2qpwvhyhz0g2mwgqjzgsw63dcy5hkfch0tgr8xj9qjcsauq8q5x0zxz",
     "tickerId": "DOT_axlUSDC",
-    "volumeDivider": 4,
-    "priceDivider": 1,
+    "volumePrecision": 4,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira12p30cr4gstmp2yucwxtaq92turrzsxxar8upz3rhmfjxh6gdgk4s5vsyse",
     "tickerId": "gPAxG_axlUSDC",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira149m52kn7nvsg5nftvv4fh85scsavpdfxp5nr7zasz97dum89dp5qevttd9",
     "tickerId": "MARS_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira17qp8g5n5wwelrsnfdakrv0p550nzg72agpcz5t0ea6thlqd300hquxljcc",
     "tickerId": "wTAO_axlUSDC",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1ws9w7wl68prspv3rut3plv8249rm0ea0kk335swye3sl2slld4lqdmc0lv",
     "tickerId": "MNTA_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1kt0jxlr5fkx3xepymxav5c3h8sjnmutp3za2e6r5k9pgsta34trq8emzqj",
     "tickerId": "NTRN_axlUSDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1pw96huy6z02uk8hdpruk6g8u700dp8yxjhp46c24rwkzay2lfd3quqdum5",
     "tickerId": "KUJI_USDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1zg4e37hz5hzlf8kmcaxjf85nyevk3qr2dp307lafdgst2928rghqed59ed",
     "tickerId": "axlUSDC_USDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira16mnw6am32ecqacsgz2kf9gfy8sh4uqyv0246f3rxnjz4up9k462q34jck5",
     "tickerId": "MNTA_USDC",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1yum4v0v5l92jkxn8xpn9mjg7wuldk784ctg424ue8gqvdp88qzlqr2qp2j",
     "tickerId": "ATOM_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira193dzcmy7lwuj4eda3zpwwt9ejal00xva0vawcvhgsyyp5cfh6jyq66wfrf",
     "tickerId": "KUJI_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1rwx6w02alc4kaz7xpyg3rlxpjl4g63x5jq292mkxgg65zqpn5llq202vh5",
     "tickerId": "axlUSDC_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira10j648ftg2g8p5vhgsu5kzfh6d907vpkrn0a5l3qch479eqy2qssqm905c4",
     "tickerId": "CRO_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1zz74gvmq6ss3pg5vgahvx47ugpfzr80qu75l97lf2ggdgxq04ddqxkdzey",
     "tickerId": "LUNA_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1a0fyanyqm496fpgneqawhlsug6uqfvqg2epnw39q0jdenw3zs8zqsjhdr0",
     "tickerId": "wBNB_USK",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1cn922pcqrt4g2dr4va9vxk8h3w3jfxnxjqq2qp6zktjsehdzde6sz66um0",
     "tickerId": "STRD_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1sse6a00arh9dalzsyrd3q825dsn2zmrag0u4qx8q0dyks4ftnxyqrj0xds",
     "tickerId": "LOCAL_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1rrnacml8zeqq3ve2t98r5x88t4uahahdk66y9qpcrjp9qxhnuvysv59zx8",
     "tickerId": "wMATIC_USK",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1ulyrqqtx9vqsk92805jk7xxwz77lszmm2f548juyced96tj4lg7qugewsf",
     "tickerId": "wBTC_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1zg4e37hz5hzlf8kmcaxjf85nyevk3qr2dp307lafdgst2928rghqed59ed",
     "tickerId": "USDC_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1qxtd87qus6uzvqs4jv9r0j9ccd4yla42s6qag7y8fp7hhv68nzas6hqxgw",
     "tickerId": "WINK_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1ggtmfuktfcf6plhtdejyyqn5de5uge3tef0jv64ru68h2ctuvyqs3355mn",
     "tickerId": "NSTK_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1w6gpsfn55ufh3g3pf6qjrdhfj6rp09zqmruvgvzupkl39mtlpcdqw2ys7e",
     "tickerId": "FUZN_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1mf4v3x3pkuthha5a4r9jd0slgulcxkucy4weuqsvx2n030twduzqewuznf",
     "tickerId": "MNTA_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira18vzzgwgc4c7mehenjllxvsnydg3gch0a63pedxl4ldrr6gexvyfqk7kupd",
     "tickerId": "NTRN_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1rpxf55u22q2tly9y8rgdrjgx9p52sus7jugaevj3hdt0z7sgvkcsyrhrv0",
     "tickerId": "SCRT_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1cduudfszcm9slm8qxlaqvnpzg2u0hkus94fe3pwt9x446dtw6eeql8ualz",
     "tickerId": "SHD_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1nm3yktzcgpnvwu6qpzqgl2ktyvlgsstc7ev849dd3ulaygw75mqqxvtnck",
     "tickerId": "STARS_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira17w9r23r8v8r7z5lphwj99296fhlye9ej5nq3hlqw554u63m88avspdl9tc",
     "tickerId": "wETH_USK",
-    "volumeDivider": 6,
-    "priceDivider": 12,
+    "volumePrecision": 6,
+    "pricePrecision": 12,
     "nominative": null
   },
   {
     "address": "kujira1v8lkqws3gd6npr0rdk9ch54amh9guas86r4u62jq27hee88lryfsxwrvlk",
     "tickerId": "FURY_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1uvqk5vj9vn4gjemrp0myz4ku49aaemulgaqw7pfe0nuvfwp3gukq64r3ws",
     "tickerId": "ampLUNA_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira13l8gwanf37938wgfv5yktmfzxjwaj4ysn4gl96vj78xcqqxlcrgssfl797",
     "tickerId": "AQUA_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1jlzw6xal0n2c580g3wxs09tjhlzdht9y8dgszq3tupf8fhl7xjus7ep7ap",
     "tickerId": "DOT_USK",
-    "volumeDivider": 4,
-    "priceDivider": 1,
+    "volumePrecision": 4,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1h7eenquygffwsmc8csrlx88zcddwx0aqspq3x2dsl20lwk4r9n2q9t86ht",
     "tickerId": "CMDX_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1fphguznhazgqdlr9mpfh6nmn3vjjr73ksz3ukznv6q7s9ndfq2cs8vhapj",
     "tickerId": "wAVAX_USK",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1qw5hdcmcf4aq5xmnu6znscurvkgvhxfsyvhz3jvxhasxjwtk3l7sccwcs8",
     "tickerId": "CMST_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1ky9kv2m4dnykm90d0lj5089k4efttgfpx34zyvkklxnew48c522sggqjsg",
     "tickerId": "wFTM_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1rtpn4nxkx7u5y4uf5lp4ywrhmnms07p8p8wc3pmw53hfv0lhyxdqlfhgrt",
     "tickerId": "gPAxG_USK",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira18lm235jzuh4t7hh5z8lqyz08dmz67magj8z0fc4a0vn6c0hzk0es3r4glx",
     "tickerId": "DAI_USK",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1538ukswznmuek3hfv7mcxem9hjqz8sa4ypl2ul0zncu3tdgfvwmq8pxkwp",
     "tickerId": "wTAO_USK",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1v8kh6mqxq7awcvl936xeyzv8fnmdkd3yxggvkyek5d0ecut4a6zs0larj2",
     "tickerId": "MARS_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1642dp8q7gzm5g5csdz2k676rc5zqfka4hfnas9ffydffp0saspts0e9zgp",
     "tickerId": "CNTO_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira18638dsuf7p3a2e23seqz8zegqrcpsdr5nw6j2a50qg6r3q8vn3qqrg9lzp",
     "tickerId": "GRAV_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1ddeadmhum3umygv84frhc87gl2grzjmx9x8fuhjts7zqwuc39xuq53w3d8",
     "tickerId": "INJ_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1x38mke7q0qut5lku4zrx7wgjrsj9jn3tffadegzzcsy9s5w5mdmqzzl0sn",
     "tickerId": "WHALE_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1zumrlzj7ffq0murckuzykgsvcn3xzyvn3e85fxjsymwyhezmkycqtq87zj",
     "tickerId": "ACRE_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1qwtjeaf0y6hn094gn3xprw7wknkl4egpkr7dqu3cljkev5ex4xfqf2h8uc",
     "tickerId": "xASTRO_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1aqnmhyu37ynf8pm0fedtykzf3clk25ecc0p23cce2d5dc59eteeqgrg6tv",
     "tickerId": "SWTH_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1q7p9wldxxvnqda4hx8w6caplqj33tfxne5efjamsp6ruhuk3knwqwjuhrn",
     "tickerId": "PLANQ_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1ullqzk95uh0derdqpp8e5f4ukdun00xdal486zmjeeqsfhefgd0qh0qndl",
     "tickerId": "DVPN_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1vllmvr0ylegpgg34y727kmys4yy3kjjnwj8xt3j22mdc5u4z7egs5d0sg8",
     "tickerId": "ROAR_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1ppr63x265m0sgqdhl2k23t8hmfcgrar85rxgq45uvctksr8w8hzsqwwdcq",
     "tickerId": "AKT_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1zf94p6srpmlk0d5p9pwpqqwztynd22mndqljqvral604k8jfcw4sw2y7kp",
     "tickerId": "ARB_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1nu8kef49y0pdrkphtkt857tgtt0pe8nr8ms0pnp6lylrav9jq2asmjljhe",
     "tickerId": "CRE_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1uau4ctnpfze4qqljqgup3watfg9yvmkgr7gevzgv27g30yx56fvsr6dkqx",
     "tickerId": "FLIX_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira10lzmqlvey89gwd4jz8aq3s4xdllk2k56yj45cex9s86v8g7nkpmq24djj4",
     "tickerId": "LUNC_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1vpvt27kwaasyfxyd9lkfu3xlm3axmayg40z8reas7l7nk659kcqsgywtdv",
     "tickerId": "MNTL_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1tnnvtvere0pwz0uupy4crl3dv6yszte9nqms4fwmfhj3e2yl477sa0frks",
     "tickerId": "stOSMO_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1q7p9wldxxvnqda4hx8w6caplqj33tfxne5efjamsp6ruhuk3knwqwjuhrn",
     "tickerId": "PLQ_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1kmw6fk5p7an27u8f3er08xrwvzlehczymgshkqxzfrxyrfleu2eqxykaln",
     "tickerId": "RAC_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1p2vmq7g8fghkeak0hz4qfgeskkd7zqp3vnj6m3sa0r6gp4dr37usmtgtej",
     "tickerId": "REGEN_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1wckallump2k4284pt5wqg63a8prr205y532ym3850l82k75yzems5mfnkj",
     "tickerId": "SOMM_USK",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira12zjpumtfh88k6s2s8k4wks37ezr2c3zeha5xx6qpd65e5ehz50nq0afvrv",
     "tickerId": "LINK_USK",
-    "volumeDivider": 12,
-    "priceDivider": 1,
+    "volumePrecision": 12,
+    "pricePrecision": 1,
     "nominative": null
   },
   {
     "address": "kujira1l2x5c2fjjnw9uhrfhtme9snw3tzs4jt8cm0q2ysqssx6zskxatesjm7w7f",
     "tickerId": "stATOM_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1hf44at7dqewrn3ssa392d9p8nh5mr538u59gqsukdza35663hlestqr29e",
     "tickerId": "wstETH_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira13xyuyw93pv6t7c4h248tc8t6kgu874v5qasmjfzqjfjhfp6hawlse5u5tz",
     "tickerId": "wETH_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1hsdzhyvuc2z3f8d3yae84uk62d69vk68vxgudkun7gccz6hvrvfq0vx6fd",
     "tickerId": "STARS_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1y50nul39ql5sf42p67nrsy9j0luly2mvaxmlkmx6888pnzw66k6qc0gku9",
     "tickerId": "wBTC_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira12zc52j25xac565t297rmd3huj8zh62usrecy66rzxnsf9mchaepqnwx3cg",
     "tickerId": "OSMO_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1nx5lqc2j4w0ak5dxevj82lar5kunxwj5yamr39xqfazmkksx4f2sksf0hz",
     "tickerId": "SOMM_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1sr2hf68nc8a8f2e42tsjf3zmsgjkl4jmctszdzxes0whyk2tzn5sd3avg7",
     "tickerId": "yieldETH_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1u2gj9a6p07hse07p66jqnq7xchneecxrq032vl4z2z97ft2r0zeqx4hadf",
     "tickerId": "STRD_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira14u8ynhj7d8h2379yqj5q2ma0xxpvfjlrpauhzxgnj40ejq953mlsugux8d",
     "tickerId": "SHD_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira17356flrg56cjs7ardg0c6jpufwyeafegss6l4asza4chrr0ne7aqfesynu",
     "tickerId": "INJ_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira17r5u5r9gl3p9lql7p4dhdcffnv2z0f4xxafvgl8wnhw8qeez4x6q9zflp7",
     "tickerId": "AXL_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1krepsjxnpesa5u2amklew60r6zgtrmt9h2ljx8dnzljp0wxcstnqxfy0tk",
     "tickerId": "AKT_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1hcvm4thkc0mq55cjzttp0fmh6gu5hzrfm4trgwpkm38nmd63tu0qha647q",
     "tickerId": "NTRN_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira19rmgf792tgl446fnyc4wjdj2t20jlt5t3wudxyuhfy2ccy67g0hsrt73d8",
     "tickerId": "WINK_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1865zmuchjd0g0xr2q5n6hm747s8xju5k8h6mympk4vmqefkuy3hqc66tcw",
     "tickerId": "WHALE_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira180qesrskvljsvvkhvlkrwvyvu5hx03jhx76lvwxveq86at4ttqxq259wz8",
     "tickerId": "UMEE_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1vwr998s2mmvqa0t2tlfayvv5uzsl7t4syxd7a94qdgstfy4720rsa3n9yp",
     "tickerId": "TIA_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1tgd479qm2cu30yr4568l23aaz0p2wcr979wx3z7wlsgcc5fj6rxshc2uwx",
     "tickerId": "wTAO_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1tdad4e3c6qz6htdha4wg4ta6l86chnpyy22rfm60e6luj4wv2casjsrtj0",
     "tickerId": "whSOL_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1y5k75yuygkr9wmpl3huy5spqktgq9w2ex3zndu0zw6l2n0mzf4asz7hdat",
     "tickerId": "SCRT_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1ff9pnz3ekflj6vkyk2taf4tvvjh4a8fp8hetw3dc59xu8ywl8tmstcf9de",
     "tickerId": "NTSK_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1pwldj8n88f99wl5sykff9q7sl2settejutlr84mjysny9wfqgluqcp6fu4",
     "tickerId": "ampMNTA_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1dsmm4q4kgs0nfsryrmlv7wq2dxp6uzruzqalc5xp30ztlmplgm7qms2qsa",
     "tickerId": "wFTM_MNTA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "MNTA_USK"
   },
   {
     "address": "kujira1lse59wt7a5yksdd08mennt299katjkfzdhmh8hvck8ln08jktcmsxrnh8s",
     "tickerId": "ampKUJI_KUJI",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "KUJI_USK"
   },
   {
     "address": "kujira1zdf0zjz8grfhhe2x06k8f8xpnv04y90w06f4py7fjml4nmukn3yswk3ugc",
     "tickerId": "wETH_KUJI",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "KUJI_USK"
   },
   {
     "address": "kujira17t9w0xlnukuy7pw6fzkr7gd3pdun9zma0hzqaueqszskw2lr95yqfqnynt",
     "tickerId": "wBTC_KUJI",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "KUJI_USK"
   },
   {
     "address": "kujira1nkgq8xl4flsau7v3vphr3ayc7tprgazg6pzjmq8plkr76v385fhsx26qfa",
     "tickerId": "MNTA_KUJI",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "KUJI_USK"
   },
   {
     "address": "kujira18v47nqmhvejx3vc498pantg8vr435xa0rt6x0m6kzhp6yuqmcp8s4x8j2c",
     "tickerId": "KUJI_ATOM",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "ATOM_USK"
   },
   {
     "address": "kujira158zzjcvkz7r3j5hueurcw22qrjerqw4dtrzlalztr7whjykjwvrsrahdnq",
     "tickerId": "stATOM_ATOM",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "ATOM_USK"
   },
   {
     "address": "kujira1gl8js9zn7h9u2h37fx7qg8xy65jrk9t4zpa6s7j5hdlanud2uwxshqq67m",
     "tickerId": "LP KUJI_ATOM (ATOM)",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "ATOM_USK"
   },
   {
     "address": "kujira1hs95lgvuy0p6jn4v7js5x8plfdqw867lsuh5xv6d2ua20jprkgesw2pujt",
     "tickerId": "LP KUJI_ATOM (KUJI)",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "KUJI_USK"
   },
   {
     "address": "kujira1xqhakgvn3jeqfade0z4aufer9xylx7ft45fgyhg6z75mauhkjwks9cucyq",
     "tickerId": "KUJI_LUNA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "LUNA_USK"
   },
   {
     "address": "kujira172qjrk8g9l86w0shz4cc3e6rt5h9janaen4j4u6ze7xkjvjnaqfskwyyqm",
     "tickerId": "ampLUNA_LUNA",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "LUNA_USK"
   },
   {
     "address": "kujira1hulx7cgvpfcvg83wk5h96sedqgn72n026w6nl47uht554xhvj9nsra5j5u",
     "tickerId": "ATOM_OSMO",
-    "volumeDivider": 6,
-    "priceDivider": 1,
+    "volumePrecision": 6,
+    "pricePrecision": 1,
     "nominative": "OSMO_USK"
   },
   {
     "address": "kujira1ehwsdvgs3chpxuexktymjmmjj68m3h4q67p9vjj9rrgjqycc3gtsfzej24",
     "tickerId": "wstETH_wETH",
-    "volumeDivider": 18,
-    "priceDivider": 1,
+    "volumePrecision": 18,
+    "pricePrecision": 1,
     "nominative": "wETH_USK"
   }
 ]

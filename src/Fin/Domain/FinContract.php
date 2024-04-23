@@ -8,17 +8,17 @@ final class FinContract extends AggregateRoot
 {
     private readonly FinContractAddress $address;
     private readonly FinContractTickerId $tickerId;
-    private readonly int $volumeDivider;
-    private readonly int $priceDivider;
+    private readonly int $volumePrecision;
+    private readonly int $pricePrecision;
     private readonly ?string $nominative;
 
-    public function __construct(string $address, string $tickerId, int $volumeDivider, int $priceDivider, ?string $nominative)
+    public function __construct(string $address, string $tickerId, int $volumePrecision, int $pricePrecision, ?string $nominative)
     {
         $this->address = new FinContractAddress($address);
         $this->tickerId = new FinContractTickerId($tickerId);
         $this->nominative = $nominative;
-        $this->volumeDivider = $volumeDivider;
-        $this->priceDivider = $priceDivider;
+        $this->volumePrecision = $volumePrecision;
+        $this->pricePrecision = $pricePrecision;
     }
 
     public function address(): string
@@ -36,14 +36,14 @@ final class FinContract extends AggregateRoot
         return $this->nominative;
     }
 
-    public function volumeDivider(): ?int
+    public function volumePrecision(): ?int
     {
-        return $this->volumeDivider;
+        return $this->volumePrecision;
     }
 
-    public function priceDivider(): ?int
+    public function pricePrecision(): ?int
     {
-        return $this->priceDivider;
+        return $this->pricePrecision;
     }
 
     public function hasNominative(): bool

@@ -23,8 +23,8 @@ final class FinContractFinder
         return [
             'address' => $finContract->address(),
             'tickerId' => $finContract->tickerId(),
-            'volumeDivider' => $finContract->volumeDivider(),
-            'priceDivider' => $finContract->priceDivider(),
+            'volumeDivider' => $finContract->volumePrecision(),
+            'priceDivider' => $finContract->pricePrecision(),
             'nominative' => $finContract->nominative(),
         ];
     }
