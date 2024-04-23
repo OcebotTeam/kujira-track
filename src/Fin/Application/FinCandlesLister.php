@@ -26,10 +26,10 @@ final class FinCandlesLister
         return array_map(
             fn (FinCandle $candle) => [
                 "time" => $candle->time(),
-                "open" => $candle->openPrice() * (10 ** $contract->pricePrecision()),
-                "close" => $candle->closePrice() * (10 ** $contract->pricePrecision()),
-                "high" => $candle->highestPrice() * (10 ** $contract->pricePrecision()),
-                "low" => $candle->lowestPrice() * (10 ** $contract->pricePrecision()),
+                "open" => $candle->openPrice(),
+                "close" => $candle->closePrice(),
+                "high" => $candle->highestPrice(),
+                "low" => $candle->lowestPrice(),
                 "value" => $candle->volume()
             ],
             iterator_to_array($candles)

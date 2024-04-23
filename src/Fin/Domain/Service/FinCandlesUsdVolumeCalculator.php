@@ -27,7 +27,7 @@ final class FinCandlesUsdVolumeCalculator
 
         // Create result array and apply decimal correction
         $usdValues = array_map(fn (FinCandle $candle) => [
-            'value' => $candle->volume() / (10 ** $contract->volumePrecision()),
+            'value' => $candle->volume(),
             'time' => $candle->time()
         ], iterator_to_array($candles));
 
@@ -42,7 +42,7 @@ final class FinCandlesUsdVolumeCalculator
             $pos = 0;
             foreach ($nominativeCandles as $nominativeCandle) {
                 if ($nominativeCandle instanceof FinCandle) {
-                    $usdValues[$pos]['value'] *= $nominativeCandle->closePrice() * (10 ** $nominativeContract->pricePrecision());
+                    $usdValues[$pos]['value'] *= $nominativeCandle->closePrice();
                     $pos++;
                 }
             }
