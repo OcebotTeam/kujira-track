@@ -19,8 +19,8 @@ final class FinContractLister
             fn (FinContract $finContract) => [
                 'address' => $finContract->address(),
                 'tickerId' => $finContract->tickerId(),
-                'volumeDivider' => $finContract->volumeDivider(),
-                'priceDivider' => $finContract->priceDivider(),
+                'volumeDivider' => $finContract->volumePrecision(),
+                'priceDivider' => $finContract->pricePrecision(),
                 'nominative' => $finContract->nominative(),
             ],
             iterator_to_array($finContracts)

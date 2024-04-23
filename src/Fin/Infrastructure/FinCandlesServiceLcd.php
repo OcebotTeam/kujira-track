@@ -26,7 +26,7 @@ class FinCandlesServiceLcd implements FinCandlesService
     {
         $toAmountBack = -$page * self::BATCH_SIZE;
         $fromAmountBack = $toAmountBack - self::BATCH_SIZE + 1;
-        $contractFinder = $this->finContractRepository->findByAddress($address);
+        $contract = $this->finContractRepository->findByAddress($address);
 
         $fromDate = new KtDateTime($fromAmountBack . ' ' . $timeframe->dateTimeKey());
         $toDate = new KtDateTime($toAmountBack . ' ' . $timeframe->dateTimeKey());
@@ -51,11 +51,11 @@ class FinCandlesServiceLcd implements FinCandlesService
             $candleDateFormatted = $candleDate->format('Y-m-d');
 
             $datesRange[$candleDateFormatted] = new FinCandle(
-                (float) $candle->low,
-                (float) $candle->high,
-                (float) $candle->close,
-                (float) $candle->open,
-                (int) $candle->volume,
+                (float) $candle->low * (10 ** $contract->pricePrecision()),
+                (float) $candle->high * (10 ** $contract->pricePrecision()),
+                (float) $candle->close * (10 ** $contract->pricePrecision()),
+                (float) $candle->open * (10 ** $contract->pricePrecision()),
+                (int) $candle->volume / (10 ** $contract->volumePrecision()),
                 $candle->bin
             );
         }

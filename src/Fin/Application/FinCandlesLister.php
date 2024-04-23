@@ -5,12 +5,14 @@ namespace Ocebot\KujiraTrack\Fin\Application;
 use Ocebot\KujiraTrack\Fin\Domain\FinCandle;
 use Ocebot\KujiraTrack\Fin\Domain\FinCandlesService;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractAddress;
+use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
 use Ocebot\KujiraTrack\Fin\Domain\TimeframeFactory;
 
 final class FinCandlesLister
 {
     public function __construct(
         private readonly FinCandlesService $candlesService,
+        private readonly FinContractRepository $contractRepository
     ) {
     }
 
@@ -18,6 +20,7 @@ final class FinCandlesLister
     {
         $timeframeVO = TimeframeFactory::build($timeframe);
         $address = new FinContractAddress($contractAddress);
+        $contract = $this->contractRepository->findByAddress($address);
         $candles = $this->candlesService->request($address, $timeframeVO, $page);
 
         return array_map(

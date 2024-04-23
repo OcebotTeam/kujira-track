@@ -21,8 +21,8 @@ class FinContractRepositoryInMemory implements FinContractRepository
             $this->finContracts[] = new FinContract(
                 $contract["address"],
                 $contract["tickerId"],
-                $contract['volumeDivider'],
-                $contract['priceDivider'],
+                $contract['volumePrecision'],
+                $contract['pricePrecision'],
                 $contract['nominative']
             );
         }
