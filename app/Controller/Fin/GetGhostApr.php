@@ -19,14 +19,10 @@ final class GetGhostApr extends AbstractController
     #[Route('/ghost/contracts/{token}/apr', name: 'get_ghost_apr', methods: ['GET'])]
     public function __invoke(Request $request, $token): JsonResponse
     {
-        // get timeframe and page from request
         $timeframe = $request->query->get('timeframe', 'monthly');
         $page = $request->query->get('page', 0);
         $finContract = $this->finder->__invoke($token);
-
         $contracts = $this->calculator->__invoke($finContract['address'], $timeframe, $page);
-
-
         return new JsonResponse($contracts);
     }
 }

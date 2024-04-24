@@ -20,7 +20,6 @@ final class GhostAprCalculator
     {
         $timeframe = TimeframeFactory::build($timeframe);
         $finContractAddress = new FinContractAddress($address);
-
         $candles = $this->service->request($finContractAddress, $timeframe, $page);
         $timeFrameAPR = [];
 
@@ -29,17 +28,15 @@ final class GhostAprCalculator
                 $time = $candle->time();
                 $month = date('Y-m', $time);
                 $timeFrameAPR[$month]['time'] = $month;
-                if($candle->openPrice() != 0){
+                if ($candle->openPrice() != 0) {
                     $increment = ($candle->closePrice() - $candle->openPrice()) / $candle->openPrice();
                     $timeFrameAPR[$month]['month_increments'] = (($candle->closePrice() - $candle->openPrice()) / $candle->openPrice()) * 100;
-                    $timeFrameAPR[$month]['apr'] = (((1+$increment) ** 12)-1)*100;
-                }else {
+                    $timeFrameAPR[$month]['apr'] = (((1 + $increment) ** 12) - 1) * 100;
+                } else {
                     $timeFrameAPR[$month]['apr'] = 0;
                 }
-
             }
         }
-
-        return $timeFrameAPR;
-}
+        return array_values($timeFrameAPR);
+    }
 }
