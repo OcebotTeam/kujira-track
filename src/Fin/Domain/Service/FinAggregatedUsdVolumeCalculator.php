@@ -26,7 +26,7 @@ final class FinAggregatedUsdVolumeCalculator
         // Aggregate and return values in unique array
         $flattenedUsdVolumes = array_merge(...$usdVolumes);
 
-        return array_reduce($flattenedUsdVolumes, function($carry, $item) {
+        $aggregatedUsdVolume = array_reduce($flattenedUsdVolumes, function($carry, $item) {
             if (isset($carry[$item['time']])) {
                 $carry[$item['time']]['value'] += $item['value'];
             } else {
@@ -34,5 +34,7 @@ final class FinAggregatedUsdVolumeCalculator
             }
             return $carry;
         }, []);
+
+        return array_values($aggregatedUsdVolume);
     }
 }
