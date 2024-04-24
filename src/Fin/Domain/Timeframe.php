@@ -7,7 +7,8 @@ class Timeframe
     public function __construct(
         private readonly string $precision,
         private readonly string $apiKey,
-        private readonly string $dateTimeKey
+        private readonly string $dateTimeKey,
+        private readonly string $format
     ) {
     }
 
@@ -24,5 +25,10 @@ class Timeframe
     public function dateTimeKey(): string
     {
         return $this->dateTimeKey;
+    }
+
+    public function format(): string
+    {
+        return $this->format;
     }
 }

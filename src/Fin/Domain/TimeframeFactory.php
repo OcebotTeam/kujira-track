@@ -7,8 +7,8 @@ class TimeframeFactory
     public static function build(string $precision): Timeframe
     {
         return match ($precision) {
-            'daily' => new Timeframe($precision, '1D', 'day'),
-            'monthly' => new Timeframe($precision, '1M', 'month'),
+            'daily' => new Timeframe($precision, '1D', 'day', 'Y-m-d'),
+            'monthly' => new Timeframe($precision, '1M', 'month', 'Y-m'),
             default => throw new TimeFrameNotSupportedError($precision),
         };
     }

@@ -9,7 +9,6 @@ use Ocebot\KujiraTrack\Fin\Domain\FinCandle;
 
 final class GhostAprCalculator
 {
-
     public function __construct(
         private readonly FinCandlesService $service,
     )
@@ -26,7 +25,7 @@ final class GhostAprCalculator
         foreach ($candles as $candle) {
             if ($candle instanceof FinCandle) {
                 $time = $candle->time();
-                $month = date('Y-m', $time);
+                $month = date($timeframe->format(), $time);
                 $timeFrameAPR[$month]['time'] = $month;
                 if ($candle->openPrice() != 0) {
                     $increment = ($candle->closePrice() - $candle->openPrice()) / $candle->openPrice();

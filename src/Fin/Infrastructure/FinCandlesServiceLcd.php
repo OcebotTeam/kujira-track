@@ -48,7 +48,7 @@ class FinCandlesServiceLcd implements FinCandlesService
         // Add the candles to the dates array
         foreach ($rawCandleValues->candles as $candle) {
             $candleDate = new DateTime($candle->bin);
-            $candleDateFormatted = $candleDate->format('Y-m-d');
+            $candleDateFormatted = $candleDate->format($timeframe->format());
 
             $datesRange[$candleDateFormatted] = new FinCandle(
                 (float) $candle->low * (10 ** $contract->pricePrecision()),
@@ -92,7 +92,7 @@ class FinCandlesServiceLcd implements FinCandlesService
         $endDate = strtotime($toDate);
 
         while ($currentDate <= $endDate) {
-            $dateString = date("Y-m-d", $currentDate);
+            $dateString = date($timeframe->format(), $currentDate);
             $dates[$dateString] = $dateString;
             $currentDate = strtotime("+1 " . $timeframe->dateTimeKey(), $currentDate);
         }
