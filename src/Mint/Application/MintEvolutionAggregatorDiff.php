@@ -15,11 +15,6 @@ class MintEvolutionAggregatorDiff
     public function __invoke(): array
     {
         $mintValues = $this->repository->getAll();
-        $mintValuesDiff = $mintValues->diff();
-
-        return array_map(fn (MintValue $mintValue) => [
-            "time" => $mintValue->time(),
-            "value" => $mintValue->amount(),
-        ], iterator_to_array($mintValuesDiff));
+        return $mintValues->diff();
     }
 }
