@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controller;
+namespace Ocebot\KujiraTrack\App\Controller;
 
-use App\Classes\Helpers;
-use App\Entity\Unmigrated;
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\App\Classes\Helpers;
+use Ocebot\KujiraTrack\App\Entity\Unmigrated;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

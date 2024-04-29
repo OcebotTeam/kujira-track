@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service;
+namespace Ocebot\KujiraTrack\App\Service;
 
 class ApplicationGlobalsService
 {

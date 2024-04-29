@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repository;
+namespace Ocebot\KujiraTrack\App\Repository;
 
-use App\Entity\StakedTokens;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Ocebot\KujiraTrack\App\Entity\StakedTokens;
 
 /**
  * @extends ServiceEntityRepository<StakedTokens>

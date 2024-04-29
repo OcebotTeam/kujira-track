@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repository;
+namespace Ocebot\KujiraTrack\App\Repository;
 
-use App\Entity\UskMinted;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Ocebot\KujiraTrack\App\Entity\UskMinted;
 
 /**
  * @extends ServiceEntityRepository<UskMinted>
@@ -50,29 +50,4 @@ class UskMintedRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-
-    //    /**
-    //     * @return UskMinted[] Returns an array of UskMinted objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('u')
-    //            ->andWhere('u.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('u.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?UskMinted
-    //    {
-    //        return $this->createQueryBuilder('u')
-    //            ->andWhere('u.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
 }

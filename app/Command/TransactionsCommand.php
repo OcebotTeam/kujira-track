@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Command;
+namespace Ocebot\KujiraTrack\App\Command;
 
-use App\Service\TransactionsService;
+use App\Service\TotalValueLockedService;
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\App\Service\TransactionsService;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use App\Service\TotalValueLockedService;
 
 #[AsCommand(
     name: 'app:transactions',

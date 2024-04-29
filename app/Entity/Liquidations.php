@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Entity;
+namespace Ocebot\KujiraTrack\App\Entity;
 
-use App\Repository\LiquidationsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Ocebot\KujiraTrack\App\Repository\LiquidationsRepository;
 
 #[ORM\Entity(repositoryClass: LiquidationsRepository::class)]
 class Liquidations

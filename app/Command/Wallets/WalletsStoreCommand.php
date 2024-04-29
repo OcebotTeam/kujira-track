@@ -1,9 +1,7 @@
 <?php
 
-namespace App\Command\Wallets;
+namespace Ocebot\KujiraTrack\App\Command\Wallets;
 
-use Ocebot\KujiraTrack\Staking\Application\StakedKujiRequester;
-use Ocebot\KujiraTrack\Staking\Application\StakedKujiStorer;
 use Ocebot\KujiraTrack\Wallets\Application\WalletsRequester;
 use Ocebot\KujiraTrack\Wallets\Application\WalletsStorer;
 use Symfony\Component\Console\Attribute\AsCommand;

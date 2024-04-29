@@ -1,6 +1,6 @@
 <?php
 
-namespace App\EventListener;
+namespace Ocebot\KujiraTrack\App\EventListener;
 
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelInterface;

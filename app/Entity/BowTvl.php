@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Entity;
+namespace Ocebot\KujiraTrack\App\Entity;
 
-use App\Repository\BowTvlRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Ocebot\KujiraTrack\App\Repository\BowTvlRepository;
 
 #[ORM\Entity(repositoryClass: BowTvlRepository::class)]
 class BowTvl
@@ -20,7 +20,7 @@ class BowTvl
     #[ORM\Column(length: 255)]
     private ?string $token = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: Types::STRING, length: 50)]
     private ?string $balance = null;
 
 

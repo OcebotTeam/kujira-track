@@ -14,9 +14,7 @@
 		8080,
 		3306
 	],
-	"features": {
-		"ghcr.io/shyim/devcontainers-features/symfony-cli:0": {}
-	},
+	"features": {},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "composer install && symfony server:start",

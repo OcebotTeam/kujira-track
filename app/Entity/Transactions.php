@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Entity;
+namespace Ocebot\KujiraTrack\App\Entity;
 
-use App\Repository\TransactionsRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Ocebot\KujiraTrack\App\Repository\TransactionsRepository;
 
 #[ORM\Entity(repositoryClass: TransactionsRepository::class)]
 class Transactions

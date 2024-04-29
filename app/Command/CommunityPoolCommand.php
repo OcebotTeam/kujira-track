@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Command;
+namespace Ocebot\KujiraTrack\App\Command;
 
-use App\Service\CommunityPoolService;
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\App\Service\CommunityPoolService;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

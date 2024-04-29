@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Service;
+namespace Ocebot\KujiraTrack\App\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\App\Entity\BwVaults;
 use Symfony\Component\HttpClient\HttpClient;
-use App\Entity\BwVaults;
 
 class BwVaultsService
 {

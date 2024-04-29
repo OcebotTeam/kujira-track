@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Entity;
+namespace Ocebot\KujiraTrack\App\Entity;
 
-use App\Repository\UskMintedRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Ocebot\KujiraTrack\App\Repository\UskMintedRepository;
 
 #[ORM\Entity(repositoryClass: UskMintedRepository::class)]
 class UskMinted
@@ -17,7 +17,7 @@ class UskMinted
     #[ORM\Column]
     private ?float $num = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column(type: Types::STRING, length: 255, nullable: true)]
     private ?string $collateral = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Command;
+namespace Ocebot\KujiraTrack\App\Command;
 
-use App\Repository\LiquidationsRepository;
-use App\Service\LiquidationsService;
 use Doctrine\ORM\EntityManagerInterface;
+use Ocebot\KujiraTrack\App\Repository\LiquidationsRepository;
+use Ocebot\KujiraTrack\App\Service\LiquidationsService;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Entity;
+namespace Ocebot\KujiraTrack\App\Entity;
 
-use App\Repository\GhostBorrowedRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Ocebot\KujiraTrack\App\Repository\GhostBorrowedRepository;
 
 #[ORM\Entity(repositoryClass: GhostBorrowedRepository::class)]
 class GhostBorrowed

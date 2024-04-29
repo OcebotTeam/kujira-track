@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controller\Tokens;
+namespace Ocebot\KujiraTrack\App\Controller\Tokens;
 
 use Ocebot\KujiraTrack\Tokens\Application\TokenFinder;
 use Ocebot\KujiraTrack\Tokens\Application\TokenPricer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Annotation\Route;
 
 class GetToken extends AbstractController
 {
