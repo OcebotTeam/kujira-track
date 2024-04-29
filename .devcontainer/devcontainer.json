@@ -19,7 +19,7 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "composer install && symfony server:start",
+	// "postCreateCommand": "composer install && symfony server:start",
 
 	// Configure tool-specific properties.
 	"customizations": {
