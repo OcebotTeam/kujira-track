@@ -1,9 +1,22 @@
 nelmio_api_doc:
     documentation:
         info:
-            title: My App
-            description: This is an awesome app!
+            title: Kujira track API
+            description: Provides useful information and metrics about Kujira network.
             version: 1.0.0
+        servers:
+            - url: http://api.kujira-track.app
+              description: Main (production) server
+        tags: [
+            {
+                "name": "FIN",
+                "description": "FIN DEX metrics related data",
+                "externalDocs": {
+                    "description": "fin.kujira.network",
+                    "url": "https://fin.kujira.network"
+                }
+            }
+        ]
     areas: # to filter documented areas
         path_patterns:
-            - ^/fin(?!/doc$) # Accepts routes under /api except /api/doc
+            - ^/fin/(?!(timeframes)).*

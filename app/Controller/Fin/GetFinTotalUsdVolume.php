@@ -3,6 +3,7 @@
 namespace Ocebot\KujiraTrack\App\Controller\Fin;
 
 use Ocebot\KujiraTrack\Fin\Application\FinTotalUsdVolumeObtainer;
+use OpenApi\Attributes as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +16,8 @@ final class GetFinTotalVolume extends AbstractController
     ) {
     }
 
-    #[Route('/fin/volume', name: 'fin_total_volume', methods: ['GET'])]
+    #[Route('/fin/usd-volume', name: 'fin_total_usd_volume', methods: ['GET'])]
+    #[OA\Tag(name: 'FIN')]
     public function __invoke(Request $request): JsonResponse
     {
         $timeframe = $request->query->get('timeframe', 'daily');

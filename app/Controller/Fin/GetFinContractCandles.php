@@ -4,6 +4,7 @@ namespace Ocebot\KujiraTrack\App\Controller\Fin;
 
 use Ocebot\KujiraTrack\Fin\Application\FinCandlesLister;
 use Ocebot\KujiraTrack\Fin\Application\FinContractFinder;
+use OpenApi\Attributes as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,8 +18,8 @@ final class GetFinContractCandles extends AbstractController
     ) {
     }
 
-    #[Route('/fin/contracts/{identifier}/candles', name: 'fin_contract_candles', methods: ['GET'])]
-    #[Route('/ghost/contracts/{identifier}/candles', name: 'ghost_contract_candles', methods: ['GET'])]
+    #[Route('/fin/contracts/{tickerId}/candles', name: 'fin_contract_candles', methods: ['GET'])]
+    #[OA\Tag(name: 'FIN')]
     public function __invoke(Request $request, string $identifier): JsonResponse
     {
         $timeframe = $request->query->get('timeframe', 'daily');

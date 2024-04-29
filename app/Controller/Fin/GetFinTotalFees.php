@@ -3,6 +3,7 @@
 namespace Ocebot\KujiraTrack\App\Controller\Fin;
 
 use Ocebot\KujiraTrack\Fin\Application\FinTotalFeesCalculator;
+use OpenApi\Attributes as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,6 +16,7 @@ final class GetFinTotalFees extends AbstractController
     }
 
     #[Route('/fin/fees', name: 'fin_total_fees', methods: ['GET'])]
+    #[OA\Tag(name: 'FIN')]
     public function __invoke(Request $request): JsonResponse
     {
         $from = $request->query->get('from');

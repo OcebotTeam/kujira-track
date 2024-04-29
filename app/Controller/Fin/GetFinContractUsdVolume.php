@@ -3,6 +3,7 @@
 namespace Ocebot\KujiraTrack\App\Controller\Fin;
 
 use Ocebot\KujiraTrack\Fin\Application\FinContractUsdVolumeObtainer;
+use OpenApi\Attributes as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +16,8 @@ final class GetFinContractUsdVolume extends AbstractController
     ) {
     }
 
-    #[Route('/fin/contracts/{tickerId}/usd-volume')]
+    #[Route('/fin/contracts/{tickerId}/usd-volume', name: 'fin_contract_usd_volume', methods: ['GET'])]
+    #[OA\Tag(name: 'FIN')]
     public function __invoke(Request $request, string $tickerId): JsonResponse
     {
         $timeframe = $request->query->get('timeframe', 'daily');
