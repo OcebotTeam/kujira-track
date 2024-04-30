@@ -18,7 +18,7 @@ class GetToken extends AbstractController
     #[Route('/tokens/{symbol}', name: 'get_token', methods: ['GET'])]
     #[OA\Tag(name: 'TOKENS')]
     #[OA\Response(response: 200, description: 'Return Token information')]
-    public function __invoke(string $symbol) : JsonResponse
+    public function __invoke(string $symbol): JsonResponse
     {
         $token = $this->tokenFinder->__invoke($symbol);
         return new JsonResponse($token);

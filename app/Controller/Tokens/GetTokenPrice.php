@@ -18,9 +18,9 @@ class GetTokenPrice extends AbstractController
     #[Route('/tokens/{symbol}/price', name: 'get_token_price', methods: ['GET'])]
     #[OA\Tag(name: 'TOKENS')]
     #[OA\Response(response: 200, description: 'Return Token price')]
-    public function __invoke(string $symbol) : JsonResponse
+    public function __invoke(string $symbol): JsonResponse
     {
-        $price= $this->tokenPricer->__invoke($symbol);
+        $price = $this->tokenPricer->__invoke($symbol);
         return new JsonResponse($price);
     }
 }
