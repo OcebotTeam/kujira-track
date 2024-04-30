@@ -21,6 +21,8 @@ final class FinContractRepositoryInMemoryDev extends FinContractRepositoryInMemo
                 case 'wETH_USDC':
                 # GHOST
                 case 'USK':
+                case 'USDC':
+                case 'USDC.axl':
                     return true;
                 default:
                     return false;

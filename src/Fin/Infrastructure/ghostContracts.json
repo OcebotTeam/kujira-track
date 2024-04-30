@@ -2,5 +2,13 @@
   {
     "address": "kujira1w4yaama77v53fp0f9343t9w2f932z526vj970n2jv5055a7gt92sxgwypf",
     "token": "USK"
+  },
+  {
+    "address": "kujira1jelmu9tdmr6hqg0d6qw4g6c9mwrexrzuryh50fwcavcpthp5m0uq20853h",
+    "token": "USDC"
+  },
+  {
+    "address": "kujira1e224c8ry0nuun5expxm00hmssl8qnsjkd02ft94p3m2a33xked2qypgys3",
+    "token": "USDC.axl"
   }
 ]
