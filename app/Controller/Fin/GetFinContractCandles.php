@@ -20,12 +20,12 @@ final class GetFinContractCandles extends AbstractController
 
     #[Route('/fin/contracts/{tickerId}/candles', name: 'fin_contract_candles', methods: ['GET'])]
     #[OA\Tag(name: 'FIN')]
-    public function __invoke(Request $request, string $identifier): JsonResponse
+    public function __invoke(Request $request, string $tickerId): JsonResponse
     {
         $timeframe = $request->query->get('timeframe', 'daily');
         $page = $request->query->get('page', 0);
 
-        $contract = $this->contractFinder->__invoke($identifier);
+        $contract = $this->contractFinder->__invoke($tickerId);
         $chart = $this->candlesObtainer->__invoke($contract['address'], $timeframe, $page);
 
         return new JsonResponse($chart);
