@@ -39,6 +39,22 @@ nelmio_api_doc:
           "description": "blue.kujira.network",
           "url": "https://blue.kujira.network"
         }
+      },
+      {
+        "name": "TOKENS",
+        "description": "Token information",
+        "externalDocs": {
+          "description": "blue.kujira.network",
+          "url": "https://blue.kujira.network"
+        }
+      },
+      {
+        "name": "WALLETS",
+        "description": "Wallets information",
+        "externalDocs": {
+          "description": "blue.kujira.network",
+          "url": "https://blue.kujira.network"
+        }
       }
     ]
   areas: # to filter documented areas
@@ -47,3 +63,5 @@ nelmio_api_doc:
       - ^/ghost/
       - ^/mint/
       - ^/staking
+      - ^/tokens
+      - ^/v2/wallets

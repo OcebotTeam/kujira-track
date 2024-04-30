@@ -4,6 +4,7 @@ namespace Ocebot\KujiraTrack\Tokens\Infrastructure;
 
 use Ocebot\KujiraTrack\Tokens\Domain\Token;
 use Ocebot\KujiraTrack\Tokens\Domain\TokenCollection;
+use Ocebot\KujiraTrack\Tokens\Domain\TokenNotFoundError;
 use Ocebot\KujiraTrack\Tokens\Domain\TokenRepository;
 
 final class TokenRepositoryInMemory implements TokenRepository
@@ -35,7 +36,7 @@ final class TokenRepositoryInMemory implements TokenRepository
             return new Token($ticker, self::$tokens[$ticker]);
         }
 
-        return null;
+        throw new TokenNotFoundError($ticker);
     }
 
     public function findByIbc(string $ibc): ?Token
@@ -44,7 +45,7 @@ final class TokenRepositoryInMemory implements TokenRepository
             return new Token(array_search($ibc, self::$tokens), $ibc);
         }
 
-        return null;
+        throw new TokenNotFoundError($ibc);
     }
 
     public function findAll(): TokenCollection
