@@ -17,7 +17,7 @@ class GetMintDiff extends AbstractController
     #[Route('/mint/aggregation/diff', name: 'get_mint_diff', methods: ['GET'])]
     #[OA\Tag(name: 'USK')]
     #[OA\Response(response: 200, description: 'Return increments/decrements of minted USK')]
-    public function __invoke() : JsonResponse
+    public function __invoke(): JsonResponse
     {
         $UskMinted = $this->aggregator->__invoke();
         return new JsonResponse($UskMinted);

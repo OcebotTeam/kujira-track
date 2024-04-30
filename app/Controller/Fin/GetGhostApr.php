@@ -12,9 +12,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final class GetGhostApr extends AbstractController
 {
-    public function __construct(private readonly GhostContractFinder $finder,
-    private readonly GhostAprCalculator $calculator)
-    {
+    public function __construct(
+        private readonly GhostContractFinder $finder,
+        private readonly GhostAprCalculator $calculator
+    ) {
     }
 
     #[Route('/ghost/contracts/{token}/apr', name: 'get_ghost_apr', methods: ['GET'])]

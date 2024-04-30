@@ -17,7 +17,7 @@ class GetMintAggregation extends AbstractController
     #[Route('/mint/aggregation', name: 'get_mint_aggregation', methods: ['GET'])]
     #[OA\Tag(name: 'USK')]
     #[OA\Response(response: 200, description: 'Return evolution of minted USK aggregated')]
-    public function __invoke() : JsonResponse
+    public function __invoke(): JsonResponse
     {
         $UskMinted = $this->aggregator->__invoke();
         return new JsonResponse($UskMinted);

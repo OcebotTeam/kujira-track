@@ -10,15 +10,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final class GetGhostContract extends AbstractController
 {
-    public function __construct(private readonly GhostContractFinder $finder)
-    {
+    public function __construct(
+        private readonly GhostContractFinder $finder
+    ) {
     }
 
     #[Route('/ghost/contracts/{token}', name: 'get_ghost_contract', methods: ['GET'])]
     #[OA\Tag(name: 'GHOST')]
     #[OA\Response(response: 200, description: 'Returns Contract details for a token')]
     #[OA\Response(response: 404, description: 'Contract not found')]
-
     public function __invoke($token): JsonResponse
     {
         $contracts = $this->finder->__invoke($token);

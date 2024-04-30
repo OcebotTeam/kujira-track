@@ -19,7 +19,7 @@ final class GetFinContract extends AbstractController
      */
     #[Route('/fin/contracts/{tickerId}', name: 'fin_contract', methods: ['GET'])]
     #[OA\Tag(name: 'FIN')]
-    #[OA\Response(response: 200, description: 'Returns the contract for the given ticker id',)]
+    #[OA\Response(response: 200, description: 'Returns the contract for the given ticker id')]
     #[OA\Response(response: 404, description: 'Contract not found')]
     public function __invoke(string $tickerId): JsonResponse
     {

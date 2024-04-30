@@ -10,8 +10,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final class GetGhostContractList extends AbstractController
 {
-    public function __construct(private readonly GhostContractLister $lister)
-    {
+    public function __construct(
+        private readonly GhostContractLister $lister
+    ) {
     }
 
     #[Route('/ghost/contracts', name: 'get_ghost_contract_list', methods: ['GET'])]

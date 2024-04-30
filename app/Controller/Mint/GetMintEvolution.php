@@ -18,7 +18,7 @@ class GetMintEvolution extends AbstractController
     #[OA\Tag(name: 'USK')]
     #[OA\Response(response: 200, description: 'Return evolution of minted USK by collateral')]
     #[OA\Response(response: 404, description: 'Collateral not found')]
-    public function __invoke($collateral) : JsonResponse
+    public function __invoke($collateral): JsonResponse
     {
         $UskMinted = $this->obtainer->__invoke($collateral);
         return new JsonResponse($UskMinted);

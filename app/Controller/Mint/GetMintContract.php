@@ -21,7 +21,7 @@ class GetMintContract extends AbstractController
     #[OA\Tag(name: 'USK')]
     #[OA\Response(response: 200, description: 'Return contracts details for a collateral')]
     #[OA\Response(response: 404, description: 'Collateral not found')]
-    public function __invoke(string $collateral) : JsonResponse
+    public function __invoke(string $collateral): JsonResponse
     {
         $mintContract = $this->finder->__invoke($collateral);
         $currentValue = $this->valueRequester->__invoke($mintContract['address']);

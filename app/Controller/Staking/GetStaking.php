@@ -18,7 +18,7 @@ class GetStaking extends AbstractController
     #[Route('/staking', name: 'get_staking', methods: ['GET'])]
     #[OA\Tag(name: 'STAKE')]
     #[OA\Response(response: 200, description: 'Return evolution of KUJI staked')]
-    public function __invoke() : JsonResponse
+    public function __invoke(): JsonResponse
     {
         $stakedKuji = $this->stakedKujiObtainer->__invoke();
         return new JsonResponse($stakedKuji);
