@@ -2,7 +2,7 @@
 
 namespace Ocebot\KujiraTrack\Fin\Application;
 
-use Ocebot\KujiraTrack\Fin\Domain\FinContractNotFoundError;
+use Ocebot\KujiraTrack\Fin\Domain\GhostContractNotFoundError;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 
@@ -19,7 +19,7 @@ final class GhostContractFinder
         $finContract = $this->repository->findByTickerId($tickerId);
 
         if (is_null($finContract)) {
-            throw new FinContractNotFoundError($tickerId);
+            throw new GhostContractNotFoundError($tickerId);
         }
 
         return [
