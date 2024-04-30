@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-final class GetFinTotalVolume extends AbstractController
+final class GetFinTotalUsdVolume extends AbstractController
 {
     public function __construct(
         private readonly FinTotalUsdVolumeObtainer $calculator
