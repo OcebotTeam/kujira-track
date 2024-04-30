@@ -17,7 +17,7 @@ final class FinCandlesUsdVolumeCalculator
     ) {
     }
 
-    public function __invoke(string $address,string $timeframe, int $page): array
+    public function __invoke(string $address, string $timeframe, int $page): array
     {
         // Obtain candles for given page and timeframe
         $address = new FinContractAddress($address);

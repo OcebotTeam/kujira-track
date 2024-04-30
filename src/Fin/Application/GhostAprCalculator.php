@@ -11,8 +11,7 @@ final class GhostAprCalculator
 {
     public function __construct(
         private readonly FinCandlesService $service,
-    )
-    {
+    ) {
     }
 
     public function __invoke(string $address, string $timeframe, int $page): array

@@ -19,7 +19,7 @@ final class FinContractRepositoryInMemoryDev extends FinContractRepositoryInMemo
                 case 'wstETH_wETH':
                 case 'wETH_USK':
                 case 'wETH_USDC':
-                # GHOST
+                    # GHOST
                 case 'USK':
                 case 'USDC':
                 case 'USDC.axl':

@@ -15,8 +15,7 @@ class FinCandle
         private readonly float $open,
         private readonly int $volume,
         string $time,
-    )
-    {
+    ) {
         $this->time = new KtDateTime($time);
     }
 

@@ -18,15 +18,16 @@ final class FinAggregatedUsdVolumeCalculator
         $contractCollection = $this->repository->findByType('fin');
 
         // Obtain USD volume for every contract
-        $usdVolumes = array_map(fn (FinContract $contract) =>
-            $this->usdCalculator->__invoke($contract->address(), $timeframe, $page)
-            ,iterator_to_array($contractCollection)
+        $usdVolumes = array_map(
+            fn (FinContract $contract) =>
+            $this->usdCalculator->__invoke($contract->address(), $timeframe, $page),
+            iterator_to_array($contractCollection)
         );
 
         // Aggregate and return values in unique array
         $flattenedUsdVolumes = array_merge(...$usdVolumes);
 
-        $aggregatedUsdVolume = array_reduce($flattenedUsdVolumes, function($carry, $item) {
+        $aggregatedUsdVolume = array_reduce($flattenedUsdVolumes, function ($carry, $item) {
             if (isset($carry[$item['time']])) {
                 $carry[$item['time']]['value'] += $item['value'];
             } else {

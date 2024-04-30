@@ -2,7 +2,6 @@
 
 namespace Ocebot\KujiraTrack\Fin\Application;
 
-
 use Ocebot\KujiraTrack\Fin\Domain\FinContractRepository;
 use Ocebot\KujiraTrack\Fin\Domain\FinContractTickerId;
 use Ocebot\KujiraTrack\Fin\Domain\Service\FinCandlesUsdVolumeCalculator;
@@ -15,7 +14,7 @@ final class FinContractUsdVolumeObtainer
     ) {
     }
 
-    public function __invoke(string $tickerId,string $timeframe, int $page): array
+    public function __invoke(string $tickerId, string $timeframe, int $page): array
     {
         $tickerId = new FinContractTickerId($tickerId);
         $contract = $this->repository->findByTickerId($tickerId);
