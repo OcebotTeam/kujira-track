@@ -4,6 +4,7 @@ namespace Ocebot\KujiraTrack\App\Controller\Fin;
 
 use Ocebot\KujiraTrack\Fin\Application\GhostAprCalculator;
 use Ocebot\KujiraTrack\Fin\Application\GhostContractFinder;
+use OpenApi\Attributes as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,6 +18,9 @@ final class GetGhostApr extends AbstractController
     }
 
     #[Route('/ghost/contracts/{token}/apr', name: 'get_ghost_apr', methods: ['GET'])]
+    #[OA\Tag(name: 'GHOST')]
+    #[OA\Response(response: 200, description: 'Returns monthly increase percentage and APR')]
+    #[OA\Response(response: 404, description: 'Contract not found')]
     public function __invoke(Request $request, $token): JsonResponse
     {
         $timeframe = $request->query->get('timeframe', 'monthly');

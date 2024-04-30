@@ -1,22 +1,49 @@
 nelmio_api_doc:
-    documentation:
-        info:
-            title: Kujira track API
-            description: Provides useful information and metrics about Kujira network.
-            version: 1.0.0
-        servers:
-            - url: http://api.kujira-track.app
-              description: Main (production) server
-        tags: [
-            {
-                "name": "FIN",
-                "description": "FIN DEX metrics related data",
-                "externalDocs": {
-                    "description": "fin.kujira.network",
-                    "url": "https://fin.kujira.network"
-                }
-            }
-        ]
-    areas: # to filter documented areas
-        path_patterns:
-            - ^/fin/(?!(timeframes)).*
+  documentation:
+    info:
+      title: Kujira track API
+      description: Provides useful information and metrics about Kujira network.
+      version: 1.0.0
+    servers:
+      - url: http://api.kujira-track.app
+        description: Main (production) server
+    tags: [
+      {
+        "name": "FIN",
+        "description": "FIN DEX metrics related data",
+        "externalDocs": {
+          "description": "fin.kujira.network",
+          "url": "https://fin.kujira.network"
+        }
+      },
+      {
+        "name": "GHOST",
+        "description": "GHOST Lending Market metrics related data",
+        "externalDocs": {
+          "description": "ghost.kujira.network",
+          "url": "https://ghost.kujira.network"
+        }
+      },
+      {
+        "name": "USK",
+        "description": "USK Mint metrics related data",
+        "externalDocs": {
+          "description": "blue.kujira.network",
+          "url": "https://blue.kujira.network/mint"
+        }
+      },
+      {
+        "name": "STAKE",
+        "description": "KUJI staking metrics related data",
+        "externalDocs": {
+          "description": "blue.kujira.network",
+          "url": "https://blue.kujira.network"
+        }
+      }
+    ]
+  areas: # to filter documented areas
+    path_patterns:
+      - ^/fin/(?!(timeframes))
+      - ^/ghost/
+      - ^/mint/
+      - ^/staking
