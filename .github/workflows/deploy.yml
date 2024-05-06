@@ -42,6 +42,6 @@ jobs:
         password: ${{ secrets.OCEBOT_HOST_PASS }}
         port: ${{ secrets.OCEBOT_HOST_PORT }}
         sftp_only: true
-        local_path: '.'
+        local_path: './*'
         remote_path: ${{ secrets.KT_HOST_PATH }}
   
