@@ -39,5 +39,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.OCEBOT_HOST }}
           REMOTE_USER: ${{ secrets.OCEBOT_HOST_USER }}
           TARGET: ${{ secrets.KT_HOST_PATH }}
-          EXCLUDE: "/.git/, /env.local"
+          EXCLUDE: "/.git/, /.env.local"
     
