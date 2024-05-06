@@ -34,10 +34,10 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         with:
           SSH_PRIVATE_KEY: ${{ secrets.OCEBOT_PRIVATE_SSH_KEY }}
-          ARGS: "-rlgoDzvc -i"
+          ARGS: "-rlgoDzvc -i --delete"
           SOURCE: "./"
           REMOTE_HOST: ${{ secrets.OCEBOT_HOST }}
           REMOTE_USER: ${{ secrets.OCEBOT_HOST_USER }}
           TARGET: ${{ secrets.KT_HOST_PATH }}
-          EXCLUDE: "/.git/, /.vscode/"
+          EXCLUDE: "/.git/, /env.local"
     
