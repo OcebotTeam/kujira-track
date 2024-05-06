@@ -32,12 +32,6 @@ jobs:
       id: build-files
       run: composer install --prefer-dist --no-progress
 
-    - name: Generate artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: kt-artifact
-        path: ~/kt-artifact
-
   deploy:
 
     runs-on: ubuntu-latest
@@ -51,6 +45,6 @@ jobs:
           password: ${{ secrets.OCEBOT_HOST_PASS }}
           port: ${{ secrets.OCEBOT_HOST_PORT }}
           sftp_only: true
-          local_path: '~/kt-artifact'
+          local_path: ${{ $GITHUB_WORKSPACE }}
           remote_path: ${{ secrets.KT_HOST_PATH }}
     
