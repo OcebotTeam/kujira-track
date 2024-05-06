@@ -38,19 +38,19 @@ jobs:
         name: kt-artifact
         path: ~/kt-artifact
 
-deploy:
+  deploy:
 
-  runs-on: ubuntu-latest
-  
-  steps:
-    - name: Copy result in server
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-      with:
-        server: ${{ secrets.OCEBOT_HOST }}
-        username: ${{ secrets.OCEBOT_HOST_USER }}
-        password: ${{ secrets.OCEBOT_HOST_PASS }}
-        port: ${{ secrets.OCEBOT_HOST_PORT }}
-        sftp_only: true
-        local_path: '~/kt-artifact'
-        remote_path: ${{ secrets.KT_HOST_PATH }}
-  
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Copy result in server
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.OCEBOT_HOST }}
+          username: ${{ secrets.OCEBOT_HOST_USER }}
+          password: ${{ secrets.OCEBOT_HOST_PASS }}
+          port: ${{ secrets.OCEBOT_HOST_PORT }}
+          sftp_only: true
+          local_path: '~/kt-artifact'
+          remote_path: ${{ secrets.KT_HOST_PATH }}
+    
