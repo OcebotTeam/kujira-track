@@ -1,0 +1,47 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate --strict
+
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Install dependencies
+      id: build-files
+      run: composer install --prefer-dist --no-progress
+
+    # - name: Run test suite
+    #   run: composer run-script test
+
+    - name: Copy result in server
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      with:
+        server: ${{ secrets.OCEBOT_HOST }}
+        username: ${{ secrets.OCEBOT_HOST_USER }}
+        password: ${{ secrets.OCEBOT_HOST_PASS }}
+        port: ${{ secrets.OCEBOT_HOST_PORT }}
+        sftp_only: true
+        local_path: '.'
+        remote_path: ${{ secrets.KT_HOST_PATH }}
+  
