@@ -8,6 +8,7 @@ permissions:
   contents: read
 
 jobs:
+
   build:
 
     runs-on: ubuntu-latest
@@ -31,9 +32,17 @@ jobs:
       id: build-files
       run: composer install --prefer-dist --no-progress
 
-    # - name: Run test suite
-    #   run: composer run-script test
+    - name: Generate artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: kt-artifact
+        path: ~/kt-artifact
 
+deploy:
+
+  runs-on: ubuntu-latest
+  
+  steps:
     - name: Copy result in server
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
@@ -42,6 +51,6 @@ jobs:
         password: ${{ secrets.OCEBOT_HOST_PASS }}
         port: ${{ secrets.OCEBOT_HOST_PORT }}
         sftp_only: true
-        local_path: '${{ github.workspace }}/'
+        local_path: '~/kt-artifact'
         remote_path: ${{ secrets.KT_HOST_PATH }}
   
