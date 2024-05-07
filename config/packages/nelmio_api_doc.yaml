@@ -5,7 +5,7 @@ nelmio_api_doc:
       description: Provides useful information and metrics about Kujira network.
       version: 1.0.0
     servers:
-      - url: http://api.kujira-track.app
+      - url: https://api.kujira-track.app
         description: Main (production) server
     tags: [
       {
