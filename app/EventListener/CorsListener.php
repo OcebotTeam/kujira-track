@@ -16,10 +16,6 @@ class CorsListener
 
     public function onKernelResponse(ResponseEvent $event)
     {
-        if ($this->kernel->getEnvironment() !== 'dev') {
-            return;
-        }
-
         $response = $event->getResponse();
         $response->headers->set('Access-Control-Allow-Origin', '*');
         $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');

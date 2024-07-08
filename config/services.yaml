@@ -28,10 +28,10 @@ services:
             resource: '../src/'
 
     Ocebot\KujiraTrack\Fin\Domain\FinContractRepository:
-        alias: Ocebot\KujiraTrack\FinContracts\Infrastructure\FinContractRepositoryInMemory
+        alias: Ocebot\KujiraTrack\Fin\Infrastructure\FinContractRepositoryInMemory
 
     Ocebot\KujiraTrack\Fin\Domain\FinCandlesService:
-        alias: Ocebot\KujiraTrack\FinCandles\Infrastructure\FinCandlesServiceLcdCached
+        alias: Ocebot\KujiraTrack\Fin\Infrastructure\FinCandlesServiceLcdCached
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
