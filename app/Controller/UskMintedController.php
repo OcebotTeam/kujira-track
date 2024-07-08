@@ -41,7 +41,7 @@ class UskMintedController extends AbstractController
     {
 
         $usk_minted_repo = $entityManager->getRepository(UskMinted::class);
-        $usk_minted_all = $usk_minted_repo->findBy([], ["tracked" => "ASC"],null,30000);
+        $usk_minted_all = $usk_minted_repo->findBy([], ["tracked" => "ASC"]);
         $result = [];
 
         foreach($usk_minted_all as $item) {
